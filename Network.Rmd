@@ -1,0 +1,223 @@
+---
+title: "Network"
+output: html_document
+---
+
+# Network
+
+## Proxy/VPN/Tor itp
+
+[link](https://pl.vpnmentor.com/blog/proxy-kontra-vpn-zrozumienie-roznic/?keyword=&geo=1011521&device=&ad=442543689761&cq_src=google_ads&cq_cmp=6541065276&cq_term=&cq_plac=&cq_net=g&cq_plt=gp&gclid=Cj0KCQjw9O6HBhCrARIsADx5qCT5w0jbgyKCPU3WdXp1t20E7tBf--MKRYCYf4wZWvgaiHw0RhlDX6EaAjuVEALw_wcB)
+
+## Protokół HTTP
+
+### Linki:
+
+Wprowadzenie do protokołu http [samouczekprogramisty.pl](https://www.samouczekprogramisty.pl/protokol-http/)
+
+### Różne uwagi
+
+Architektura klient serwer zakłada że :
+
+-   Serwer jest bierny. Dlatego po stronie serwera w stosunku do klienta chyba nie ma żądań (w kontekście www takich elementów jak GET, PAST itp.). Serwer jedynie na żądanie zwraca informacje.
+
+-   To klient jest elementem aktywnym.
+
+Komunikacja w ramach protokołu http odbywa się w sposób bezstanowy. Każde kolejne zdarzenia są w pełni od siebie niezależne. Kiedy klient wykonuje żądanie to przy jego ponownym wykonaniu nie może powołać na to poprzednie. W celu rozwiązania tego problemy można zastosować 2 rozwiązania
+
+-   ciasteczka
+
+-   sesje
+
+Protokół to ogólne zasady komunikacji.
+
+![](Network/czy_jest_protokol.jpg)
+
+### Adres URL
+
+#### Ogólny schemat
+
+Ogólny schemat adresu URL
+
+    scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
+
+Przykładowy adres URL może wyglądać następująco:
+
+    http://marcin:tajne@www.samouczekprogramisty.pl:80/nie/ma/tej?strony=1#identyfikator
+
+Wyjaśnienie poszczególnych elementów
+
+**`scheme`**
+
+W praktyce ta część adresu używana jest do określenia protokołu, najczęściej zobaczysz tu `http` czy `https`. W uproszczeniu można powiedzieć, że HTTPS (ang. *Hypertext Transfer Protocol Secure*) jest rozszerzeniem protokołu HTTP. To rozszerzenie pozwala na szyfrowanie połączenia pomiędzy klientem a serwerem.
+
+**`user:password`**
+
+`user:password` służą do uwierzytelniania. Uwierzytelnianie to proces, który polega na udowodnieniu, że klient wysyłający dane żądanie jest tym za kogo się podaje. Mechanizmu uwierzytelniania używasz praktycznie w każdym serwisie gdzie masz założone konto.
+
+W tym przypadku nazwa użytkownika i hasło przesyłane są jako część URL. Nie jest to bezpieczne w przypadku używania protokołu HTTP. Nawet przy komunikacji protokołem HTTPS adres URL może być zapamiętany przez przeglądarkę. Daje to możliwość przechwycenia nazwy użytkownika i hasła. W związku z tym nie jest to bezpieczny sposób na przesyłanie hasła czy nazwy użytkownika i należy go unikać^[3](https://www.samouczekprogramisty.pl/protokol-http/#fn:wewnetrzna)^.
+
+**`host`**
+
+W przypadku protokołu HTTP sprowadza się to do nazwy domeny internetowej lub adresu IP. Przykładem domeny może być [www.samouczekprogramisty.pl](https://www.samouczekprogramisty.pl/). Przykładowy adres IPv4 to `192.30.253.112`. Jaka strona kryje się pod tym adresem :)?
+
+[DNS](https://pl.wikipedia.org/wiki/Domain_Name_System) (ang. *Domain Name System*) jest protokołem, który pozwala na tłumaczenie [adresów IP](https://pl.wikipedia.org/wiki/Adres_IP) na nazwy domen.
+
+**`port`**
+
+Port to numer. Numer ten jest wykorzystywany przez serwer. Serwer nasłuchuje ruch na danym porcie. To tak jak z numerem w bloku, domena to numer klatki a port to numer mieszkania ;).
+
+Protokoły mają swoje standardowe porty. Na przykład standardowym portem protokołu HTTP jest 80. Protokół HTTPS natomiast używa portu 443. W praktyce, ze względu na domyślne wartości, porty te często się pomija. Odpowiednia wartość pola `scheme` pozwala na określenie czy użytkownikowi chodzi o port 80 czy 443.
+
+Możesz także uruchomić serwer, który nasłuchuje na innym porcie. Przykładem może tu być Tomcat, który domyślnie uruchamia się na porcie 8080. W takim przypadku podanie portu jest konieczne.
+
+**`path`**
+
+Ta część adresu URL jest ścieżką, która określa zasób. Na przykład w adresie `www.samouczekprogramisty.pl/kurs-programowania-java` ścieżką jest `/kurs-programowania-java`.
+
+**`query`**
+
+Zawiera dodatkowe dane identyfikujące dany zasób. Ta część oddzielona jest od ścieżki znakiem `?`. W praktyce zawiera pary `klucz=wartość` połączone znakiem `&`. Na przykład:
+
+    ?parametr=wartosc&format=json
+
+**`fragment`**
+
+Ostatnia część adresu URL. W praktyce wykorzystywana jest do określenia fragmentu strony HTML, która powinna zostać pokazana użytkownikowi. Na przykład adres [[https://www.samouczekprogramisty.pl/strumienie-w-jezyku-java/\#właściwości-strumieni](https://www.samouczekprogramisty.pl/strumienie-w-jezyku-java/\#właściwości-strumieni)](https://www.samouczekprogramisty.pl/strumienie-w-jezyku-java/#w%C5%82a%C5%9Bciwo%C5%9Bci-strumieni) przeniesie Cię do sekcji opisującej właściwości strumieni.
+
+Pisząc bardziej formalnie fragment używany jest do określenia „podzbioru" zasobu (ang. *secondary resource*). W przypadku HTML zasobem jest strona HTML a podzbiorem sekcja tej strony. Zgodnie ze [specyfikacją](https://tools.ietf.org/html/rfc7230#section-5.1) ta część adresu URL służy do identyfikacji zasobu wyłącznie po stronie klienta. Oznacza to tyle, serwer do identyfikacji zasobu nie używa tej części URL.
+
+#### **Czasowniki HTTP**
+
+**`GET`**
+
+Jest to podstawowe żądanie. Każde otworzenie strony internetowej zaczyna się od zapytania typu `GET`. Przeglądarka wysyła żądanie typu `GET` żeby otworzyć stronę internetową. Specyfikacja mówi, że żądanie to służy do pobrania aktualnej reprezentacji zasobu. W praktyce może to oznaczać pobranie aktualnej wersji strony znajdującej się pod danym adresem. Zakłada się, że żądania typu `GET` nie posiadają dołączonego ciała wiadomości.
+
+Odpowiedź na żądania typu `GET` może być przechowywana w cache'u.
+
+**`HEAD`**
+
+Zapytanie typu `HEAD` jest podobne do `GET`. Różni się jednym ważnym szczegółem. W przypadku tego zapytania odpowiedź serwera nie może zawierać ciała wiadomości. Zapytania tego typu są używane do sprawdzenia czy dany zasób się zmienił, czy do sprawdzania poprawności odnośników. Zysk z używania tego zapytania polega na tym, że ciało wiadomości nie jest przesyłane. Wyobraź sobie plik PDF, który zawiera 10MB danych. Można wysłać zapytanie typu `HEAD`, żeby sprawdzić czy zawartość tego pliku uległa zmianie. To czy plik jest nowszy można określić na podstawie nagłówków, które będą dołączone do odpowiedzi.
+
+Odpowiedź na żądania typu `HEAD` może być przechowywana w cache'u.
+
+**`POST`**
+
+Specyfikacja mówi, że żądania typu `POST` są przetwarzane przez serwer zgodnie z założeniami dla danego zasobu. Taki skomplikowany opis sprowadza się do:
+
+-   używania `POST` do przesyłania zawartości formularzy,
+
+-   dodawania nowego zasobu,
+
+-   dodawanie danych do istniejącego zasobu.
+
+Odpowiedzi na żądania typu `POST` nie jest przechowywana w cache'u^[7](https://www.samouczekprogramisty.pl/protokol-http/#fn:wyjatek)^.
+
+**`PUT`**
+
+W codziennym użytkowaniu żądania typu `PUT` służą do aktualizacji danego zasobu. Zgodnie ze specyfikacją ciało wiadomości powinno posłużyć do ustawienia stanu zasobu na serwerze. Zatem w przypadku gdy zasób nie istniał żądanie tego typu powinno go utworzyć. Jeśli zasób istnieje wówczas jego stan powinien być ustawiony na ten przekazany w ciele wiadomości.
+
+W większości znanych mi przypadków ten pierwszy aspekt jest pomijany, prawdopodobnie dla uproszczenia logiki aplikacji.
+
+Główna różnica pomiędzy zapytaniami `POST` i `PUT` polega na sposobie interpretowania ciała wiadomości. W przypadku zapytania typu `POST` to zasób decyduje jak przetworzyć otrzymaną wiadomość. W przypadku żądania typu `PUT` otrzymana wiadomość powinna posłużyć do ustawienia wartość zasobu.
+
+Odpowiedzi na żądanie typu `PUT` nie powinny być przechowywane w cache'u.
+
+##### **Idempotentność**
+
+Oznacza to tyle, że zapytania typu `PUT` są idempotentne. Zapytania, które są idempotentne można powtarzać wielokrotnie i zawsze doprowadzą one do tego samego stanu danego zasobu.
+
+**`DELETE`**
+
+Zapytania tego typu służą do usuwania zasobów. Na przykład w którymś z wcześniejszych zapytań dany zasób może być utworzony przy pomocy żądania typu `POST`. Następnie może on być usunięty przy pomocy `DELETE`. Odpowiedzi na żądania tego typu nie powinny zawierać ciała wiadomości.
+
+Odpowiedzi na żądania typu `DELETE` nie powinny być umieszczane w cache'u.
+
+**`CONNECT`**
+
+Żądania tego typu służą do utworzenia połączenia pomiędzy klientem a serwerem docelowym (za pomocą węzłów pośrednich). W praktyce nie będziesz używał tego typu żądań w trakcie pisania aplikacji webowych. Mi się to nigdy do tej pory nie zdarzyło :).
+
+**`OPTIONS`**
+
+Żądania typu `OPTIONS` używane są do pobrania informacji na temat możliwości komunikacji dla danego zasobu. W praktyce żądania tego typu używane są do sprawdzenia jakie żądania są obsługiwane przez serwer. Żądanie tego typu także wykorzystywane jest w mechanizmie [CORS](https://pl.wikipedia.org/wiki/Cross-Origin_Resource_Sharing).
+
+Odpowiedzi na żądania typu `OPTIONS` nie powinny być przechowywane w cache'u.
+
+**`TRACE`**
+
+Żądanie tego typu służy do testowania. W odpowiedzi na to żądanie serwer powinien wysłać zapytanie, które otrzymał. Możliwa jest drobna modyfikacja otrzymanych nagłówków, na przykład serwer może usunąć nagłówki zawierające dane wrażliwe (na przykład ciasteczka). Żądanie typu `TRACE` nie może zawierać ciała wiadomości.
+
+Odpowiedzi na żądanie typu `TRACE` nie powinny być umieszczane w cache'u.
+
+#### Statusy
+
+Wiesz już, że każda odpowiedź od serwera zawiera między innymi informacje o statusie. Status ten jest podstawową informacją o tym czy żądanie się powiodło. Wszystkie statusy podzielone są na pięć grup.
+
+**Statusy 1xx**
+
+Szczerze nigdy w praktyce nie spotkałem się z użyciem tych statusów. Ta grupa statusów to statusy informacyjne. Informują klienty o tym, że zapytanie zostało otrzymane i jest przetwarzane.
+
+**Statusy 2xx**
+
+Statusy z tej grupy informują o tym, że zapytanie zostało poprawnie przetworzone. W zależności od kodu odpowiedzi wynik tego przetwarzania może być różny. Najczęściej używane statusy z tej grupy to:
+
+-   `200 OK` -- zapytanie zostało przetworzone poprawnie,
+
+-   `201 Created` -- zapytanie zostało przetworzone poprawnie i zasób został utworzony,
+
+-   `202 Accepted` -- zapytanie zostało przyjęte przez serwer, jednak jego przetwarzanie nie jest jeszcze ukończone,
+
+-   `204 No Content` -- zapytanie zostało przetworzone, ciało wiadomości jest puste.
+
+**Statusy 3xx**
+
+Statusy zaczynające się od 3 informują klienty o tym, że musi być podjęta dodatkowa akcja w celu skończenia przetwarzania zapytania. Statusy te wykorzystywane są do ustawiania przekierowań. Na przykład jeśli zmieniłbym adres samouczka z www.samouczekprogramisty.pl na cokolwiek innego wówczas żądanie wysłane pod www.samouczekprogramisty.pl powinno skończyć się statusem z grupy 3xx:
+
+-   `301 Moved Permanently` -- informuje klienta, że zasób został przeniesiony na stałe w inne miejsce. Ten status ma znaczenie duże dla twórców stron, którzy bazują na ruchu z wyszukiwarek. Taki status informuje wyszukiwarki o tym, że strona, która wcześniej była pod adresem X znajduje się w nowym miejscu.
+
+**Statusy 4xx**
+
+Statusy z tej grupy informują o błędzie klienta. Pewnie nie raz widziałeś błąd 404 ;). Serwer tymi statusami informuje o tym, że żądanie nie może być poprawnie przetworzone:
+
+-   `400 Bad Request` -- serwer informuje klienta o błędnym zapytaniu, które nie będzie przetworzone,
+
+-   `403 Forbidden` -- zasób wymaga uwierzytelnienia, po potwierdzeniu tożsamości może być dostępny,
+
+-   `404 Not Found` -- to pewnie znasz i widziałeś wielokrotnie, żądany zasób nie istnieje.
+
+**Statusy 5xx**
+
+Tutaj sprawa jest poważna. Serwer informuje klienty o błędzie po stronie serwera, które uniemożliwiają przetworzenie zapytania:
+
+-   `500 Internal Server Error` -- informacja dla klienta o tym, że serwer znalazł się w stanie, który uniemożliwia poprawne przetworzenie żądania,
+
+-   `502 Bad Gateway` -- na początku artykułu wspomniałem o tym, że może być wiele węzłów, które będą przekazywały zapytanie do serwera, który je finalnie obsłuży. Ten status informuje klienta o tym, że jeden z tych pośrednich węzłów dostał błędną odpowiedź od poprzedniego węzła,
+
+-   `503 Service Unavailable` -- ten błąd może informować klienta o tym, że serwer jest przeciążony. Ponowna próba może kończyć się poprawną odpowiedzią.
+
+#### Naglowki
+
+Nagłówki dołączane są przez klienty do wysyłanych zapytań i przez serwery do wysyłanych odpowiedzi. Mają one postać `nazwa-nagłówka: wartość-nagłówka`. Zgodnie ze specyfikacją wielkość liter w nazwach nagłówków nie ma znaczenia. Wielkość liter w wartości nagłówka może mieć znaczenie, zależy to od aplikacji. Chociaż istnieje [cała masa standardowych nagłówków](https://www.iana.org/assignments/message-headers/message-headers.xhtml) możesz tworzyć swoje własne.
+
+Do nagłówków należą m.in cookies.
+
+Lista podstawowych nagłówków:
+
+| **Nagłówek**                   | **Znaczenie**                                                                                                                                          |
+|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Accept`                       | Klient informuje serwer o tym jaki format jest w stanie zrozumieć, może to być na przykład JSON: `application/json`                                    |
+| `Accept-Encoding`              | Klient informuje serwer o tym jakie sposoby kodowania ciała wiadomości rozumie, może być użyty do określenia pożądanego algorytmu kompresji odpowiedzi |
+| `Access-Control-Allow-Methods` | W odpowiedzi na zapytanie typu `OPTIONS` serwer informuje jakie inne czasowniki HTTP są dozwolone                                                      |
+| `Access-Control-Allow-Origin`  | Serwer informuje klienta jakie domeny uprawnione są do użycia odpowiedzi                                                                               |
+| `Cache-Control`                | Nagłówek służący do zarządzania cache'owaniem. Dotyczy zarówno żądań jak i odpowiedzi                                                                  |
+| `Connection`                   | Zawiera informacje na temat połączenia pomiędzy klientem a serwerem                                                                                    |
+| `Content-Encoding`             | Serwer informuje klienta o sposobie kodowania ciała wiadomości                                                                                         |
+| `Content-Type`                 | Odpowiednik nagłówka `Accept` wysyłany przez serwer informujący o formacie odpowiedzi                                                                  |
+| `Cookie`                       | Nagłówek służący do przesłania ciasteczka przez klienty do serwera                                                                                     |
+| `Date`                         | Zawiera datę mówiącą o czasie wygenerowania żądania/odwiedzi                                                                                           |
+| `ETag`                         | Zawiera identyfikator zasobu zwróconego przez serwer. Używany przez cache                                                                              |
+| `Host`                         | Zawiera domenę, do której wysyłane jest żądanie                                                                                                        |
+| `Location`                     | Zawiera informacje o położeniu zasobu, może być użyty na przykład przy przekierowaniach i tworzeniu nowych zasobów                                     |
+| `Server`                       | Serwer informuje klienty jakiego oprogramowania używa do obsługi odpowiedzi                                                                            |
+| `Set-Cookie`                   | Nagłówek służący do ustawienia ciasteczka                                                                                                              |
+| `User-Agent`                   | Nagłówek dołączany do zapytania informujący o tym jaki klient został użyty do jego wysłania                                                            |

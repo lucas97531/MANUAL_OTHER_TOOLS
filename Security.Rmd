@@ -1,0 +1,44 @@
+---
+title: "Security"
+output: html_document
+---
+
+
+# Security
+
+
+## Klucze szyfrujące
+
+Mamy szyfrowanie symetryczne i asymetryczne. W pierwszym przypadku tym samym kluczem szyfrujemy i odszyfrowujemy wiadomość. W kluczy asymetrycznym inny kluczy służy do szyfrowania, a inny do odszyfrowania wiadomości. Szyfrowanie asymetryczne jest zazwyczaj używane do tworzenia pary kluczy publicznych-prywatny : wszyscy mają dostęp do klucza szyfrującego (klucz publiczny), ale odszyfrowanie (kluczy prywatny) mają tylko wybrane jednostki. Szyfrowanie asymetryczne jest używane do tworzenia klucza prywatnego gdzie tylko strony uczestniczące w komunikacji mają do niego dostęp (obie strony używają tego samego klucza prywatnego). Ponieważ klucze publiczne są obliczeniochłonne, w praktyce jest tak, że komunikacja zaczyna się od klucza publicznego a potem przechodzi się na klucze prywatne, tzn:
+
+Strona A z użyciem klucza publicznego (należącego do B) szyfruje utworzony przez siebie klucz prywatny (nazwijmy go *g*). Strona B go swoim kluczem prywatnym odszyfrowuje i przechodzą dalej na komunikację prywatnym kluczem *g*.
+
+**Uwaga:** Certyfikaty publiczne powinny być uwierzytelniane przez CA (Certhificate Authority). W celach testowych kiedy pracuje lokalnie na komputerze mogę sobie ten proces zasymulować odpowiednią aplikacją w systemie operacyjnym.
+
+Przykład szyfrowania niesymetrycznego na bazie protokołu Diffiego Hellmana [crypto-it.net](http://www.crypto-it.net/pl/asymetryczne/diffiego-hellmana.html):
+
+**Sam algorytm**
+
+1.  Alice i Bob uzgadniają liczbę pierwszą p i bazę g.
+
+2.  Alice wybiera sekretną liczbę całkowitą a, a następnie wysyła Bobowi liczbę A = g^a^ mod p.
+
+3.  Bob wybiera sekretną liczbę całkowitą b, a następnie wysyła Alice liczbę B = g^b^ mod p.
+
+4.  Alice oblicza liczbę k = B^a^ mod p.
+
+5.  Bob oblicza tę samą liczbę k = A^b^ mod p.
+
+6.  Od tego momentu Alice i Bob współdzielą sekretną liczbę k.
+
+Otrzymana przez obie strony liczba k jest bardzo duża - wykorzystywane w algorytmie liczby a i b mają przynajmniej po 100 cyfr, natomiast liczba pierwsza p ma przynajmniej 300 cyfr. Wartość k może być następnie zmieniona na klucz symetryczny za pomocą [funkcji haszującej](http://www.crypto-it.net/pl/teoria/funkcja-jednokierunkowa.html#hash "Przeczytaj więcej o funkcjach haszujących"). Klucz symetryczny jest stosowany do szyfrowania całej dalszej komunikacji.
+
+**Przykład użycia do kluczy prywatny-publiczny:**
+
+Możliwe jest wykorzystanie protokołu Diffiego-Hellmana do szyfrowania wiadomości przy użyciu kluczy publicznego i prywatnego.
+
+W takim przypadku, Bob mógłby wysłać wiadomość do Alice, szyfrując ją za klucza publicznego Alice, którym są trzy liczby: g, p, g^a^ mod p. W celu przesłania Alice sekretnej wiadomości, Bob musi wylosować liczbę b, a następnie wysłać niezaszyfrowaną liczbę g^b^ mod p do Alice. Wreszcie przychodzi czas na wysłanie właściwej wiadomości, zaszyfrowanej za pomocą klucza symetrycznego (g^a^)^b^ mod p.
+
+Jedynie Alice będzie w stanie określić wartość b i odszyfrować wiadomość. Zastosowanie klucza publicznego zapobiega również atakom [man-in-the-middle](http://www.crypto-it.net/pl/ataki/man-in-the-middle.html "Przeczytaj więcej o atakach man-in-the-middle").
+
+Przytoczony algorytm umożliwia szyfrowanie danych za pomocą szyfrów asymetrycznych. Obecnie jednak, dużo bardziej popularnym sposobem szyfrowania z kluczem publicznym jest [RSA](http://www.crypto-it.net/pl/asymetryczne/rsa.html "Przeczytaj więcej o szyfrowaniu RSA").

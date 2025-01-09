@@ -1,0 +1,65 @@
+---
+title: "Files_types"
+output: html_document
+---
+
+# Files types
+
+## YAML
+
+Dobry tutorial do skladni samego YAML-a: [link](https://www.youtube.com/watch?v=1uFVr15xDGg)
+
+Duzo przykladow: [link](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
+
+```{r}
+# tutaj mozge zaczac kolejny dokument
+# tekst w jednej linijce
+bar_m: >
+  this is not a normal string it
+  spans more than
+  one line
+  see?
+# tekst wielolinijkowy
+bar_o: >
+  this is not a normal string it
+  spans more than
+  see?
+# null
+foo: ~
+# null - drugie sposob zapisu
+bar: null
+# dwa rowpowazne sposoby zapisu listy wartosci
+items_1: [ 1, 2, 3, 4, 5 ]
+items_2:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+# zagniezdzanie
+xmas-fifth-day:
+ calling-birds: four
+ french-hens: 3
+ golden-rings: 5
+ partridges:
+   count: 1
+   location: "a pear tree"
+ turtle-doves: two
+---
+doe: "a deer, a female deer"
+ray: "a drop of golden sun"
+pi: 3.14159
+xmas: true # zmienna logiczne to true/false; yes/no; on/off
+french-hens: 3
+calling-birds:
+ - huey
+ - dewey
+ - louie
+ - fred
+```
+
+## JSON
+
+## XML
+
+## INI

@@ -1,0 +1,3 @@
+FROM busybox:latest
+ENV BOOK="Poznaj Dockera" \
+    CHAPTER="Kontenery i orkiestracja" 

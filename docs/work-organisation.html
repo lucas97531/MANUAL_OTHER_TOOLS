@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Work organisation | Workflow</title>
+  <meta name="description" content="Chapter 9 Work organisation | Workflow" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Work organisation | Workflow" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Work organisation | Workflow" />
+  
+  
+  
+
+<meta name="author" content="Łukasz Muszyński" />
+
+
+<meta name="date" content="2023-08-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="windows-2.html"/>
+<link rel="next" href="workflow.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdution to Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> INTRO</a></li>
+<li class="chapter" data-level="2" data-path="files-types.html"><a href="files-types.html"><i class="fa fa-check"></i><b>2</b> Files types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="files-types.html"><a href="files-types.html#yaml"><i class="fa fa-check"></i><b>2.1</b> YAML</a></li>
+<li class="chapter" data-level="2.2" data-path="files-types.html"><a href="files-types.html#json"><i class="fa fa-check"></i><b>2.2</b> JSON</a></li>
+<li class="chapter" data-level="2.3" data-path="files-types.html"><a href="files-types.html#xml"><i class="fa fa-check"></i><b>2.3</b> XML</a></li>
+<li class="chapter" data-level="2.4" data-path="files-types.html"><a href="files-types.html#ini"><i class="fa fa-check"></i><b>2.4</b> INI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>3</b> Linux</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="linux.html"><a href="linux.html#podstawowe-pojecia"><i class="fa fa-check"></i><b>3.1</b> Podstawowe pojecia</a></li>
+<li class="chapter" data-level="3.2" data-path="linux.html"><a href="linux.html#architektura-linuxa"><i class="fa fa-check"></i><b>3.2</b> Architektura Linuxa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="linux.html"><a href="linux.html#system-plików"><i class="fa fa-check"></i><b>3.2.1</b> System plików</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="linux.html"><a href="linux.html#make-file"><i class="fa fa-check"></i><b>3.3</b> Make file</a></li>
+<li class="chapter" data-level="3.4" data-path="linux.html"><a href="linux.html#repozytoria"><i class="fa fa-check"></i><b>3.4</b> Repozytoria</a></li>
+<li class="chapter" data-level="3.5" data-path="linux.html"><a href="linux.html#dostepy-uzytkownicy"><i class="fa fa-check"></i><b>3.5</b> Dostepy / Uzytkownicy</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="linux.html"><a href="linux.html#polecenia"><i class="fa fa-check"></i><b>3.5.1</b> Polecenia</a></li>
+<li class="chapter" data-level="3.5.2" data-path="linux.html"><a href="linux.html#plik-shadow---zarzadzanie"><i class="fa fa-check"></i><b>3.5.2</b> Plik shadow - zarzadzanie</a></li>
+<li class="chapter" data-level="3.5.3" data-path="linux.html"><a href="linux.html#admin-vs-root-user-vs-super-user"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Admin vs Root user vs Super User</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="linux.html"><a href="linux.html#screens"><i class="fa fa-check"></i><b>3.6</b> Screens</a></li>
+<li class="chapter" data-level="3.7" data-path="linux.html"><a href="linux.html#red-hat"><i class="fa fa-check"></i><b>3.7</b> Red Hat</a></li>
+<li class="chapter" data-level="3.8" data-path="linux.html"><a href="linux.html#ubuntu"><i class="fa fa-check"></i><b>3.8</b> Ubuntu</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="linux.html"><a href="linux.html#instalacja"><i class="fa fa-check"></i><b>3.8.1</b> Instalacja</a></li>
+<li class="chapter" data-level="3.8.2" data-path="linux.html"><a href="linux.html#nautilus"><i class="fa fa-check"></i><b>3.8.2</b> Nautilus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="linux.html"><a href="linux.html#terminal-shell-console"><i class="fa fa-check"></i><b>3.9</b> Terminal-Shell-console</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="linux.html"><a href="linux.html#zsh-instalacja-i-konfiguracja"><i class="fa fa-check"></i><b>3.9.1</b> ZSH Instalacja i konfiguracja</a></li>
+<li class="chapter" data-level="3.9.2" data-path="linux.html"><a href="linux.html#skladnia"><i class="fa fa-check"></i><b>3.9.2</b> Skladnia</a></li>
+<li class="chapter" data-level="3.9.3" data-path="linux.html"><a href="linux.html#komendy-bash"><i class="fa fa-check"></i><b>3.9.3</b> Komendy bash</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="linux.html"><a href="linux.html#networking"><i class="fa fa-check"></i><b>3.10</b> Networking</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="linux.html"><a href="linux.html#polecenie-netstat"><i class="fa fa-check"></i><b>3.10.1</b> polecenie netstat</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="linux.html"><a href="linux.html#scheduling"><i class="fa fa-check"></i><b>3.11</b> Scheduling</a></li>
+<li class="chapter" data-level="3.12" data-path="linux.html"><a href="linux.html#rozne"><i class="fa fa-check"></i><b>3.12</b> Rozne</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="linux.html"><a href="linux.html#stdin-stdout-and-stderr"><i class="fa fa-check"></i><b>3.12.1</b> <strong>stdin, stdout and stderr</strong></a></li>
+<li class="chapter" data-level="3.12.2" data-path="linux.html"><a href="linux.html#uzywanie-devnull"><i class="fa fa-check"></i><b>3.12.2</b> Uzywanie dev/null</a></li>
+<li class="chapter" data-level="3.12.3" data-path="linux.html"><a href="linux.html#exit-status"><i class="fa fa-check"></i><b>3.12.3</b> Exit status</a></li>
+<li class="chapter" data-level="3.12.4" data-path="linux.html"><a href="linux.html#sh-vs-source-vs-bin"><i class="fa fa-check"></i><b>3.12.4</b> sh vs source vs bin</a></li>
+<li class="chapter" data-level="3.12.5" data-path="linux.html"><a href="linux.html#domyslny-edytor"><i class="fa fa-check"></i><b>3.12.5</b> Domyslny edytor</a></li>
+<li class="chapter" data-level="3.12.6" data-path="linux.html"><a href="linux.html#split-okna-terminala"><i class="fa fa-check"></i><b>3.12.6</b> Split okna terminala</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="network.html"><a href="network.html"><i class="fa fa-check"></i><b>4</b> Network</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="network.html"><a href="network.html#proxyvpntor-itp"><i class="fa fa-check"></i><b>4.1</b> Proxy/VPN/Tor itp</a></li>
+<li class="chapter" data-level="4.2" data-path="network.html"><a href="network.html#protokół-http"><i class="fa fa-check"></i><b>4.2</b> Protokół HTTP</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="network.html"><a href="network.html#linki"><i class="fa fa-check"></i><b>4.2.1</b> Linki:</a></li>
+<li class="chapter" data-level="4.2.2" data-path="network.html"><a href="network.html#różne-uwagi"><i class="fa fa-check"></i><b>4.2.2</b> Różne uwagi</a></li>
+<li class="chapter" data-level="4.2.3" data-path="network.html"><a href="network.html#adres-url"><i class="fa fa-check"></i><b>4.2.3</b> Adres URL</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="security.html"><a href="security.html"><i class="fa fa-check"></i><b>5</b> Security</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="security.html"><a href="security.html#klucze-szyfrujące"><i class="fa fa-check"></i><b>5.1</b> Klucze szyfrujące</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sonar-qube.html"><a href="sonar-qube.html"><i class="fa fa-check"></i><b>6</b> SONAR QUBE</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sonar-qube.html"><a href="sonar-qube.html#installing"><i class="fa fa-check"></i><b>6.1</b> Installing</a></li>
+<li class="chapter" data-level="6.2" data-path="sonar-qube.html"><a href="sonar-qube.html#running"><i class="fa fa-check"></i><b>6.2</b> Running</a></li>
+<li class="chapter" data-level="6.3" data-path="sonar-qube.html"><a href="sonar-qube.html#project"><i class="fa fa-check"></i><b>6.3</b> Project</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="virtualisation.html"><a href="virtualisation.html"><i class="fa fa-check"></i><b>7</b> Virtualisation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="virtualisation.html"><a href="virtualisation.html#virtual-machines"><i class="fa fa-check"></i><b>7.1</b> Virtual Machines</a></li>
+<li class="chapter" data-level="7.2" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---kubernetes"><i class="fa fa-check"></i><b>7.2</b> Virtual OS - Kubernetes</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-1"><i class="fa fa-check"></i><b>7.2.1</b> Instalacja</a></li>
+<li class="chapter" data-level="7.2.2" data-path="virtualisation.html"><a href="virtualisation.html#pytania"><i class="fa fa-check"></i><b>7.2.2</b> Pytania</a></li>
+<li class="chapter" data-level="7.2.3" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi"><i class="fa fa-check"></i><b>7.2.3</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.2.4" data-path="virtualisation.html"><a href="virtualisation.html#architektura"><i class="fa fa-check"></i><b>7.2.4</b> Architektura</a></li>
+<li class="chapter" data-level="7.2.5" data-path="virtualisation.html"><a href="virtualisation.html#polecenia-1"><i class="fa fa-check"></i><b>7.2.5</b> Polecenia</a></li>
+<li class="chapter" data-level="7.2.6" data-path="virtualisation.html"><a href="virtualisation.html#praca-z-plikami-konfiguracyjnymi"><i class="fa fa-check"></i><b>7.2.6</b> Praca z plikami konfiguracyjnymi</a></li>
+<li class="chapter" data-level="7.2.7" data-path="virtualisation.html"><a href="virtualisation.html#health-check"><i class="fa fa-check"></i><b>7.2.7</b> Health check</a></li>
+<li class="chapter" data-level="7.2.8" data-path="virtualisation.html"><a href="virtualisation.html#namespace"><i class="fa fa-check"></i><b>7.2.8</b> Namespace</a></li>
+<li class="chapter" data-level="7.2.9" data-path="virtualisation.html"><a href="virtualisation.html#volumes"><i class="fa fa-check"></i><b>7.2.9</b> Volumes</a></li>
+<li class="chapter" data-level="7.2.10" data-path="virtualisation.html"><a href="virtualisation.html#helm"><i class="fa fa-check"></i><b>7.2.10</b> Helm</a></li>
+<li class="chapter" data-level="7.2.11" data-path="virtualisation.html"><a href="virtualisation.html#dashboard"><i class="fa fa-check"></i><b>7.2.11</b> Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---dockers"><i class="fa fa-check"></i><b>7.3</b> Virtual OS - Dockers</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi-1"><i class="fa fa-check"></i><b>7.3.1</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.3.2" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-2"><i class="fa fa-check"></i><b>7.3.2</b> Instalacja</a></li>
+<li class="chapter" data-level="7.3.3" data-path="virtualisation.html"><a href="virtualisation.html#docker"><i class="fa fa-check"></i><b>7.3.3</b> Docker</a></li>
+<li class="chapter" data-level="7.3.4" data-path="virtualisation.html"><a href="virtualisation.html#images"><i class="fa fa-check"></i><b>7.3.4</b> Images</a></li>
+<li class="chapter" data-level="7.3.5" data-path="virtualisation.html"><a href="virtualisation.html#section-2"><i class="fa fa-check"></i><b>7.3.5</b> </a></li>
+<li class="chapter" data-level="7.3.6" data-path="virtualisation.html"><a href="virtualisation.html#kontenery"><i class="fa fa-check"></i><b>7.3.6</b> Kontenery</a></li>
+<li class="chapter" data-level="7.3.7" data-path="virtualisation.html"><a href="virtualisation.html#tworzenie-obrazu"><i class="fa fa-check"></i><b>7.3.7</b> Tworzenie obrazu</a></li>
+<li class="chapter" data-level="7.3.8" data-path="virtualisation.html"><a href="virtualisation.html#networking-1"><i class="fa fa-check"></i><b>7.3.8</b> Networking</a></li>
+<li class="chapter" data-level="7.3.9" data-path="virtualisation.html"><a href="virtualisation.html#compose"><i class="fa fa-check"></i><b>7.3.9</b> Compose</a></li>
+<li class="chapter" data-level="7.3.10" data-path="virtualisation.html"><a href="virtualisation.html#uprodukcyjnianie"><i class="fa fa-check"></i><b>7.3.10</b> Uprodukcyjnianie</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---other-solutions"><i class="fa fa-check"></i><b>7.4</b> Virtual OS - Other Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="windows-2.html"><a href="windows-2.html"><i class="fa fa-check"></i><b>8</b> Windows</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="windows-2.html"><a href="windows-2.html#podstawy-skladni"><i class="fa fa-check"></i><b>8.1</b> podstawy skladni</a></li>
+<li class="chapter" data-level="8.2" data-path="windows-2.html"><a href="windows-2.html#zmienne-1"><i class="fa fa-check"></i><b>8.2</b> zmienne</a></li>
+<li class="chapter" data-level="8.3" data-path="windows-2.html"><a href="windows-2.html#control-flow"><i class="fa fa-check"></i><b>8.3</b> control flow</a></li>
+<li class="chapter" data-level="8.4" data-path="windows-2.html"><a href="windows-2.html#odpalanie-stron-w-danej-przegladarce"><i class="fa fa-check"></i><b>8.4</b> odpalanie stron w danej przegladarce</a></li>
+<li class="chapter" data-level="8.5" data-path="windows-2.html"><a href="windows-2.html#przydatne-komentu"><i class="fa fa-check"></i><b>8.5</b> przydatne komentu</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="work-organisation.html"><a href="work-organisation.html"><i class="fa fa-check"></i><b>9</b> Work organisation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="work-organisation.html"><a href="work-organisation.html#cicd-concept"><i class="fa fa-check"></i><b>9.1</b> CI/CD concept</a></li>
+<li class="chapter" data-level="9.2" data-path="work-organisation.html"><a href="work-organisation.html#jenkins"><i class="fa fa-check"></i><b>9.2</b> Jenkins</a></li>
+<li class="chapter" data-level="9.3" data-path="work-organisation.html"><a href="work-organisation.html#team-city"><i class="fa fa-check"></i><b>9.3</b> Team city</a></li>
+<li class="chapter" data-level="9.4" data-path="work-organisation.html"><a href="work-organisation.html#gib-lab"><i class="fa fa-check"></i><b>9.4</b> Gib Lab</a></li>
+<li class="chapter" data-level="9.5" data-path="work-organisation.html"><a href="work-organisation.html#git"><i class="fa fa-check"></i><b>9.5</b> Git</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="work-organisation.html"><a href="work-organisation.html#uwagi-rozne"><i class="fa fa-check"></i><b>9.5.1</b> uwagi rozne</a></li>
+<li class="chapter" data-level="9.5.2" data-path="work-organisation.html"><a href="work-organisation.html#logika-git-a"><i class="fa fa-check"></i><b>9.5.2</b> logika git-a</a></li>
+<li class="chapter" data-level="9.5.3" data-path="work-organisation.html"><a href="work-organisation.html#repozytoria-1"><i class="fa fa-check"></i><b>9.5.3</b> repozytoria</a></li>
+<li class="chapter" data-level="9.5.4" data-path="work-organisation.html"><a href="work-organisation.html#diff"><i class="fa fa-check"></i><b>9.5.4</b> diff</a></li>
+<li class="chapter" data-level="9.5.5" data-path="work-organisation.html"><a href="work-organisation.html#tracking"><i class="fa fa-check"></i><b>9.5.5</b> tracking</a></li>
+<li class="chapter" data-level="9.5.6" data-path="work-organisation.html"><a href="work-organisation.html#stage"><i class="fa fa-check"></i><b>9.5.6</b> stage</a></li>
+<li class="chapter" data-level="9.5.7" data-path="work-organisation.html"><a href="work-organisation.html#branches"><i class="fa fa-check"></i><b>9.5.7</b> branches</a></li>
+<li class="chapter" data-level="9.5.8" data-path="work-organisation.html"><a href="work-organisation.html#commits"><i class="fa fa-check"></i><b>9.5.8</b> commits</a></li>
+<li class="chapter" data-level="9.5.9" data-path="work-organisation.html"><a href="work-organisation.html#stash"><i class="fa fa-check"></i><b>9.5.9</b> stash</a></li>
+<li class="chapter" data-level="9.5.10" data-path="work-organisation.html"><a href="work-organisation.html#inne-komendy"><i class="fa fa-check"></i><b>9.5.10</b> Inne komendy</a></li>
+<li class="chapter" data-level="9.5.11" data-path="work-organisation.html"><a href="work-organisation.html#github"><i class="fa fa-check"></i><b>9.5.11</b> GitHub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>10</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="workflow.html"><a href="workflow.html#airflow"><i class="fa fa-check"></i><b>10.1</b> AirFlow</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="workflow.html"><a href="workflow.html#instalacja---ubuntu"><i class="fa fa-check"></i><b>10.1.1</b> Instalacja - Ubuntu</a></li>
+<li class="chapter" data-level="10.1.2" data-path="workflow.html"><a href="workflow.html#instalacja---windows"><i class="fa fa-check"></i><b>10.1.2</b> Instalacja - Windows</a></li>
+<li class="chapter" data-level="10.1.3" data-path="workflow.html"><a href="workflow.html#składnia"><i class="fa fa-check"></i><b>10.1.3</b> Składnia</a></li>
+<li class="chapter" data-level="10.1.4" data-path="workflow.html"><a href="workflow.html#komendy-cli-command-line-interface"><i class="fa fa-check"></i><b>10.1.4</b> Komendy CLI (<strong>Command Line Interface</strong>)</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workflow</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="work-organisation" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Work organisation</h1>
+<div id="cicd-concept" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> CI/CD concept</h2>
+</div>
+<div id="jenkins" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Jenkins</h2>
+</div>
+<div id="team-city" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Team city</h2>
+</div>
+<div id="gib-lab" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Gib Lab</h2>
+</div>
+<div id="git" class="section level2" number="9.5">
+<h2><span class="header-section-number">9.5</span> Git</h2>
+<p>C:/Users/memy/OneDrive/Pulpit/1_Programs_and_programing/GIT/git_test/repo1</p>
+<div id="uwagi-rozne" class="section level3" number="9.5.1">
+<h3><span class="header-section-number">9.5.1</span> uwagi rozne</h3>
+<ol style="list-style-type: decimal">
+<li>Wystarczy podawać PIERWSZE 8 znakow nazwy commitu przy odwolywaniu
+sie do niego.</li>
+<li>Moze wystapic problem kiedy w pliku zostana zrobione zmiany w dwoch
+roznych programach (np. w samym Git i w Git pod Rstudio). Wtedy
+trzeba usunac odpowiedni plik poleceniem w konsoli Git.</li>
+<li>Dopoki katalog repozytorium jest pusty nie utworzy sie zaden branch
+!!!</li>
+</ol>
+</div>
+<div id="logika-git-a" class="section level3" number="9.5.2">
+<h3><span class="header-section-number">9.5.2</span> logika git-a</h3>
+<p>Podstawowe elementy i czynnosci zwiazane z git-em</p>
+<p><img src="figures/GIT-elements_and_actions.png" /></p>
+</div>
+<div id="repozytoria-1" class="section level3" number="9.5.3">
+<h3><span class="header-section-number">9.5.3</span> repozytoria</h3>
+<ul>
+<li><p>UTWORZENIE lokalnego repozytorium</p>
+<pre><code>git init # w katalogu w ktorym aktualnie przebywam zostanie utworzone lokalnie nowe repo git-a</code></pre></li>
+<li><p>LISTA repozytoriow zdalnych</p>
+<pre><code>git remote -v</code></pre></li>
+<li><p>DODANIE dla lokalnego repozytorium polaczenia do zdalnego repo na
+publicznym GitHubie.</p>
+<pre><code>git remote add origin  git@github.com:USERNAME/REPOSITORY.gflusk </code></pre></li>
+<li><p>ZMIANA URL dla istniejącego polaczenia ze zdalnym repozytorium</p>
+<pre><code>git remote set-url origin git@github.com:USERNAME/REPOSITORY.git # &#39;origin&#39; to bedzie nazwa polaczenia do ktorego bedziemy mogli sie potem odwolywac w komendach</code></pre></li>
+<li><p>USUNIECIE poloczenia do zdalnego repo ktore przy laczeniu nazwalismy
+‘origin’</p>
+<pre><code>git remote rm origin # &#39;origin&#39; musi byc wczesniej zdefiniwoane</code></pre></li>
+<li><p>Wypchniecie zmian z lokalnego repo z brancha do repo zdalngo</p>
+<pre><code># dla aktualnego brancha
+git push
+
+# dla aktulnego brancha z podaniem lokalizacji repo zdalnego i nazwy zdalnego brancha
+git push [nazwa-zdalnego-repo] [nazwa-gałęzi]
+
+git push 
+
+# jezeli chce dla wszyskich branchow
+git push --all</code></pre></li>
+<li><p>Wypchniecie zmian z lokalnego repo z aktulanego brancha do repo
+zdalngo <strong>ZA PIERWSZYM RAZEM</strong>.</p>
+<p>Za pierszym razem trzeba ustalic tzw. usptream-branch (Upstream
+branches define the branch tracked on the remote repository by your
+local remote branch (also called the remote tracking branch))</p>
+<pre><code>git push --set-upstream &lt;remote&gt; &lt;branch&gt;</code></pre></li>
+<li><p>Jezeli chce zacząć śledzić już istniejącego zdalnego brancha
+`<code>git branch --set-upstream-to origin/BRANCH</code></p></li>
+<li><p>pobranie metadanych ze zdalnego repo o branchu np. w celach
+porownania z lokalnym repo</p>
+<pre><code># dla aktualnego brancha
+git fetch
+
+# jezeli chce dla wszyskich branchow
+git fetch -all</code></pre></li>
+<li><p>Pobranie metadanych o branchu ze zdalnego repo + wykonanie ‘merge’</p>
+<pre><code># dla aktulnego brancha
+git pull # &#39;pull&#39; wykonuje &#39;fetch&#39; i &#39;merge&#39; jednoczesnie.
+
+# jezeli chce dla wszyskich branchow
+git pull --all</code></pre></li>
+<li><p>sklowanie zdalnego repo (zazwyczaj robi sie tylko na poczatku). To polecenie pomyslnie pobiera wszystkie branche. Jest tez mozliwosc sklonowania wybranego brancha.</p>
+<pre><code>git clone</code></pre></li>
+<li><p>klonowanie wybranego brancha : (<a href="https://www.freecodecamp.org/news/git-clone-branch-how-to-clone-a-specific-branch/#" class="uri">https://www.freecodecamp.org/news/git-clone-branch-how-to-clone-a-specific-branch/#</a>:~:text=While%20you%20can%20clone%20repositories,master%20and%20all%20other%20branches.)</p></li>
+<li><p>podlaczenie sie lokalnie do brancha ktory nie byl sledzony, czyli nie było połączenia między lokalnym repo i remotem (taki problemy moze byc np po sklonowaniu repo)</p>
+<pre><code>git checkout --track &lt;nazwa remota&gt;/....</code></pre></li>
+</ul>
+</div>
+<div id="diff" class="section level3" number="9.5.4">
+<h3><span class="header-section-number">9.5.4</span> diff</h3>
+<p>Polecenie diff sluzy do porownywania plikow pomiedzy modyfikacjami.</p>
+<ul>
+<li><p>Jakie dokładnie zmiany sa w plikach w stage wzgledem tego to jest
+przed poczekalnia.</p>
+<pre><code>git diff</code></pre>
+<p><strong>Uwaga</strong> ‘diff’ nie wyswietli roznic polegajacych na tym ze dodano
+i nie wrzucono do poczekalni nowego pliku (pliki nie sledzone).
+‘diff’ tylko porownuje pliki istniejace.</p></li>
+<li><p>zmiany jakie sa w stage wzgledem poprzedniego commitu</p>
+<pre><code>git diff --staged</code></pre></li>
+<li><p>roznice miedzy branchami</p>
+<pre><code>git diff branch_1 branch_2  </code></pre></li>
+<li><p>zmiany w konkretnym commicie</p>
+<pre><code>git show hash_7</code></pre></li>
+<li><p>roznice miedzy dwoma zadanymi commitami</p>
+<pre><code>git diff hash_7_1 hash_7_2</code></pre></li>
+<li><p>roznica miedzy zadanym commitem i commitem na ktorym jest wskaznik
+(HEAD to miejsce po ostatnim commicie na branchy na ktory jestesmy)</p>
+<pre><code>git diff hash_7 HEAD</code></pre></li>
+<li><p>roznica miedzy branchem obecnym i zdalnym</p>
+<pre><code>git fetch # pobranie meta danych ze zdalnego branch-a
+git diff &lt;local branch&gt; &lt;remote&gt;/&lt;remote branch&gt;</code></pre></li>
+</ul>
+</div>
+<div id="tracking" class="section level3" number="9.5.5">
+<h3><span class="header-section-number">9.5.5</span> tracking</h3>
+<div id="sledzenie-nowych-plikow" class="section level4" number="9.5.5.1">
+<h4><span class="header-section-number">9.5.5.1</span> sledzenie nowych plikow</h4>
+<p>Nie wszystkie pliki ktore mamy w katalogu repozytorium muszę być
+śledzone przez git-a. W szczegolnosci nowo dodane pliki nie sa
+automatycznie sledzone.</p>
+<ul>
+<li><p>Rozpoczecie sledzenie nowo dodanego pliku</p>
+<pre><code>git cp s1 s2 # dodalem plik &#39;s2&#39; kopiujac &#39;s1&#39;
+git status # dostaje komunikat ze plik jest niesledzony
+git add . # dodane plik do sledzenia</code></pre></li>
+<li><p>Jeżeli chcemy aby jakis plik nie był sledzony na stale to dodajemy
+go do pliku .gitignore (patrz nastepny punkt manuala)</p></li>
+</ul>
+</div>
+<div id="gitignore" class="section level4" number="9.5.5.2">
+<h4><span class="header-section-number">9.5.5.2</span> gitignore</h4>
+<p>-tworzenie pustego pliku (najszybsza metoda) <code>touch .gitignore</code></p>
+<p>-zaladownie globalnego pliku .gitignore (o nazwie ‘.gitignore_global’)
+waznego dla wszysktkich repozytoriow lokalnych.
+<code>git config --global core.excludesfile ~/.gitignore_global</code></p>
+<ul>
+<li><p>problemy z sledzeniem plikow (git np. jakiegos ignoruje a nie
+powinien):</p>
+<p>Czasami aby gitignore dzialal dobrze trzeba wyczyscic cache:</p>
+<pre><code>git rm -r --cached .
+git add .
+git commit -m &quot;.gitignore is now working&quot;</code></pre></li>
+<li><p>Skladnia wewnatrz gitignore</p>
+<ul>
+<li><p>ignoruj wszystkie pliki z rozszrzeniem ‘log’</p>
+<pre><code>*.log </code></pre></li>
+<li><p>ignoruj wszystkie pliki z rozszrzeniem ‘log’ z wyjatkiem
+‘important.log’</p>
+<pre><code>*.log
+!important.log</code></pre></li>
+<li><p>ignoruj caly katalog ‘logs’</p>
+<pre><code>logs/</code></pre></li>
+<li><p>Z katalogu ‘logs’ ignoruj tylko plik ‘debug.log’</p>
+<pre><code>logs/debug.log</code></pre></li>
+<li><p>ignoruj katalog ‘logs’ z wyjatkiem znajdujacego sie w nim pliku
+‘important.log’</p>
+<pre><code>logs/
+!logs/important.log</code></pre></li>
+<li><p>ignoruj wszystkie pliki i katalogi z wyjatkiem pliku ‘module.py’</p>
+<pre><code>*
+!module.py</code></pre></li>
+<li><p>Reczne jednorazowe zawieszenie ignorowania pliku dla commitu</p>
+<pre><code>git add -f debug.log
+git commit -m &quot;Force adding debug.log&quot;</code></pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="stage" class="section level3" number="9.5.6">
+<h3><span class="header-section-number">9.5.6</span> stage</h3>
+<p>Stage to poczekalnia. Tutaj przechowuje sie tymczasowo modyfikacje przed
+commit-em. Stage wystepuje tez pod innymi nazwami z literaturze: + Index
++ Cache + Directory cache + Current directory cache + Staging area +
+Staged files</p>
+<ul>
+<li><p>cofniecie zmian z stage (poczekalni)</p>
+<pre><code>git reset HEAD nazwa_pliku</code></pre></li>
+<li><p>dodanie do stage wszystkich modyfikacji nie bedacych w poczekalni</p>
+<pre><code>git add .</code></pre></li>
+<li><p>dodanie do stage modyfikacji w konkretnym pliku</p>
+<pre><code>git add nazwa_pliku</code></pre></li>
+</ul>
+</div>
+<div id="branches" class="section level3" number="9.5.7">
+<h3><span class="header-section-number">9.5.7</span> branches</h3>
+<p>Nie mylic branchow z repozytoriami !!!. Jedno repozytorium moze miec
+wiele branchow.</p>
+<ul>
+<li><p>lista lokalnych branchow</p>
+<pre><code>git branch</code></pre></li>
+<li><p>lista wszyskich branchow (branche zdalne są na czerwono)</p>
+<pre><code>git branch --all</code></pre></li>
+<li><p>przelaczenie sie na inny branch</p>
+<pre><code>git checkout &lt;branch&gt;</code></pre></li>
+<li><p>utworzenie nowego brancha i przelaczenie sie na niego</p>
+<pre><code>git checkout -b &lt;branch&gt;</code></pre></li>
+<li><p>utworzenie nowego brancha bez przelaczenie sie na niego</p>
+<pre><code>git branch &lt;name_of_your_new_branch&gt;</code></pre></li>
+<li><p>usuniecie brancha (dwie metody)</p>
+<pre><code>git branch -d branch_name
+git branch -D branch_name</code></pre>
+<ul>
+<li>The -d option stands for –delete, which would delete the local
+branch, only if you have already pushed and merged it with your
+remote branches.</li>
+<li>The -D option stands for –delete –force, which deletes the
+branch regardless of its push and merge status, so be careful
+using this one!</li>
+</ul></li>
+<li><p>usuniecie zdalnego brancha</p>
+<pre><code>git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</code></pre></li>
+<li><p>utworzenia zdalnego brancha w oparciu o lokalny: Najpierw tworzymy
+go lokalnie. A potem pushujemy odpowiednio.</p>
+<pre><code>Syntax:
+$ git push &lt;REMOTE_NAME&gt; &lt;LOCAL_BRANCH_NAME&gt;:&lt;REMOTE_BRANCH_NAME&gt;
+
+Command:
+$ git push origin stage1:development</code></pre>
+<p>Przykla ze strony: <a href="https://tecadmin.net/how-to-create-a-branch-in-remote-git-repository/">How to Create a Branch in Remote Git
+Repository</a></p></li>
+</ul>
+</div>
+<div id="commits" class="section level3" number="9.5.8">
+<h3><span class="header-section-number">9.5.8</span> commits</h3>
+<div id="podstawy" class="section level4" number="9.5.8.1">
+<h4><span class="header-section-number">9.5.8.1</span> podstawy</h4>
+<ul>
+<li><p>commit dla konkretnego pliku</p>
+<pre><code>git commit nazwa_pliku -m &#39;.&#39;</code></pre></li>
+<li><p>add i commit w jednej komendzie</p>
+<pre><code>git commit -am &quot;comment&quot;</code></pre></li>
+<li><p>lista commits (wiecej o funkcji log do wyswietlania commitoW jest
+dalej)</p>
+<pre><code>git log </code></pre></li>
+<li><p>modyfikacja do komentarza w ostatniej zmianie</p>
+<pre><code>git commit --amend</code></pre>
+<p>Wchodzę w VIM w tryb umozliwiajacy zmiany i poprawiam pierwsza
+linijke gdzie jest komentarz. Naciskam <esc> i potem :wq i <enter></p></li>
+</ul>
+</div>
+<div id="funkcja-log-wyswietla-liste-commitow" class="section level4" number="9.5.8.2">
+<h4><span class="header-section-number">9.5.8.2</span> funkcja log (wyswietla liste commitow)</h4>
+<ul>
+<li><p>lista commitow dla konkretnego pliku</p>
+<pre><code>git log nazwa_pliku</code></pre></li>
+<li><p>lista commitow dla konkretnego brancha (tutaj ‘master’)</p>
+<pre><code>git log master</code></pre></li>
+<li><p>lista ladnie sformatowana</p>
+<pre><code>git log --decorate</code></pre></li>
+<li><p>lista uproszczona jednolinijkowa per commit (dla bardziej zwiezlego
+i kompaktowego output)</p>
+<pre><code>git log --oneline</code></pre></li>
+<li><p>list commitow jako drzewo (przydaje sie kiedy jest wiele branchow,
+mergow itp.)</p>
+<pre><code>git log --graph --oneline --decorate --all</code></pre>
+<p>Przyklad output takiej drzewiastej listy:</p>
+<pre><code>* 0e25143 (HEAD, master) Merge branch &#39;feature&#39;
+|\
+| * 16b36c6 Fix a bug in the new feature
+| * 23ad9ad Start a new feature
+* | ad8621a Fix a critical security issue
+|/
+* 400e4b7 Fix typos in the documentation
+* 160e224 Add the initial code base</code></pre>
+<p>Co widzimy powyżej: The asterisk shows which branch the commit was
+on, so the above graph tells us that the 23ad9ad and 16b36c6 commits
+are on a topic branch and the rest are on the master branch.</p></li>
+<li><p>lista commitow z datami</p>
+<pre><code>git log --pretty=format:&quot;%cn committed %h on %cd&quot;</code></pre></li>
+<li><p>lista commitow-filtrowanie:</p>
+<ul>
+<li><p>ostatnie 3 commity</p>
+<pre><code>git log -3</code></pre></li>
+<li><p>po dacie</p>
+<pre><code>git log --after=&quot;2014-7-1&quot;
+git log --after=&quot;yesterday&quot;
+git log --after=&quot;2014-7-1&quot; --before=&quot;2014-7-4&quot;</code></pre></li>
+<li><p>po autorze:</p>
+<pre><code>git log --author=&quot;John&quot;</code></pre></li>
+<li><p>po autorze z uzyciem regex:</p>
+<pre><code>git log --author=&quot;John\|Mary&quot;</code></pre></li>
+<li><p>po message:</p>
+<pre><code>git log --grep=&quot;JRA-224:&quot;</code></pre></li>
+<li><p>po commitach dotyczacych tylko i wylacznie jedngo brancha (nie
+wyswietla commitow wspoldzielonych z innymi branchami):</p>
+<pre><code>git log master..feature</code></pre>
+<p>Np jesli na poczatku byl tylko branch ‘master,’ a potem wydzieli
+sie od niego nowy branch to ‘master..feature’ zwroci to co sie
+dzieje na masterze od czasu wydzielenia sie nowego brancha. To
+co jest przed podzialem jest wspolne dla obu branchy a nie jest
+unikatowe dla ‘master,’ dlatego nie bedzie wyswietlone.</p></li>
+<li><p>commity bedace mergami:</p>
+<pre><code>git log --merges</code></pre></li>
+</ul></li>
+</ul>
+</div>
+<div id="wskazniki" class="section level4" number="9.5.8.3">
+<h4><span class="header-section-number">9.5.8.3</span> wskazniki</h4>
+<ul>
+<li><p>przesuniecie wskaznika na zadany commit (o nazwie ‘7eb01a3’) na
+branchu ‘master’ i potem powrot do HEAD</p>
+<pre><code>git checkout a7eb01a3
+git checkout master</code></pre></li>
+<li><p>cofniecie wskaznika na stary commit (o nazwie 0d1d7fc32) i
+utworzenie od niego branch-a o nazwie ‘new_branch’</p>
+<pre><code>git checkout 0d1d7fc32
+git checkout -b new_branch</code></pre></li>
+<li><p>cofniecie zmian do zadanego commitu na danym branchu</p>
+<pre><code>git checkout master
+git reset --hard 1258f0d0aae</code></pre>
+<p>This will destroy any local modifications. Don’t do it if you have
+uncommitted work you want to keep.</p>
+<p>Alternatively, if there’s work to keep you can use ‘stash’:</p>
+<pre><code>git stash
+git reset --hard 0d1d7fc32
+git stash pop</code></pre>
+<p>This saves the modifications, then reapplies that patch after
+resetting. You could get merge conflicts, if you’ve modified things
+which were changed since the commit you reset to.</p>
+<p>Pelny przyklad na :
+<a href="https://www.youtube.com/watch?v=KLEDKgMmbBI&amp;t=322s" class="uri">https://www.youtube.com/watch?v=KLEDKgMmbBI&amp;t=322s</a> (‘Git Tutorial:
+Using the Stash Command’ by Corey Schafer)</p></li>
+<li><p>usuniecie ostatniego commitu (HAED to glowa drzewa commitow, czyli
+ostatni commit)</p>
+<pre><code>git reset HEAD~1</code></pre></li>
+<li><p>usuniecie 3 ostatanich commitow</p>
+<pre><code>  git rebase HEAD~3</code></pre></li>
+<li><p>usuniecie kilku commitow usuniecie 4 i 3 commitu (commmit 1 to
+commit pierwszy chyba)</p>
+<pre><code>git rebase --onto master~4 master~2 master  </code></pre>
+<p>Powyzej celowo jest ‘master~2’ a nie ‘master~3’ mimo ze kasujemy
+od trzeciego commitu !!! . Niestety moga wystapic konflikty przy
+uzyciu ‘rabase’ takie jak przy mergowaniu. Wtedy trzeba postepowac
+zgodnie z instrukcjami wyswietlanymi przez git-a na ekranie. Pracuje
+się tak jak przy mergu. Czyli patrze na jakich plikach jest konflikt
+, potem zmieniam to recznie w plikach wedlug znaczników, potem daje
+git add <plik> i potem git rebase –continue. W zmianach zatwierdzam
+to co jest ostatnie i chyba wtedy bedzie ok.</p></li>
+</ul>
+</div>
+<div id="revert-vs-reset" class="section level4" number="9.5.8.4">
+<h4><span class="header-section-number">9.5.8.4</span> revert vs reset</h4>
+<ul>
+<li><p>revert vs reset (porownanie)</p>
+<p>Let’s say you had commits:</p>
+<p>C B A git revert B, will create a commit that undoes changes in B.</p>
+<p>git revert A, will create a commit that undoes changes in A, but
+will not touch changes in B</p>
+<p>Note that if changes in B are dependent on changes in A, the revert
+of A is not possible.</p>
+<p>git reset –soft A, will change the commit history and repository;
+staging and working directory will still be at state of C.</p>
+<p>git reset –mixed A, will change the commit history, repository, and
+staging; working directory will still be at state of C.</p>
+<p>git reset –hard A, will change the commit history, repository,
+staging and working directory; you will go back to the state of A
+completely.</p>
+<p>Podsumowujac w uproszczeniu. restet - cofam się o kilka commitow
+usuwajac je po drodze. revert - kopiuje na poczatek (jako HEAD)
+commit do ktorego stanu chcemy sie cofnac nie usuwajac commitow
+pomiedzy obecnym a tym do ktorego chcemy sie cofnac.</p>
+<p><img src="figures/Git-Reverting-Resetting.jpg" /></p></li>
+</ul>
+</div>
+<div id="squash" class="section level4" number="9.5.8.5">
+<h4><span class="header-section-number">9.5.8.5</span> squash</h4>
+<p>Zlewanie kilku commitow w jeden</p>
+<ul>
+<li><p>Przyklad</p>
+<pre><code># zakladam ze mam kilka commitow
+git rebase -i HEAD~3  # bede zlewal 3 ostatnie commity. Niezbedne jest tutaj &#39;-i&#39; (tryb interaktywny) aby moc wykonac squash 
+# po zatwierdzeniu powyzszego  wyswietli mi sie vim
+# na w vim gorze bede mial liste moich commitow ze slowem &#39;pick&#39; na poczkatku
+# tutaj robie edycje:
+# dla pierwszego commitu zostawiam &#39;pick&#39; a dla dwoch nastepnych &#39;pick&#39; zamieniam na &#39;squash&#39;
+# wychodze zapsisujac zmiany: esc :wq  
+# teraz wyswielti sie kolejny plik gdzie bede mial mozliwosc edytowania komentarza
+# w efekcie 3 cimmitu zlalem w jeden.</code></pre></li>
+</ul>
+</div>
+<div id="merge" class="section level4" number="9.5.8.6">
+<h4><span class="header-section-number">9.5.8.6</span> merge</h4>
+<ul>
+<li><p>zlaczenie brancha ‘prod’ do biezacego brancha</p>
+<pre><code>git merge prod</code></pre></li>
+<li><p>sprawdzenie i rozwiazywanie konfliktow</p>
+<p>Zeby zoabaczyc na jakich plikach sa konflikty (zakladam ze jestesmy
+w trakcie procesu mergowania):</p>
+<pre><code>git status</code></pre>
+<p>Nastepnie w plikach mozna zobaczyc ze beda dodane nastepujace
+elemenenty:</p>
+<p>Between the &lt;&lt;&lt;&lt;&lt;&lt;&lt; and =======, you will find the version as
+per the changes in your current branch, relative to the base commit.</p>
+<p>Between the ======= and &gt;&gt;&gt;&gt;&gt;&gt;&gt;, you will find the version
+according to the other branch, relative to the base commit.</p>
+<p>For convenience, after the &lt;&lt;&lt;&lt;&lt;&lt;&lt; and &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+markers, you will see hints as to which commit that part of the
+conflict stems from, HEAD of course being the current revision.</p>
+<p>Example:</p>
+<p>++&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ++abcgh ++======= ++abcdef ++&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+prod</p>
+<p>Ustalamy jak ma wygladac wersja finalna pliku. Nastepnie bedac dalej
+w procesie mergowania robimy git add . i potem git commit
+-m’komentarz’ . Mergowania automatycznie sie zakonczy</p></li>
+<li><p>zaprzestanie/przerwanie procesu mergowania</p>
+<pre><code>git merge -abort</code></pre></li>
+</ul>
+</div>
+<div id="rebase" class="section level4" number="9.5.8.7">
+<h4><span class="header-section-number">9.5.8.7</span> rebase</h4>
+<ul>
+<li><p>‘rebase’ pelni funkcje podobna do ‘merge,’ ale sa roznice:</p>
+<p><img src="figures/merge_vs_rebase.png" /></p></li>
+<li><p>Przyklad</p>
+<pre><code># od mastera tworze nowy branch &#39;feature_master&#39; i przlaczam sie na niego
+git checkout -b feature_branch master
+
+# na nowym branchu zatwierdzam jakas zmiane
+git commit
+
+git rebase master ( teraz na &#39;feature_master&#39; mam baze z mastera, czyli mam wszystko co bylo w masterze od czasu wydzielenia &#39;feature_master&#39; plus commity na &#39;feature&#39; master od czasu tego wydzielenia). Uwaga: master jest jeszcze nie usuniety.
+
+git checkout master # przlaczenie na mastera
+git rebase feature_master # teraz master (zakladam ze w tym czasie nie bylo na nim zadnych zmian) zaciaga to co jest w feature_master ktory przestaje teraz istniec). Pelny rebase mastera ktory zostal przeprowadzony. </code></pre></li>
+<li><p>dobry przyklad pokazjacy powyzsza operacje:
+<a href="https://www.youtube.com/watch?v=f1wnYdLEpgI" class="uri">https://www.youtube.com/watch?v=f1wnYdLEpgI</a> (“A Better Git
+Workflow with Rebase” by The Modern Coder)</p></li>
+</ul>
+</div>
+</div>
+<div id="stash" class="section level3" number="9.5.9">
+<h3><span class="header-section-number">9.5.9</span> stash</h3>
+<p>Sluzy do przechowywaniu na boku w pamieci ostatnich niezacommitowanych
+zmian. Po przerzuceniu do stasha tych zmian nie widzimy ich (komenda
+‘status’ nic nie zwroci), ale ponieważ sa przechowywane mozemy je
+przywrocic.</p>
+<ul>
+<li><p>Pelny przyklad dzialania:</p>
+<pre><code># wprowadzam zmiane tworzac plik s1
+touch s1
+git status # dostajemy informacje ze mamy niesledzony plik &#39;s1&#39;. 
+git add . 
+git status # teraz dostajemy informacje ze w poczekalni jest nowy plik do commitu. Tutaj mamy wiec nie zacommitowana zmiane, ktora wrzucimy do stasha.
+
+# zapisuje zmiane do stasha z komentarzem
+git stash save &#39;dodanie s1 do poczekalni&#39;
+git status # dodanie pliku &#39;s1&#39; do poczekalni zostalo wrzucone do stasha. Mamy teraz dla &#39;status&#39; komunikat taki sam jak przez uzyciem &#39;add&#39; czyli jedynie informacje ze jest niesledzony plik &#39;s1&#39;
+
+# lista stash-ow
+git stash list # na liscie mamy jednego stasha z indeksem 0. Indeks zero ma zawsze najnowszy stash.
+
+git stash pop statsh@{0} # przywrocenia zawartosci ostatniego stasha i usuniecie go (kiedy przywracamy ostatniego nie musimy podawac jego nazwy, czyli w tym przypadku statsh{0})
+
+git status # znowu dostajemy informacje ze w poczekalni jest nowy plik do commitu, czyli mamy przywrocone niezacommitowane zmiany.</code></pre>
+<p>Uwaga: Po stworzeniu jednego stasha mozemy tworzyc kolejne.
+Najnowszy statsh ma zawsze indeks zero.</p>
+<p>Uwaga: oprocz ‘stash pop’ jest jeszcze ‘stash apply’ ktory przywraca
+zawartosc ostatniego stasha ale go nie usuwa</p>
+<pre><code>git stash apply statsh@{0} # przywrocenia zawartosci ostatniego stasha bez uzuwania go.</code></pre></li>
+<li><p>Usuwanie konretnego stasha</p>
+<pre><code>git stash drop statsh{0} # usuwam ostatniego stasha</code></pre></li>
+<li><p>Usuwanie wszyskich stashow</p>
+<pre><code>git stash clear</code></pre></li>
+</ul>
+</div>
+<div id="inne-komendy" class="section level3" number="9.5.10">
+<h3><span class="header-section-number">9.5.10</span> Inne komendy</h3>
+<ul>
+<li><p>Czyszczenie cache</p>
+<pre><code>git rm -r -cached</code></pre></li>
+</ul>
+</div>
+<div id="github" class="section level3" number="9.5.11">
+<h3><span class="header-section-number">9.5.11</span> GitHub</h3>
+<div id="cooperation" class="section level4" number="9.5.11.1">
+<h4><span class="header-section-number">9.5.11.1</span> Cooperation</h4>
+<p>Są 2 modele współpracy na Githubie:</p>
+<ol style="list-style-type: decimal">
+<li>In the <em>fork and pull model</em>, anyone can fork an existing repository
+and push changes to their personal fork. You do not need permission
+to the source repository to push to a user-owned fork. The changes
+can be pulled into the source repository by the project maintainer.
+When you open a pull request proposing changes from your user-owned
+fork to a branch in the source (upstream) repository, you can allow
+anyone with push access to the upstream repository to make changes
+to your pull request. This model is popular with open source
+projects as it reduces the amount of friction for new contributors
+and allows people to work independently without upfront
+coordination.</li>
+<li>In the <em>shared repository model</em>, collaborators are granted push
+access to a single shared repository and topic branches are created
+when changes need to be made. Pull requests are useful in this model
+as they initiate code review and general discussion about a set of
+changes before the changes are merged into the main development
+branch. This model is more prevalent with small teams and
+organizations collaborating on private projects.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="windows-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="workflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": true,
+"instapper": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Work_organization.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-Manual_R.pdf", "bookdown-Manual_R.epub"],
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+</body>
+
+</html>

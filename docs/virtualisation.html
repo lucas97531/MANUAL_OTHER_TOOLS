@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Virtualisation | Workflow</title>
+  <meta name="description" content="Chapter 7 Virtualisation | Workflow" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Virtualisation | Workflow" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Virtualisation | Workflow" />
+  
+  
+  
+
+<meta name="author" content="Łukasz Muszyński" />
+
+
+<meta name="date" content="2023-08-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sonar-qube.html"/>
+<link rel="next" href="windows-2.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdution to Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> INTRO</a></li>
+<li class="chapter" data-level="2" data-path="files-types.html"><a href="files-types.html"><i class="fa fa-check"></i><b>2</b> Files types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="files-types.html"><a href="files-types.html#yaml"><i class="fa fa-check"></i><b>2.1</b> YAML</a></li>
+<li class="chapter" data-level="2.2" data-path="files-types.html"><a href="files-types.html#json"><i class="fa fa-check"></i><b>2.2</b> JSON</a></li>
+<li class="chapter" data-level="2.3" data-path="files-types.html"><a href="files-types.html#xml"><i class="fa fa-check"></i><b>2.3</b> XML</a></li>
+<li class="chapter" data-level="2.4" data-path="files-types.html"><a href="files-types.html#ini"><i class="fa fa-check"></i><b>2.4</b> INI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>3</b> Linux</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="linux.html"><a href="linux.html#podstawowe-pojecia"><i class="fa fa-check"></i><b>3.1</b> Podstawowe pojecia</a></li>
+<li class="chapter" data-level="3.2" data-path="linux.html"><a href="linux.html#architektura-linuxa"><i class="fa fa-check"></i><b>3.2</b> Architektura Linuxa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="linux.html"><a href="linux.html#system-plików"><i class="fa fa-check"></i><b>3.2.1</b> System plików</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="linux.html"><a href="linux.html#make-file"><i class="fa fa-check"></i><b>3.3</b> Make file</a></li>
+<li class="chapter" data-level="3.4" data-path="linux.html"><a href="linux.html#repozytoria"><i class="fa fa-check"></i><b>3.4</b> Repozytoria</a></li>
+<li class="chapter" data-level="3.5" data-path="linux.html"><a href="linux.html#dostepy-uzytkownicy"><i class="fa fa-check"></i><b>3.5</b> Dostepy / Uzytkownicy</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="linux.html"><a href="linux.html#polecenia"><i class="fa fa-check"></i><b>3.5.1</b> Polecenia</a></li>
+<li class="chapter" data-level="3.5.2" data-path="linux.html"><a href="linux.html#plik-shadow---zarzadzanie"><i class="fa fa-check"></i><b>3.5.2</b> Plik shadow - zarzadzanie</a></li>
+<li class="chapter" data-level="3.5.3" data-path="linux.html"><a href="linux.html#admin-vs-root-user-vs-super-user"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Admin vs Root user vs Super User</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="linux.html"><a href="linux.html#screens"><i class="fa fa-check"></i><b>3.6</b> Screens</a></li>
+<li class="chapter" data-level="3.7" data-path="linux.html"><a href="linux.html#red-hat"><i class="fa fa-check"></i><b>3.7</b> Red Hat</a></li>
+<li class="chapter" data-level="3.8" data-path="linux.html"><a href="linux.html#ubuntu"><i class="fa fa-check"></i><b>3.8</b> Ubuntu</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="linux.html"><a href="linux.html#instalacja"><i class="fa fa-check"></i><b>3.8.1</b> Instalacja</a></li>
+<li class="chapter" data-level="3.8.2" data-path="linux.html"><a href="linux.html#nautilus"><i class="fa fa-check"></i><b>3.8.2</b> Nautilus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="linux.html"><a href="linux.html#terminal-shell-console"><i class="fa fa-check"></i><b>3.9</b> Terminal-Shell-console</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="linux.html"><a href="linux.html#zsh-instalacja-i-konfiguracja"><i class="fa fa-check"></i><b>3.9.1</b> ZSH Instalacja i konfiguracja</a></li>
+<li class="chapter" data-level="3.9.2" data-path="linux.html"><a href="linux.html#skladnia"><i class="fa fa-check"></i><b>3.9.2</b> Skladnia</a></li>
+<li class="chapter" data-level="3.9.3" data-path="linux.html"><a href="linux.html#komendy-bash"><i class="fa fa-check"></i><b>3.9.3</b> Komendy bash</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="linux.html"><a href="linux.html#networking"><i class="fa fa-check"></i><b>3.10</b> Networking</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="linux.html"><a href="linux.html#polecenie-netstat"><i class="fa fa-check"></i><b>3.10.1</b> polecenie netstat</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="linux.html"><a href="linux.html#scheduling"><i class="fa fa-check"></i><b>3.11</b> Scheduling</a></li>
+<li class="chapter" data-level="3.12" data-path="linux.html"><a href="linux.html#rozne"><i class="fa fa-check"></i><b>3.12</b> Rozne</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="linux.html"><a href="linux.html#stdin-stdout-and-stderr"><i class="fa fa-check"></i><b>3.12.1</b> <strong>stdin, stdout and stderr</strong></a></li>
+<li class="chapter" data-level="3.12.2" data-path="linux.html"><a href="linux.html#uzywanie-devnull"><i class="fa fa-check"></i><b>3.12.2</b> Uzywanie dev/null</a></li>
+<li class="chapter" data-level="3.12.3" data-path="linux.html"><a href="linux.html#exit-status"><i class="fa fa-check"></i><b>3.12.3</b> Exit status</a></li>
+<li class="chapter" data-level="3.12.4" data-path="linux.html"><a href="linux.html#sh-vs-source-vs-bin"><i class="fa fa-check"></i><b>3.12.4</b> sh vs source vs bin</a></li>
+<li class="chapter" data-level="3.12.5" data-path="linux.html"><a href="linux.html#domyslny-edytor"><i class="fa fa-check"></i><b>3.12.5</b> Domyslny edytor</a></li>
+<li class="chapter" data-level="3.12.6" data-path="linux.html"><a href="linux.html#split-okna-terminala"><i class="fa fa-check"></i><b>3.12.6</b> Split okna terminala</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="network.html"><a href="network.html"><i class="fa fa-check"></i><b>4</b> Network</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="network.html"><a href="network.html#proxyvpntor-itp"><i class="fa fa-check"></i><b>4.1</b> Proxy/VPN/Tor itp</a></li>
+<li class="chapter" data-level="4.2" data-path="network.html"><a href="network.html#protokół-http"><i class="fa fa-check"></i><b>4.2</b> Protokół HTTP</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="network.html"><a href="network.html#linki"><i class="fa fa-check"></i><b>4.2.1</b> Linki:</a></li>
+<li class="chapter" data-level="4.2.2" data-path="network.html"><a href="network.html#różne-uwagi"><i class="fa fa-check"></i><b>4.2.2</b> Różne uwagi</a></li>
+<li class="chapter" data-level="4.2.3" data-path="network.html"><a href="network.html#adres-url"><i class="fa fa-check"></i><b>4.2.3</b> Adres URL</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="security.html"><a href="security.html"><i class="fa fa-check"></i><b>5</b> Security</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="security.html"><a href="security.html#klucze-szyfrujące"><i class="fa fa-check"></i><b>5.1</b> Klucze szyfrujące</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sonar-qube.html"><a href="sonar-qube.html"><i class="fa fa-check"></i><b>6</b> SONAR QUBE</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sonar-qube.html"><a href="sonar-qube.html#installing"><i class="fa fa-check"></i><b>6.1</b> Installing</a></li>
+<li class="chapter" data-level="6.2" data-path="sonar-qube.html"><a href="sonar-qube.html#running"><i class="fa fa-check"></i><b>6.2</b> Running</a></li>
+<li class="chapter" data-level="6.3" data-path="sonar-qube.html"><a href="sonar-qube.html#project"><i class="fa fa-check"></i><b>6.3</b> Project</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="virtualisation.html"><a href="virtualisation.html"><i class="fa fa-check"></i><b>7</b> Virtualisation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="virtualisation.html"><a href="virtualisation.html#virtual-machines"><i class="fa fa-check"></i><b>7.1</b> Virtual Machines</a></li>
+<li class="chapter" data-level="7.2" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---kubernetes"><i class="fa fa-check"></i><b>7.2</b> Virtual OS - Kubernetes</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-1"><i class="fa fa-check"></i><b>7.2.1</b> Instalacja</a></li>
+<li class="chapter" data-level="7.2.2" data-path="virtualisation.html"><a href="virtualisation.html#pytania"><i class="fa fa-check"></i><b>7.2.2</b> Pytania</a></li>
+<li class="chapter" data-level="7.2.3" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi"><i class="fa fa-check"></i><b>7.2.3</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.2.4" data-path="virtualisation.html"><a href="virtualisation.html#architektura"><i class="fa fa-check"></i><b>7.2.4</b> Architektura</a></li>
+<li class="chapter" data-level="7.2.5" data-path="virtualisation.html"><a href="virtualisation.html#polecenia-1"><i class="fa fa-check"></i><b>7.2.5</b> Polecenia</a></li>
+<li class="chapter" data-level="7.2.6" data-path="virtualisation.html"><a href="virtualisation.html#praca-z-plikami-konfiguracyjnymi"><i class="fa fa-check"></i><b>7.2.6</b> Praca z plikami konfiguracyjnymi</a></li>
+<li class="chapter" data-level="7.2.7" data-path="virtualisation.html"><a href="virtualisation.html#health-check"><i class="fa fa-check"></i><b>7.2.7</b> Health check</a></li>
+<li class="chapter" data-level="7.2.8" data-path="virtualisation.html"><a href="virtualisation.html#namespace"><i class="fa fa-check"></i><b>7.2.8</b> Namespace</a></li>
+<li class="chapter" data-level="7.2.9" data-path="virtualisation.html"><a href="virtualisation.html#volumes"><i class="fa fa-check"></i><b>7.2.9</b> Volumes</a></li>
+<li class="chapter" data-level="7.2.10" data-path="virtualisation.html"><a href="virtualisation.html#helm"><i class="fa fa-check"></i><b>7.2.10</b> Helm</a></li>
+<li class="chapter" data-level="7.2.11" data-path="virtualisation.html"><a href="virtualisation.html#dashboard"><i class="fa fa-check"></i><b>7.2.11</b> Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---dockers"><i class="fa fa-check"></i><b>7.3</b> Virtual OS - Dockers</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi-1"><i class="fa fa-check"></i><b>7.3.1</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.3.2" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-2"><i class="fa fa-check"></i><b>7.3.2</b> Instalacja</a></li>
+<li class="chapter" data-level="7.3.3" data-path="virtualisation.html"><a href="virtualisation.html#docker"><i class="fa fa-check"></i><b>7.3.3</b> Docker</a></li>
+<li class="chapter" data-level="7.3.4" data-path="virtualisation.html"><a href="virtualisation.html#images"><i class="fa fa-check"></i><b>7.3.4</b> Images</a></li>
+<li class="chapter" data-level="7.3.5" data-path="virtualisation.html"><a href="virtualisation.html#section-2"><i class="fa fa-check"></i><b>7.3.5</b> </a></li>
+<li class="chapter" data-level="7.3.6" data-path="virtualisation.html"><a href="virtualisation.html#kontenery"><i class="fa fa-check"></i><b>7.3.6</b> Kontenery</a></li>
+<li class="chapter" data-level="7.3.7" data-path="virtualisation.html"><a href="virtualisation.html#tworzenie-obrazu"><i class="fa fa-check"></i><b>7.3.7</b> Tworzenie obrazu</a></li>
+<li class="chapter" data-level="7.3.8" data-path="virtualisation.html"><a href="virtualisation.html#networking-1"><i class="fa fa-check"></i><b>7.3.8</b> Networking</a></li>
+<li class="chapter" data-level="7.3.9" data-path="virtualisation.html"><a href="virtualisation.html#compose"><i class="fa fa-check"></i><b>7.3.9</b> Compose</a></li>
+<li class="chapter" data-level="7.3.10" data-path="virtualisation.html"><a href="virtualisation.html#uprodukcyjnianie"><i class="fa fa-check"></i><b>7.3.10</b> Uprodukcyjnianie</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---other-solutions"><i class="fa fa-check"></i><b>7.4</b> Virtual OS - Other Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="windows-2.html"><a href="windows-2.html"><i class="fa fa-check"></i><b>8</b> Windows</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="windows-2.html"><a href="windows-2.html#podstawy-skladni"><i class="fa fa-check"></i><b>8.1</b> podstawy skladni</a></li>
+<li class="chapter" data-level="8.2" data-path="windows-2.html"><a href="windows-2.html#zmienne-1"><i class="fa fa-check"></i><b>8.2</b> zmienne</a></li>
+<li class="chapter" data-level="8.3" data-path="windows-2.html"><a href="windows-2.html#control-flow"><i class="fa fa-check"></i><b>8.3</b> control flow</a></li>
+<li class="chapter" data-level="8.4" data-path="windows-2.html"><a href="windows-2.html#odpalanie-stron-w-danej-przegladarce"><i class="fa fa-check"></i><b>8.4</b> odpalanie stron w danej przegladarce</a></li>
+<li class="chapter" data-level="8.5" data-path="windows-2.html"><a href="windows-2.html#przydatne-komentu"><i class="fa fa-check"></i><b>8.5</b> przydatne komentu</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="work-organisation.html"><a href="work-organisation.html"><i class="fa fa-check"></i><b>9</b> Work organisation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="work-organisation.html"><a href="work-organisation.html#cicd-concept"><i class="fa fa-check"></i><b>9.1</b> CI/CD concept</a></li>
+<li class="chapter" data-level="9.2" data-path="work-organisation.html"><a href="work-organisation.html#jenkins"><i class="fa fa-check"></i><b>9.2</b> Jenkins</a></li>
+<li class="chapter" data-level="9.3" data-path="work-organisation.html"><a href="work-organisation.html#team-city"><i class="fa fa-check"></i><b>9.3</b> Team city</a></li>
+<li class="chapter" data-level="9.4" data-path="work-organisation.html"><a href="work-organisation.html#gib-lab"><i class="fa fa-check"></i><b>9.4</b> Gib Lab</a></li>
+<li class="chapter" data-level="9.5" data-path="work-organisation.html"><a href="work-organisation.html#git"><i class="fa fa-check"></i><b>9.5</b> Git</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="work-organisation.html"><a href="work-organisation.html#uwagi-rozne"><i class="fa fa-check"></i><b>9.5.1</b> uwagi rozne</a></li>
+<li class="chapter" data-level="9.5.2" data-path="work-organisation.html"><a href="work-organisation.html#logika-git-a"><i class="fa fa-check"></i><b>9.5.2</b> logika git-a</a></li>
+<li class="chapter" data-level="9.5.3" data-path="work-organisation.html"><a href="work-organisation.html#repozytoria-1"><i class="fa fa-check"></i><b>9.5.3</b> repozytoria</a></li>
+<li class="chapter" data-level="9.5.4" data-path="work-organisation.html"><a href="work-organisation.html#diff"><i class="fa fa-check"></i><b>9.5.4</b> diff</a></li>
+<li class="chapter" data-level="9.5.5" data-path="work-organisation.html"><a href="work-organisation.html#tracking"><i class="fa fa-check"></i><b>9.5.5</b> tracking</a></li>
+<li class="chapter" data-level="9.5.6" data-path="work-organisation.html"><a href="work-organisation.html#stage"><i class="fa fa-check"></i><b>9.5.6</b> stage</a></li>
+<li class="chapter" data-level="9.5.7" data-path="work-organisation.html"><a href="work-organisation.html#branches"><i class="fa fa-check"></i><b>9.5.7</b> branches</a></li>
+<li class="chapter" data-level="9.5.8" data-path="work-organisation.html"><a href="work-organisation.html#commits"><i class="fa fa-check"></i><b>9.5.8</b> commits</a></li>
+<li class="chapter" data-level="9.5.9" data-path="work-organisation.html"><a href="work-organisation.html#stash"><i class="fa fa-check"></i><b>9.5.9</b> stash</a></li>
+<li class="chapter" data-level="9.5.10" data-path="work-organisation.html"><a href="work-organisation.html#inne-komendy"><i class="fa fa-check"></i><b>9.5.10</b> Inne komendy</a></li>
+<li class="chapter" data-level="9.5.11" data-path="work-organisation.html"><a href="work-organisation.html#github"><i class="fa fa-check"></i><b>9.5.11</b> GitHub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>10</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="workflow.html"><a href="workflow.html#airflow"><i class="fa fa-check"></i><b>10.1</b> AirFlow</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="workflow.html"><a href="workflow.html#instalacja---ubuntu"><i class="fa fa-check"></i><b>10.1.1</b> Instalacja - Ubuntu</a></li>
+<li class="chapter" data-level="10.1.2" data-path="workflow.html"><a href="workflow.html#instalacja---windows"><i class="fa fa-check"></i><b>10.1.2</b> Instalacja - Windows</a></li>
+<li class="chapter" data-level="10.1.3" data-path="workflow.html"><a href="workflow.html#składnia"><i class="fa fa-check"></i><b>10.1.3</b> Składnia</a></li>
+<li class="chapter" data-level="10.1.4" data-path="workflow.html"><a href="workflow.html#komendy-cli-command-line-interface"><i class="fa fa-check"></i><b>10.1.4</b> Komendy CLI (<strong>Command Line Interface</strong>)</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workflow</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="virtualisation" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Virtualisation</h1>
+<div id="virtual-machines" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Virtual Machines</h2>
+</div>
+<div id="virtual-os---kubernetes" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Virtual OS - Kubernetes</h2>
+<div id="instalacja-1" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Instalacja</h3>
+<div id="windows" class="section level4" number="7.2.1.1">
+<h4><span class="header-section-number">7.2.1.1</span> Windows</h4>
+<p>Pobieramy i instalujemy instalkę z minikube.</p>
+<p>Pobieramy kubectl. Tworzymy katalog c:\<code>kube</code> do ktorego wklejamy instalke kubectl. W zmiennych srodowiskowych w zmiennych systemowych do Path dodajemy ta sciezke.</p>
+<p>Aplikacje uruchamiany w Power Shell (uruchominy w trybie administracyjnym) poleceniem <code>minikube start</code></p>
+</div>
+<div id="ubunt" class="section level4" number="7.2.1.2">
+<h4><span class="header-section-number">7.2.1.2</span> Ubunt</h4>
+<p>To Do.</p>
+</div>
+</div>
+<div id="pytania" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Pytania</h3>
+<p>O co chodzi z plikami konfiguracyjnymi pod pod. Przeciez powinnismy pracowac tylko na warstwie Deployment/StatefulSet, a mimo to pods sie pojawialy (np w przykladzie przy konfiguracji Volumens pod pods). Pods maja chyba dynamicznie nadawane nazwy (przynajmniej te stateless) z hashami. Jak się do takich nazw odwolywac w tych plikach? Pods maja tez dynamiczne adresy IP, ale ten problem rozwiazuje Services.</p>
+<p>Jak wyglada komunikacja sieciowa (nie przez Volume) miedzy contenerami w pod? Chyba jest jakies rozwiazanie provider-consumer, bo same kontenery nie maja adresu IP (ma je pod). Nie wiem czy poza Volumes da sie (albo czy jest zalecane) komunikowanie sie kotenerow miedzy roznymi pod-ami (np. sieciowo). Chyba sie da poprzez Services (patrz podrozdzial o Services).</p>
+<p>Komunikacja miedzy kontenerami: <a href="https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/">link</a></p>
+<p>What is <strong>kunernetes context</strong> : A kubernetes context is <strong>just a set of access parameters that contains a Kubernetes cluster, a user, and a namespace</strong>. kubernetes Context is essentially the configuration that you use to access a particular cluster &amp; namespace with a user account</p>
+<p>What is <strong>Job</strong>: A Job creates one or more Pods and will continue to retry execution of the Pods until a specified number of them successfully terminate. As pods successfully complete, the Job tracks the successful completions. When a specified number of successful completions is reached, the task (ie, Job) is complete. Deleting a Job will clean up the Pods it created. Suspending a Job will delete its active Pods until the Job is resumed again.</p>
+</div>
+<div id="rozne-uwagi" class="section level3" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Rozne uwagi</h3>
+<ul>
+<li><p>Kubernetes moze miec pod soba rozne rozwiazania kontenerowe. Wiec nie koniecznie musi to byc Docker.</p></li>
+<li><p>Na kontenerach jest budowana dodatkowo Kubernetosewa warstwa <em>Pod</em>. Umożliwia ona abstrakcje kontenerow. Dzieki temu pracujac z kontenerami mozemy byc caly czas w warstwach Kubernetesa nie schodzac do samych kontenerow. Tak naprawdę w praktyce nie schodzi się nawet do warstwy <em>pod</em>, ale pracuje z poziomem <em>Deployment</em>. Teoretycznie jeden <em>pod</em> moze miec pod soba kilka kontenerow, ale sie rzadko sie tego uzywa.</p></li>
+<li><p>Kubernetes obsuguje <em>Volume</em> ktore tak jak przy dockerach sluza do przechywywania w sposob trwaly informacji. Kubernetes domyslnie nie zarzadza Volumnes. Volumes moga byc lokalnie w klastrze (ktorys z Nodow), albo byc zdalne. W obu przypadkach sa one plug-inem do calego Kubernetesa i znajduja sie poza samym Kuberneteresm. W przypadku baz danych zaleca sie aby byly one zdalne. Po pierwsze nasz <em>VOlumne</em> jest niezalezy od problemow z Nodami, a po drugie nie jest zwiazany z konkretnym Nodem (to chyba generuje np. utrudnienie w konfigurowaniu polaczen do Volume). Dodatkowo wystepuja jeszcze volumes wewnatrz pod-a do komunikacji miedzy kontenerami. Ale te volume zyja tak dluzo jak zyje <em>pod</em>.</p></li>
+<li><p>Ingress - Interfejs zewnetrzny umozliwiajacy komunikacje aplikacji ze swiatem zewnetrznym. Mozna to pominac poprzed odpowiednio skonfigurowane Service, ale jest to rozwiazanie zalecane.</p></li>
+<li><p>Services - wiece - patrz podrozdzial o tym temacie.</p></li>
+<li><p>ConfigMap - trzyma rozne konfiguracje. Jezeli cos zmieniamy w calym systemie, to zamiast robic to na poziomie poszczegolnych kontenerow, mozna tym zarzadzac przez taki plik. Technicznie jest to szczegolny przypadek Volume.</p></li>
+<li><p>Secret. -Taki ConfigMap, ale uzywany do przechowywanie hasel i innych poufnych informacji. Technicznie jest to szczegolny przypadek Volume.</p></li>
+<li><p>Deployment - Replikacje i wiele innych rzeczy związanych z zarządzaniem robi się nie ręcznie, ale przez Deplyment. Uwaga. Przez Deployment nie mozna duplikowac baz danych. Duplikaty baz korzystaja z tych samych <em>Volumes</em> i trzeba zapewnic ze zapisy z roznych duplikatow baz nie doprowadza do niezgodnosci w danych. Do tego uzywa sie Statefulset. Poza <em>Deployment</em> jest jeszcze warstwa <em>replicaset</em> ktora jest pod nia, ale jest powyzej warstwy <em>pod</em>. Sluzy do zarzadzania replikami pod-ow. Zarzadzmy ta warstwa z poziomu <em>deployment</em>.</p></li>
+<li><p>Statefulset - Przez Deployment nie mozna duplikowac baz danych. Duplikaty baz korzystaja z tych samych <em>Volumes</em> i trzeba zapewnic ze zapisy z roznych duplikatow baz nie doprowadza do niezgodnosci w danych. Do tego uzywa sie Statefulset.</p></li>
+</ul>
+</div>
+<div id="architektura" class="section level3" number="7.2.4">
+<h3><span class="header-section-number">7.2.4</span> Architektura</h3>
+<p>Mamy <em>master node</em> i <em>workes nodes</em>.</p>
+<p>Na kazdym <em>worker node</em> musza byc zainstalowane 3 komponenty:</p>
+<ul>
+<li><p>Container runtime - narzedzie do uruchamiania kontenerow (np. Docker Engine)</p></li>
+<li><p>Kublet - interfejs Kubernetersa do wspolpracy z Container runtime i z samym nodem.</p></li>
+<li><p>Kube proxy. Narzedzie do optymalizacji pracy pod katem przeplywu informacji. Chodzi o to zeby minimalizowac ruch sieciowy. Np. jezeli dwa kontenery (a wlasciwie pod-y) musza sie ze soba skomunikować to niech to bedzie w ramach tego samego Noda jezeli to jest mozliwe. Kube proxy umozliwia rozniez komunikacje <em>pod-ow</em> ze swiatem zewnetrznym</p></li>
+</ul>
+<p>Na <em>master node</em> mamy 4 komponenty:</p>
+<ul>
+<li><p>API Server - interfejs dla użytkownika do zarzadzania interfejsem. Rowniez waliduje request-y uzytkownikow.</p></li>
+<li><p>Scheduler - Np. jezeli chcemy utworzyc nowy Pod, to po weryfikacji naszego requesta przez API Server, to scheduler zadecyduje na jakim node go utworzyc. Zbada gdzie sa odpowiednie zasoby dla naszej aplikacji. (po wybraniu lokalizacji samego <em>pod-a</em> zalozy nam na nadzie Kublet)</p></li>
+<li><p>Controller Manager - wykrywa stany <em>pod-ow</em> (np. ich zawieszenie się, albo wywalenie się). Jezeli jest problem (np. <em>pod</em> sie zawiesi) to <em>Controller Manager</em> sprobuje go zrestartowac. W celu optymalizacji wspolpracuje ze <em>schedulerem</em>, ktory samo zadanie (czyli np. restart <em>pod-a</em>) zleca <em>Kublet-owi</em>.</p></li>
+<li><p>etcs - klucze z zapisanymi informacjami o stanie klastra Kubernetesowego. Czyli wszystkie operacje klustra (glownie zwiazane z <em>pod</em>) sa tu rejestrowane. <em>Scheduler</em> i <em>Controller Manager</em>* korzystaja z niego. Na jest podstawie wiedza co gdzie jest na nod-ach.</p></li>
+</ul>
+<p>Siec - jest jedna na caly cluster:</p>
+<p><img src="Virtualisation/figures/kubernetes_overlay_network.png" /></p>
+<p>Podsumowanie architektury:</p>
+<p><img src="Virtualisation/figures/kubernetes_architektura.PNG" /></p>
+<p>Przyklad architektury z Mongo DB (baza) i Mongo Express (jako UI):</p>
+<p><img src="Virtualisation/figures/kubernetes_przyklad_architektury_mongo.png" /></p>
+<p>Narzedzie do laczenia sie z API server:</p>
+<ul>
+<li><p>ctl - interfejs konsolowy - najbardziej profesjonalne narzedzie</p></li>
+<li><p>ui - klikany interfejs</p></li>
+<li><p>api -</p></li>
+</ul>
+<div id="podzial-pod-ow-na-aplikacje-stateful-i-stateless" class="section level4" number="7.2.4.1">
+<h4><span class="header-section-number">7.2.4.1</span> <strong>Podzial pod-ow na aplikacje stateful i stateless</strong></h4>
+<ul>
+<li><p>sateful pods - potrzebuje zapisywania informacji o swoich stanach rzeczy sie do nich potem odwolywac. Przykladem jest baza danych. W Kubernetes sa obslugiwane przez <em>Deployment.</em> Nie mylic ich z Volumes.</p></li>
+<li><p>stateless pods - nie musza zapisywac inforamcji o swoim stanie ich pamietac. W Kubernetes sa obslugiwane przez <em>StatefulSet.</em></p></li>
+</ul>
+<p>Dla sateful jest duzo trudniej robie replikacje, bo sa dodatkowe wymagania. Tutaj kazdy replikowany pod ma swoj oddzielny identyfikator.</p>
+<p>W stateless pods mamy podzial na mastera i workerow:</p>
+<p><img src="Virtualisation/figures/kubernetes_stateful_pods.PNG" /></p>
+<p>Kazdy element ma swoje oddzielne pv (volumne). Kiedy nastepuje zmiana w danych na Master , to wtedy obowiazkiem Workerow jest synchronizacja danych z Masterem tak aby wszedzie byly te same dane.</p>
+<p>Uwaga. Volumnes nie sa obowiazkowe, ale robienie bazy bez Volumes nie ma sensu. W komencie restartu pod-a utracimy dane.</p>
+<p>Nazewnicto dla stateful pods to nie sa losowe hashe (jak w statless), ale narastajace numery.</p>
+<p><img src="Virtualisation/figures/kubernetes_stateful_pods_2.PNG" /></p>
+<p>numer 0 (zero) to zawsze master. Kolejny workes jest tworzony na podstawie poprzedniedo (np. 3 odwoluje sie do 2). Jak usuwamy np. 3 to wczesniej musimy usunac wyzsze numery ( w kolejnosci od najwyzszego numeru).</p>
+<p>Nazwy pod-to dla stateful sa tez stale (dla stateles przy restarcie pod-a hash jest chyba generowany na nowo). Dzieli czemu po restarcie nod-a mozna np. latwo przywrocic jego podpiecie do pv (hmm, stateless nie ma sztywnego polaczenia z pv?)</p>
+<p>Kuberneter dosys slabo wspiera te wszyskie procesy zwiazane z stateful. Np. synchronizacje danych musimy sobie sami ogarnac.</p>
+</div>
+</div>
+<div id="polecenia-1" class="section level3" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> Polecenia</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="virtualisation.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># minikube status</span></span>
+<span id="cb13-2"><a href="virtualisation.html#cb13-2" aria-hidden="true" tabindex="-1"></a>minikube status</span>
+<span id="cb13-3"><a href="virtualisation.html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="virtualisation.html#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="virtualisation.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># wersja  kubernetesa</span></span>
+<span id="cb13-6"><a href="virtualisation.html#cb13-6" aria-hidden="true" tabindex="-1"></a>kubectl vesion </span>
+<span id="cb13-7"><a href="virtualisation.html#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="virtualisation.html#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="virtualisation.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># lista wszystkich komponentow</span></span>
+<span id="cb13-10"><a href="virtualisation.html#cb13-10" aria-hidden="true" tabindex="-1"></a>kubectl get all</span>
+<span id="cb13-11"><a href="virtualisation.html#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="virtualisation.html#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="virtualisation.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># lista nod-ow</span></span>
+<span id="cb13-14"><a href="virtualisation.html#cb13-14" aria-hidden="true" tabindex="-1"></a>kubectl get nodes</span>
+<span id="cb13-15"><a href="virtualisation.html#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="virtualisation.html#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="virtualisation.html#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># lista pod-ow</span></span>
+<span id="cb13-18"><a href="virtualisation.html#cb13-18" aria-hidden="true" tabindex="-1"></a>kubectl get pod</span>
+<span id="cb13-19"><a href="virtualisation.html#cb13-19" aria-hidden="true" tabindex="-1"></a>kubectl get pod <span class="sc">-</span>o wide <span class="co"># lista z wieksza ioscia informacji</span></span>
+<span id="cb13-20"><a href="virtualisation.html#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="virtualisation.html#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># lista deploymentow</span></span>
+<span id="cb13-22"><a href="virtualisation.html#cb13-22" aria-hidden="true" tabindex="-1"></a>kubectl get deployment</span>
+<span id="cb13-23"><a href="virtualisation.html#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="virtualisation.html#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="virtualisation.html#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co"># lista uslug</span></span>
+<span id="cb13-26"><a href="virtualisation.html#cb13-26" aria-hidden="true" tabindex="-1"></a>kubectl get services</span>
+<span id="cb13-27"><a href="virtualisation.html#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="virtualisation.html#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-29"><a href="virtualisation.html#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="co"># help po komndy tworzoce elementy</span></span>
+<span id="cb13-30"><a href="virtualisation.html#cb13-30" aria-hidden="true" tabindex="-1"></a>kubectl create <span class="sc">-</span>h</span>
+<span id="cb13-31"><a href="virtualisation.html#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-32"><a href="virtualisation.html#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-33"><a href="virtualisation.html#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="co"># tworzenie deploymentow-ow (nie tworzomy pod, ale pracujemy poziom wyzej czyli na poziomie deployment)</span></span>
+<span id="cb13-34"><a href="virtualisation.html#cb13-34" aria-hidden="true" tabindex="-1"></a>kubectl create deployment [deployment_name] <span class="sc">--</span>image<span class="ot">=</span>[image_name] <span class="co">#</span></span>
+<span id="cb13-35"><a href="virtualisation.html#cb13-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-36"><a href="virtualisation.html#cb13-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-37"><a href="virtualisation.html#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="co"># logi z pod-a</span></span>
+<span id="cb13-38"><a href="virtualisation.html#cb13-38" aria-hidden="true" tabindex="-1"></a>kubectl logs [pod_name] <span class="co"># nazwa poda to prefix od deployment plus dodany hash</span></span>
+<span id="cb13-39"><a href="virtualisation.html#cb13-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-40"><a href="virtualisation.html#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co"># informacje</span></span>
+<span id="cb13-41"><a href="virtualisation.html#cb13-41" aria-hidden="true" tabindex="-1"></a>kubectl describe pod [pod_name] <span class="co"># tutaj tez mozna zobaczyc jakie sa kontenery z pod</span></span>
+<span id="cb13-42"><a href="virtualisation.html#cb13-42" aria-hidden="true" tabindex="-1"></a>kubectl describe service [sevice_name]</span>
+<span id="cb13-43"><a href="virtualisation.html#cb13-43" aria-hidden="true" tabindex="-1"></a>....</span>
+<span id="cb13-44"><a href="virtualisation.html#cb13-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-45"><a href="virtualisation.html#cb13-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-46"><a href="virtualisation.html#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="co"># lista services </span></span>
+<span id="cb13-47"><a href="virtualisation.html#cb13-47" aria-hidden="true" tabindex="-1"></a>kubectl get service</span>
+<span id="cb13-48"><a href="virtualisation.html#cb13-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-49"><a href="virtualisation.html#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="co"># wejscie do kontenera (nie wiem jak wyglada sytuacja (i skladnia) kiedy pod jednym pod-em jest kilka kontenerow)</span></span>
+<span id="cb13-50"><a href="virtualisation.html#cb13-50" aria-hidden="true" tabindex="-1"></a>kubectl exec <span class="sc">-</span>it <span class="sc">&lt;</span>pod name<span class="sc">&gt;</span> <span class="sc">--</span> bin<span class="sc">/</span>bash</span>
+<span id="cb13-51"><a href="virtualisation.html#cb13-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-52"><a href="virtualisation.html#cb13-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-53"><a href="virtualisation.html#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="co"># usuniecie deploymentu</span></span>
+<span id="cb13-54"><a href="virtualisation.html#cb13-54" aria-hidden="true" tabindex="-1"></a>kubectl delete deployment <span class="sc">&lt;</span>deployment_name<span class="sc">&gt;</span></span>
+<span id="cb13-55"><a href="virtualisation.html#cb13-55" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-56"><a href="virtualisation.html#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="co"># satysyki ilosc replik pod-ow (ilosc pod-ow mozna ustawic jako opcje przy ich tworzeniu)</span></span>
+<span id="cb13-57"><a href="virtualisation.html#cb13-57" aria-hidden="true" tabindex="-1"></a>kubectl get replicaSet</span>
+<span id="cb13-58"><a href="virtualisation.html#cb13-58" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-59"><a href="virtualisation.html#cb13-59" aria-hidden="true" tabindex="-1"></a><span class="dv">56</span><span class="sc">:</span><span class="dv">03</span> 3282s</span></code></pre></div>
+<p>output kobectl get pod:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="virtualisation.html#cb14-1" aria-hidden="true" tabindex="-1"></a>NAME                          READY   STATUS    RESTARTS   AGE</span>
+<span id="cb14-2"><a href="virtualisation.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="virtualisation.html#cb14-3" aria-hidden="true" tabindex="-1"></a>mongo<span class="sc">-</span>depl<span class="sc">-</span>5fd6b7d4b4<span class="sc">-</span>h6k2j   <span class="dv">0</span><span class="sc">/</span><span class="dv">1</span>     .....     <span class="dv">0</span>          16m</span>
+<span id="cb14-4"><a href="virtualisation.html#cb14-4" aria-hidden="true" tabindex="-1"></a>mongo<span class="sc">-</span>depl2<span class="sc">-</span>fiksdfb7d4b4<span class="sc">-</span>h6   <span class="dv">1</span><span class="sc">/</span><span class="dv">1</span>     Running   <span class="dv">0</span>          16m</span>
+<span id="cb14-5"><a href="virtualisation.html#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="virtualisation.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="virtualisation.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 0/1 oznacza ze pod zostal utworzony, ale kontener ktory jest pod spodem nie zostal uruchominy. 2/3 - 2 z 3 kontenerow juz dzialaja</span></span></code></pre></div>
+</div>
+<div id="praca-z-plikami-konfiguracyjnymi" class="section level3" number="7.2.6">
+<h3><span class="header-section-number">7.2.6</span> Praca z plikami konfiguracyjnymi</h3>
+<p>Pliki konfiguracyjne są tworzone w YAML lub JSON. Ich budowa pozwala potem latwo odwolywac sie do poszczegolnych elementow w poleceniach (patrz: <a href="https://kubernetes.io/docs/reference/kubectl/jsonpath/">link</a>).</p>
+<p>Glowne typy to:</p>
+<ul>
+<li><p>Deployment</p></li>
+<li><p>Service</p></li>
+<li><p>Secret</p></li>
+<li><p>ConfigMap - jezeli kilka usulg bedzie chcilo sie np. odwolac do naszej bazy to dobrze dac jej adres w ConfigMap. Wtedy przy zmienie np. adresu servera zmieniamy tylko raz w konfig map, a nie w kazdyej aplikacji ktora musi miec namiar na baze.</p></li>
+<li><p>Job</p></li>
+<li><p>Ingress</p></li>
+<li><p>Rozne elementy do Volumes</p></li>
+<li><p>I inne</p></li>
+</ul>
+<p>W skladni YAML wazne sa wciecia</p>
+<p>Pliki konfiguracyjne powinno sie trzymac z kodem projektu.</p>
+<p>Pliki mozna tak naprawde polaczyc w jeden plik. Kolejne komponenty oddzielam w plikach YAML poprzez:</p>
+<p><code>---</code></p>
+<p>Do zarzadzania plikami warto uzywac <em>Helm</em>.</p>
+<p>Po zaladowaniu pliku jest konfigiracja jest zapisywana w Kubernetesie i Kubernetes nie ptrzebuje tych plikow. Konfiguracje mozemy z Kubernetesa mozemy wyswietlic w strukturze YAML, albo nawet wyeksportowac do YAMLA.</p>
+<p>Plik konfiguracyjny zawiera</p>
+<ul>
+<li>kind - np. deployment, service itp. W zaleznosci od <em>kind</em> bedziemy miec inne elementy w czesci pliku dot. specyfikacji: <img src="Virtualisation/figures/kubernetes_plik_konfig_specyfikacja_1.PNG" /></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>metadane</p></li>
+<li><p>specyfikacje</p></li>
+<li><p>status - Według filmiku jest jeszcze status-jest automatycznie generowany przez Kubernetes. Sprawdza czy to co jest naprawdę, jest zgodne ze specyfikacja. Tak wiec jezeli wszystko jest ok to nie mamy tej czesci w pliku. Jezeli sa problemy to Kubernetes automatycznie doda ta sekcje. Dane o statusie sa pobierane w etcd. Żeby miec konfiguracje uzupelniona o status w formacie pliku to musimy ja sobie wyeksportowac.</p></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="virtualisation.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wyswietlenie konfiguracji w strukturze yaml</span></span>
+<span id="cb15-2"><a href="virtualisation.html#cb15-2" aria-hidden="true" tabindex="-1"></a>kubectl get deployment [nazwa_deployment] <span class="sc">-</span>o yaml</span>
+<span id="cb15-3"><a href="virtualisation.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="virtualisation.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># dodatkowo ekport do pliku</span></span>
+<span id="cb15-5"><a href="virtualisation.html#cb15-5" aria-hidden="true" tabindex="-1"></a>kubectl get deployment [nazwa_deployment] <span class="sc">-</span>o yaml <span class="sc">&gt;</span> [nazwa_pliku.yaml]</span></code></pre></div>
+<div id="labels-i-selectors" class="section level4" number="7.2.6.1">
+<h4><span class="header-section-number">7.2.6.1</span> Labels i Selectors</h4>
+<p>Labels sa w sekcji ‘metadata,’ a selectors w sekcji ‘spec.’ Ponizej jest pokazane jak Service jest spinane z deployment poprzez Label i Selector (pamietajmy ze kilka pod-w moze byc pod jednym services).</p>
+<p><img src="Virtualisation/figures/kubernetes_budowa_config_labels_1.PNG" /></p>
+<p>Analigicznie <em>pod</em> jest spinany z deployment.</p>
+<p><img src="Virtualisation/figures/kubernetes_budowa_config_labels_2.PNG" /></p>
+<p>Ponizej sa pokazanie wspolzaleznosci w konfiguracji portow kontenerow i Services:</p>
+<p>Kontener nasluchuje na 8080. Service ma port 80, ale pod nia moze byc kilka podow/kontenerow. Wiec trzeba okreslic w Service ‘targetPoint’ ktory okresla do ktorego kotenera sie odnosimy.</p>
+<p><img src="Virtualisation/figures/kubernetes_budowa_config_spinanie_portow.PNG" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="virtualisation.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tworzenie pliku konfiguracyjnego (kazdy deployment/service ma swoj)</span></span>
+<span id="cb16-2"><a href="virtualisation.html#cb16-2" aria-hidden="true" tabindex="-1"></a>touch <span class="sc">&lt;</span>nazwa_pliku.yaml<span class="sc">&gt;</span></span>
+<span id="cb16-3"><a href="virtualisation.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="virtualisation.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># uruchamianie pliku konfiguracyjnego deploymentu/service</span></span>
+<span id="cb16-5"><a href="virtualisation.html#cb16-5" aria-hidden="true" tabindex="-1"></a>kubectl apply <span class="sc">-</span>f [file_name.yaml]</span></code></pre></div>
+</div>
+<div id="plik-konfiguracyjny---deployment" class="section level4" number="7.2.6.2">
+<h4><span class="header-section-number">7.2.6.2</span> plik konfiguracyjny - Deployment</h4>
+<p>Budowa pliku konfiguracyjnego dla <em>Deployment:</em></p>
+<p>Szablon dla samego Poda jest na podjasnionym miejscu na rysunku ponizej.</p>
+<p>W tym podjasnionym miejscu jest kolejna sekcja ‘spec’ gdzie definiuje sie takie rzeczy jak obraz pod kontenery, port port itp.</p>
+<p><img src="Virtualisation/figures/kubernetes_budowa_config_deployment.PNG" /></p>
+</div>
+<div id="plik-konfiguracyjny---pod" class="section level4" number="7.2.6.3">
+<h4><span class="header-section-number">7.2.6.3</span> plik konfiguracyjny - pod</h4>
+<p>Chyba tez taki jest bo wystepuje w przykladach.</p>
+</div>
+<div id="plik-konfiguracyjny---service" class="section level4" number="7.2.6.4">
+<h4><span class="header-section-number">7.2.6.4</span> plik konfiguracyjny - Service</h4>
+<p>typy Service:</p>
+<p><img src="Virtualisation/figures/kubernetes_service_types.PNG" /></p>
+<p>ClusterIP:</p>
+<ul>
+<li><p>jest domyslny</p></li>
+<li><p>jest wewnetrzny w tym sensie ze nie wystawia komunikacji poza Kluster Kubernetesa.</p></li>
+<li><p><em>pods</em> maja zmienne adresy IP, natomiast <em>Service</em> ma staly adres. Dzieki czemy w komunikacji lepiej odwolywac sie do service ktory na przekieruje na <em>pod</em> niz do samych <em>pod</em>.</p></li>
+<li><p>Zduplikowane pod-sy sa podpinane automatycznie pod ten sam services (jezeli oczywiscie poda podpielismy pod Service).</p></li>
+<li><p>Uzywa sie ich do podpinania pods z aplikacjami stateless</p></li>
+</ul>
+<p>Headless:</p>
+<ul>
+<li>Uzywa sie ich do podpinania pods z aplikacjami statefull. W ClusterIP kiedy mamy duplikaty pod podpietych pod to samo ip service , to ten service losowo nas przekierowuje do ktorejs z kopii. Przy aplikacjach sateful nie chcemy tej losowosci. My chcemy laczyc sie z konkretnym pode-m. Pamietajmy ze przy statefull ‘kopie’ maja indywidualne stale nazwy.</li>
+</ul>
+<p>NodePort:</p>
+<ul>
+<li><p>Sa przypisane do Nod-a, ale tak jak ClusterIP moga przekierowywac na <em>pods</em>.</p></li>
+<li><p>Maja mozliwosc bezposredniej komunikacji ze swiatem zewnetrznym (bez posrednictwa Ingress) co nie jest do konca dobre.</p></li>
+<li><p>W praktyce sie bardzo rzadko je stosuje.</p></li>
+<li><p>Traktuje sie je jako rozwiniecie ClusterIP.</p></li>
+</ul>
+<p>LoadBalancer Services</p>
+<ul>
+<li><p>To rozwiniecie NodePort umozliwiajace komunikacje ze swiatem zewnetrznym (bez posrednictwa Ingress) poprzez LoadBalancer.</p></li>
+<li><p>Aby uzyskac ten typ:</p>
+<p><code>type:LoadBalancer</code></p>
+<p>oraz w portach dodajemy port noda. Port noda w przeciwienstwie do NodePort nie jest wystawiony bezposrednio na zewnatrz.</p>
+<p><code>nodePort: [numer]</code></p>
+<p>Uwaga: external Service uzywa sie tylko w celach testowych. Żeby wystawic komunikacja na zewnatrz preferuje sie uzycie Ingress.</p></li>
+</ul>
+<p>ClusterIP: Komunikacja z Ingress</p>
+<p><img src="Virtualisation/figures/kubernetes_service.PNG" /></p>
+<p>ClusterIP: Komunikacja wewnatrz klastra:</p>
+<p><img src="Virtualisation/figures/kubernetes_service_2.PNG" /></p>
+<p>Headless (dla stateful)</p>
+<p><img src="Virtualisation/figures/kubernetes_service_3.PNG" /></p>
+</div>
+<div id="plik-konfiguracyjny---secret" class="section level4" number="7.2.6.5">
+<h4><span class="header-section-number">7.2.6.5</span> plik konfiguracyjny - Secret</h4>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="virtualisation.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># w Linux przekodowania tekstu na base64:</span></span>
+<span id="cb17-2"><a href="virtualisation.html#cb17-2" aria-hidden="true" tabindex="-1"></a>echo <span class="sc">-</span>n <span class="st">&#39;text&#39;</span> <span class="sc">|</span> base64</span></code></pre></div>
+<p>Odwolanie sie innym pliku (deployment) do zawartosci Secret.</p>
+<p><img src="Virtualisation/figures/kubernetes_plik_konfig_Secret.PNG" /></p>
+</div>
+<div id="plik-konfiguracyjny---ingress" class="section level4" number="7.2.6.6">
+<h4><span class="header-section-number">7.2.6.6</span> plik konfiguracyjny - Ingress</h4>
+<p>Ingress ma swoje IP ktore jest wystawiona na zewnatrz. Dodatkowo jest ono zmapowane na nazwe DSN. Osoba wpisuje sobie adress http (glowna czesc odpowiadajaca IP Ingress i potem rozne slashe ktore moga odpwiadac roznym pod-om). W Ingress mamy przekirowanie z otrzymanygo http na poszczegolne aplikacje.</p>
+<p>W celach testowych Ingressa w linux mozemy sobie zrobic mapowanie w etc/hosts. Wtedy przegladarka przekieruje dana nazwe na IP naszego Ingressa.</p>
+<p><img src="Virtualisation/figures/kubernetes_ingress.PNG" /></p>
+</div>
+<div id="plik-konfiguracyjny---configmap" class="section level4" number="7.2.6.7">
+<h4><span class="header-section-number">7.2.6.7</span> plik konfiguracyjny - ConfigMap</h4>
+<p>Odwolanie sie innym pliku (deployment) do zawartosci ConfigMap.</p>
+<p><img src="Virtualisation/figures/kubernetes_plik_konfig_configMap.PNG" /></p>
+</div>
+<div id="plik-konfiguracyjny---persistentvolume-pv-i-persistentvolumeclaim-pvc" class="section level4" number="7.2.6.8">
+<h4><span class="header-section-number">7.2.6.8</span> plik konfiguracyjny - PersistentVolume (pv) i PersistentVolumeClaim (pvc)</h4>
+<p>Pvc jest dodatkową warstwa abstrakcji. Podpinam pod nia aplikacje i ogolnie definiuje np. jakiej pojemnosci pamieci potrzebuje. Kubernetes dalej znajdzie mi odpowienii pv sposrod tych pv ktore sa podpiete pod dany pvc.</p>
+<p>UWga - <em>pod</em> i <em>pvc</em> musza byc w tym samym Namespace. Natomiast <em>pv</em> nie sa przypisywane do NameSpace.</p>
+<p>Konfiguracja pv pod local storage:</p>
+<p><img src="Virtualisation/figures/kubernetes_plik_konfig_pv2.PNG" width="375" /></p>
+<p>Konfiguracja pv pod nfs:</p>
+<p><img src="Virtualisation/figures/kubernetes_plik_konfig_pv.PNG" width="375" /></p>
+<p>Konfiguracja pv pod Google Cloud:</p>
+<p><img src="Virtualisation/figures/kubernetes_plik_konfig_pv3.PNG" /></p>
+<p>Przyklad konfiguracji pod (pytanie co z Deployment???) i pvc (mountPath w <em>pod</em> to sciezka w podzie pod ktora jest podczeiony <em>Volume</em>. Nie jest to sciezka samego <em>Volume</em>:</p>
+<p><img src="Virtualisation/figures/kubernetes_plik_konfig_volumes.PNG" /></p>
+</div>
+<div id="plik-konfiguracyjny---job" class="section level4" number="7.2.6.9">
+<h4><span class="header-section-number">7.2.6.9</span> plik konfiguracyjny - Job</h4>
+<p>Job</p>
+</div>
+</div>
+<div id="health-check" class="section level3" number="7.2.7">
+<h3><span class="header-section-number">7.2.7</span> Health check</h3>
+<p>Sa 3 typy checkow.</p>
+<p><img src="Virtualisation/figures/kubernetes_health.PNG" /></p>
+<p>Przyklad dla ExecAction:</p>
+<p><img src="Virtualisation/figures/kubernetes_health_1.PNG" /></p>
+</div>
+<div id="namespace" class="section level3" number="7.2.8">
+<h3><span class="header-section-number">7.2.8</span> Namespace</h3>
+<p>Nowe Namespace tworzy sie kiedy mamy dużo aplikacji. Domyslnie istnieje tzw. ‘default’ NameSpace.</p>
+<p>Kazdy <em>Namespace</em> musi miec swoj <em>ConfiMap</em>.</p>
+<p>To do jakiej <em>Namespace</em> nalezy element najlepiej sparametryzowac w plikach konfiguracyjnych.</p>
+<p>Istnieje mozliwosc odwolywanie sie pomiedzy namespace. Sluzy do tego nazwa Namespace po kropce za nawa elementu.</p>
+<p>Kiedy tworzymy <em>Namespacy</em> nie wszyskie elementy musza sie w nich znajmowac. Czesc moze byc dalej po prostu w Default Namespace.</p>
+</div>
+<div id="volumes" class="section level3" number="7.2.9">
+<h3><span class="header-section-number">7.2.9</span> Volumes</h3>
+<p>Volumens rowniez konfiguruje sie w plikach konfiguracyjnych. Dlatego odsylam to do odpowiednich podrozdzialow tego manuala.</p>
+<p>Dodatkowo nalezy pamietac ze istnieje mozliwosc powolywania volumes wewnatrz pod-a do komunikacji miedzy kontenerami w pod-ie. Wystaraczy to skonfigurowac w plikach konfiguracyjnych samych pod-ow:</p>
+<p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/" class="uri">https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/</a></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="virtualisation.html#cb18-1" aria-hidden="true" tabindex="-1"></a>apiVersion<span class="sc">:</span> v1</span>
+<span id="cb18-2"><a href="virtualisation.html#cb18-2" aria-hidden="true" tabindex="-1"></a>kind<span class="sc">:</span> Pod  <span class="co"># pytanie co z Deployment ???</span></span>
+<span id="cb18-3"><a href="virtualisation.html#cb18-3" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">:</span></span>
+<span id="cb18-4"><a href="virtualisation.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  name<span class="sc">:</span> redis</span>
+<span id="cb18-5"><a href="virtualisation.html#cb18-5" aria-hidden="true" tabindex="-1"></a>spec<span class="sc">:</span></span>
+<span id="cb18-6"><a href="virtualisation.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  containers<span class="sc">:</span></span>
+<span id="cb18-7"><a href="virtualisation.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> redis</span>
+<span id="cb18-8"><a href="virtualisation.html#cb18-8" aria-hidden="true" tabindex="-1"></a>    image<span class="sc">:</span> redis</span>
+<span id="cb18-9"><a href="virtualisation.html#cb18-9" aria-hidden="true" tabindex="-1"></a>    volumeMounts<span class="sc">:</span></span>
+<span id="cb18-10"><a href="virtualisation.html#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> name<span class="sc">:</span> redis<span class="sc">-</span>storage</span>
+<span id="cb18-11"><a href="virtualisation.html#cb18-11" aria-hidden="true" tabindex="-1"></a>      mountPath<span class="sc">:</span> <span class="er">/</span>data<span class="sc">/</span>redis</span>
+<span id="cb18-12"><a href="virtualisation.html#cb18-12" aria-hidden="true" tabindex="-1"></a>  volumes<span class="sc">:</span></span>
+<span id="cb18-13"><a href="virtualisation.html#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> redis<span class="sc">-</span>storage</span>
+<span id="cb18-14"><a href="virtualisation.html#cb18-14" aria-hidden="true" tabindex="-1"></a>    emptyDir<span class="sc">:</span> {}</span></code></pre></div>
+<p>Uwaga: technicznie ConfigMap i Secret to local Volumes.</p>
+</div>
+<div id="helm" class="section level3" number="7.2.10">
+<h3><span class="header-section-number">7.2.10</span> Helm</h3>
+<p>Narzedzie do zarzadzania wszyskimi plikami konfiguracyjnymi.</p>
+<p>W ramach niego powstaje tzw. Helm Chart okreslajacy strukture plikow konfiguracyjnych. Ulatwia to wspoldzieleniem sie naszymi rozwiazaniami z innymi. Są nawet puliczne Hub-y z Helm-ami</p>
+<p>W templetach helmowych jest duzo curly brackets.</p>
+<p>FIlmik: <a href="https://www.youtube.com/watch?v=5_J7RWLLVeQ">link</a></p>
+<p>Opis czym sa</p>
+<p><a href="https://helm.sh/docs/howto/charts_tips_and_tricks/">link</a></p>
+<p>Lista elementow ktore mozna wykorzystac:</p>
+<p><a href="https://hub.kubeapps.com/charts/bitnami/common/1.3.8">link</a></p>
+</div>
+<div id="dashboard" class="section level3" number="7.2.11">
+<h3><span class="header-section-number">7.2.11</span> Dashboard</h3>
+<p><a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">link</a></p>
+<p><a href="https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the-kubernetes-dashboard">link</a></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="virtualisation.html#cb19-1" aria-hidden="true" tabindex="-1"></a>kubectl apply <span class="sc">-</span>f https<span class="sc">:</span><span class="er">//</span>raw.githubusercontent.com<span class="sc">/</span>kubernetes<span class="sc">/</span>dashboard<span class="sc">/</span>v2.<span class="fl">2.0</span><span class="sc">/</span>aio<span class="sc">/</span>deploy<span class="sc">/</span>recommended.yaml</span>
+<span id="cb19-2"><a href="virtualisation.html#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="virtualisation.html#cb19-3" aria-hidden="true" tabindex="-1"></a>kubectl create serviceaccount dashboard<span class="sc">-</span>admin<span class="sc">-</span>sa</span>
+<span id="cb19-4"><a href="virtualisation.html#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="virtualisation.html#cb19-5" aria-hidden="true" tabindex="-1"></a>kubectl create clusterrolebinding dashboard<span class="sc">-</span>admin<span class="sc">-</span>sa <span class="sc">--</span>clusterrole<span class="ot">=</span>cluster<span class="sc">-</span>admin <span class="sc">--</span>serviceaccount<span class="ot">=</span>default<span class="sc">:</span>dashboard<span class="sc">-</span>admin<span class="sc">-</span>sa</span>
+<span id="cb19-6"><a href="virtualisation.html#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="virtualisation.html#cb19-7" aria-hidden="true" tabindex="-1"></a>kubectl get secrets</span>
+<span id="cb19-8"><a href="virtualisation.html#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="virtualisation.html#cb19-9" aria-hidden="true" tabindex="-1"></a>kubectl describe secret dashboard<span class="sc">-</span>admin<span class="sc">-</span>sa<span class="sc">-</span>token<span class="sc">-</span>….. <span class="co"># tutaj nazwa odpowiedniego tokena wyswietlonego przez &#39;kubectl get secrets&#39;</span></span>
+<span id="cb19-10"><a href="virtualisation.html#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="virtualisation.html#cb19-11" aria-hidden="true" tabindex="-1"></a>kubectl proxy</span></code></pre></div>
+<p>Aktualny token:</p>
+<p>eyJhbGciOiJSUzI1NiIsImtpZCI6IldMajNwcFJOemoyNkNFVmctVmZDRWN6YzRDWGpaZGJRVlN2djgyX2pTRWcifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRhc2hib2FyZC1hZG1pbi1zYS10b2tlbi16enh6dCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tc2EiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3YTYzZTgwZC1iYTEyLTQ5NzMtYmEwMC1lNGI4MDFhZjJhNmQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpkYXNoYm9hcmQtYWRtaW4tc2EifQ.QlORaTfP7kJ8vIbx2XeMl2z93oPzWiyGEG4db7hzZ-PldnyLhuuKcV4LSDkKQFjpv_ihuzDgeXlgO1LVAxGQibIk7bG5x2hwGG-5d8JkE0Wkbwjfte3eiEUGsJ6kULeyq7NinNrFhJE0u2IGWQq-xIr-hpxtLvZ7dvEY2LM4xc1dV72NnRqV0tiaTTTAMK3h_Jo9y5_nsMlD1JloeL_XCZOZQE_SxNXdBnTBgaGtGQw9NH3pMiA135CCnUsJ2XqCFDSqsBRjVuV_FCD8KFKH1cxrK9LMornz1_nzNUyic73MwxeGRTT_C1GsfsqAtxQ6QVEl7GyWrR0yHatN76Lebw</p>
+<p>dashboard bedzie dostepny pod strona: <a href="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/" class="uri">http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</a></p>
+</div>
+</div>
+<div id="virtual-os---dockers" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Virtual OS - Dockers</h2>
+<div id="rozne-uwagi-1" class="section level3" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Rozne uwagi</h3>
+<ul>
+<li>Dockery wirtualizuja system operacyjny, ale tylko jego warstwe aplikacyjna bez warstwy kernala. Dlatego np.nie da się w prosty sposob odpalic kontenerow linuxowych na windows. Do tego musimy miec na Windowsie dodatkowe komponenty ktore to umozliwia.</li>
+<li>Docker host odnosci sie nie do jakiego servera dockerowego, ale hosta czyli komputera na ktorym docker jest zainstalowany. Nalezy o tym pamietac przy ogladaniu rysunkow na ktorym jest uzywane to pojecie.</li>
+</ul>
+</div>
+<div id="instalacja-2" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Instalacja</h3>
+<div id="windows-1" class="section level4" number="7.3.2.1">
+<h4><span class="header-section-number">7.3.2.1</span> Windows</h4>
+<p><a href="https://www.youtube.com/watch?v=3c-iBn73dDE&amp;t=240s">link</a> (30:22)</p>
+<div id="wymagania-wstepne" class="section level5" number="7.3.2.1.1">
+<h5><span class="header-section-number">7.3.2.1.1</span> Wymagania wstepne</h5>
+<p>Windows 10 w wersji home nie zawiera niezbędnego <em>hyper-v</em>. Ale można to jakość obejść.</p>
+<p>Sprawdzanie czy mamy <em>hyper-v</em> i czy jest włączony:</p>
+<p>start -&gt; aplikacje i funkcje -&gt; kolejno zamazane na zółto elementy na screenie:</p>
+<p><img src="Virtualisation/figures/hyper_v_enabling_windows.PNG" /></p>
+</div>
+</div>
+<div id="ubuntu-1" class="section level4" number="7.3.2.2">
+<h4><span class="header-section-number">7.3.2.2</span> Ubuntu</h4>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">link</a></p>
+</div>
+</div>
+<div id="docker" class="section level3" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Docker</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="virtualisation.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wersja dockera enginee. </span></span>
+<span id="cb20-2"><a href="virtualisation.html#cb20-2" aria-hidden="true" tabindex="-1"></a>sudo docker version</span>
+<span id="cb20-3"><a href="virtualisation.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="virtualisation.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># szczegolowe informacje o dockerze</span></span>
+<span id="cb20-5"><a href="virtualisation.html#cb20-5" aria-hidden="true" tabindex="-1"></a>sudo docker info</span>
+<span id="cb20-6"><a href="virtualisation.html#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="virtualisation.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Status dockera</span></span>
+<span id="cb20-8"><a href="virtualisation.html#cb20-8" aria-hidden="true" tabindex="-1"></a>sudo service docker status</span>
+<span id="cb20-9"><a href="virtualisation.html#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="virtualisation.html#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Restartowanie dockera</span></span>
+<span id="cb20-11"><a href="virtualisation.html#cb20-11" aria-hidden="true" tabindex="-1"></a>sudo service docker restart</span></code></pre></div>
+</div>
+<div id="images" class="section level3" number="7.3.4">
+<h3><span class="header-section-number">7.3.4</span> Images</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="virtualisation.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lista obrazow na dokerze</span></span>
+<span id="cb21-2"><a href="virtualisation.html#cb21-2" aria-hidden="true" tabindex="-1"></a>sudo docker images</span>
+<span id="cb21-3"><a href="virtualisation.html#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="virtualisation.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># szczegolowe informacj o obrazie</span></span>
+<span id="cb21-5"><a href="virtualisation.html#cb21-5" aria-hidden="true" tabindex="-1"></a>sudo docker image rm <span class="sc">--</span>force  <span class="sc">&lt;</span>nazwa_obrazu<span class="sc">&gt;</span></span>
+<span id="cb21-6"><a href="virtualisation.html#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="virtualisation.html#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="virtualisation.html#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># usuniecie obrazu (nie kontenera!!!)</span></span>
+<span id="cb21-9"><a href="virtualisation.html#cb21-9" aria-hidden="true" tabindex="-1"></a>sudo docker image rm <span class="sc">&lt;</span>nazwa_obrazu<span class="sc">&gt;</span></span>
+<span id="cb21-10"><a href="virtualisation.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-11"><a href="virtualisation.html#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># usuniecie obrazu (nie kontenera!!!) w wymuszeniem w przypadku problemow</span></span>
+<span id="cb21-12"><a href="virtualisation.html#cb21-12" aria-hidden="true" tabindex="-1"></a>sudo docker image rm <span class="sc">--</span>force  <span class="sc">&lt;</span>nazwa_obrazu<span class="sc">&gt;</span></span>
+<span id="cb21-13"><a href="virtualisation.html#cb21-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-14"><a href="virtualisation.html#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co"># wyszukiwanie obrazow zawierajacy okreslana fraze</span></span>
+<span id="cb21-15"><a href="virtualisation.html#cb21-15" aria-hidden="true" tabindex="-1"></a>sudo docker search <span class="sc">&lt;</span>fraza<span class="sc">&gt;</span></span>
+<span id="cb21-16"><a href="virtualisation.html#cb21-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-17"><a href="virtualisation.html#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="co"># pobranie obrazu z repozytorium</span></span>
+<span id="cb21-18"><a href="virtualisation.html#cb21-18" aria-hidden="true" tabindex="-1"></a>sudo docker pull <span class="sc">&lt;</span>obraz<span class="sc">&gt;</span></span>
+<span id="cb21-19"><a href="virtualisation.html#cb21-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-20"><a href="virtualisation.html#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co"># pobranie obrazu z podaniem wersji (bez podania wersji jest pobierany najnowsza)</span></span>
+<span id="cb21-21"><a href="virtualisation.html#cb21-21" aria-hidden="true" tabindex="-1"></a>sudo docker pull <span class="sc">&lt;</span>obraz<span class="sc">:</span>wersja<span class="sc">&gt;</span></span></code></pre></div>
+<div id="warstwy" class="section level4" number="7.3.4.1">
+<h4><span class="header-section-number">7.3.4.1</span> Warstwy</h4>
+<p>Obrazy skladaja sie z warstw. Mozna je porownac go Git-owych commitow gdzie kolejne commity dokladaja kolejne zmiany.</p>
+<p>Obraz pobierany jest kolejnymi warstwami: to widać poniżej (kolejne hashe to kolejne warstwy).</p>
+<p><img src="Virtualisation/figures/docker_sciaganie_images.PNG" /></p>
+<p>Kiedy pobierany nowszą wersję tego samego obrazu podmieniane są tylko te warstwy które się zmieniły.</p>
+<p>Najniższą (bazową) warstwą jest zazwyczaj system operacyjny. Najczęściej jest to linux. Dodatkowo zalecana jest jego lekka wersja o nazwie <em>alpine</em>.</p>
+<p>Ubuntu domyslnie trzyma obrazy w lokalizacji:</p>
+<p><code>/var/lib/docker/</code></p>
+</div>
+</div>
+<div id="section-2" class="section level3" number="7.3.5">
+<h3><span class="header-section-number">7.3.5</span> </h3>
+</div>
+<div id="kontenery" class="section level3" number="7.3.6">
+<h3><span class="header-section-number">7.3.6</span> Kontenery</h3>
+<p>Uwaga: nazwa obrazow i kontenera to nie to samo. Nazwy kontenerow sa tworzone dynamicznie (po polceniu <em>create</em> lub <em>run</em>) i roznia od nazw obrazow jezeli ich recznie nie ustawimy.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="virtualisation.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dodanie do obrazu warstwy kontenera i tym samym utworzenie go (kontenera)</span></span>
+<span id="cb22-2"><a href="virtualisation.html#cb22-2" aria-hidden="true" tabindex="-1"></a>sudo docker create <span class="sc">&lt;</span>image_name<span class="sc">&gt;</span></span>
+<span id="cb22-3"><a href="virtualisation.html#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="virtualisation.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># uruchomienie kontenera</span></span>
+<span id="cb22-5"><a href="virtualisation.html#cb22-5" aria-hidden="true" tabindex="-1"></a>sudo docker start <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span> <span class="co"># pamietajmy: nazwa kontenera a nie obrazu</span></span>
+<span id="cb22-6"><a href="virtualisation.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-7"><a href="virtualisation.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># run = create + start</span></span>
+<span id="cb22-8"><a href="virtualisation.html#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="virtualisation.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># utworzenie wartwy na obrazie kontenera oraz uruchomienie kontenera w trybie interaktywnym (attach)</span></span>
+<span id="cb22-10"><a href="virtualisation.html#cb22-10" aria-hidden="true" tabindex="-1"></a>sudo docker run <span class="sc">-</span>i <span class="sc">&lt;</span>image_name<span class="sc">&gt;</span></span>
+<span id="cb22-11"><a href="virtualisation.html#cb22-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-12"><a href="virtualisation.html#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># utworzenie wartwy na obrazie kontenera oraz uruchomienie kontenera w trybie interaktywnym (detach)</span></span>
+<span id="cb22-13"><a href="virtualisation.html#cb22-13" aria-hidden="true" tabindex="-1"></a>sudo docker run <span class="sc">-</span>d <span class="sc">&lt;</span>image_name<span class="sc">&gt;</span></span>
+<span id="cb22-14"><a href="virtualisation.html#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="virtualisation.html#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># uruchomienie dockera z wyborem, shella (tuta przyklad z bash-em)</span></span>
+<span id="cb22-16"><a href="virtualisation.html#cb22-16" aria-hidden="true" tabindex="-1"></a>sudo docker run <span class="sc">&lt;</span>image_name<span class="sc">&gt;</span> <span class="er">/</span>bin<span class="sc">/</span>bash  <span class="co"># /bin/sh dla sh</span></span>
+<span id="cb22-17"><a href="virtualisation.html#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="virtualisation.html#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># wiecej o patametrach &#39;run&#39;:</span></span>
+<span id="cb22-19"><a href="virtualisation.html#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co"># https://docs.docker.com/engine/reference/commandline/run//</span></span>
+<span id="cb22-20"><a href="virtualisation.html#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="virtualisation.html#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="co"># wyjscie z kontenera w ktorym jestesmy  i zatrzymanie jego pracy</span></span>
+<span id="cb22-22"><a href="virtualisation.html#cb22-22" aria-hidden="true" tabindex="-1"></a>exit</span>
+<span id="cb22-23"><a href="virtualisation.html#cb22-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-24"><a href="virtualisation.html#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="co"># wyjscie z kontenera bez jego ubijania (detach)</span></span>
+<span id="cb22-25"><a href="virtualisation.html#cb22-25" aria-hidden="true" tabindex="-1"></a>ctrl<span class="sc">+</span>p<span class="sc">+</span>q</span>
+<span id="cb22-26"><a href="virtualisation.html#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-27"><a href="virtualisation.html#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co"># wejscie do dzialajacego kontenera (attach). Warto porownac z komenda &#39;docker exec&#39;</span></span>
+<span id="cb22-28"><a href="virtualisation.html#cb22-28" aria-hidden="true" tabindex="-1"></a>sudo attach <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span></span>
+<span id="cb22-29"><a href="virtualisation.html#cb22-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-30"><a href="virtualisation.html#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-31"><a href="virtualisation.html#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="co"># uruchomienie kontenera bez wchodzenia do niego (tryb detach)</span></span>
+<span id="cb22-32"><a href="virtualisation.html#cb22-32" aria-hidden="true" tabindex="-1"></a>sudo run <span class="sc">-</span>d <span class="sc">&lt;</span>image_name<span class="sc">&gt;</span></span>
+<span id="cb22-33"><a href="virtualisation.html#cb22-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-34"><a href="virtualisation.html#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="co"># co wyzej w recznym wyspecyfikowaniem nazwy powstajacego kontenera</span></span>
+<span id="cb22-35"><a href="virtualisation.html#cb22-35" aria-hidden="true" tabindex="-1"></a>sudo run <span class="sc">-</span>d <span class="sc">--</span>name <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span> <span class="er">&lt;</span>image_name<span class="sc">&gt;</span></span>
+<span id="cb22-36"><a href="virtualisation.html#cb22-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-37"><a href="virtualisation.html#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="co"># lista uruchomomionych kontenerow (ich nazwy sa wkolumnie &#39;NAMES&#39; na koncu)</span></span>
+<span id="cb22-38"><a href="virtualisation.html#cb22-38" aria-hidden="true" tabindex="-1"></a>sudo docker ps</span>
+<span id="cb22-39"><a href="virtualisation.html#cb22-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-40"><a href="virtualisation.html#cb22-40" aria-hidden="true" tabindex="-1"></a><span class="co"># lista wszyskich kontenerow</span></span>
+<span id="cb22-41"><a href="virtualisation.html#cb22-41" aria-hidden="true" tabindex="-1"></a>sudo docker ps <span class="sc">-</span>a</span>
+<span id="cb22-42"><a href="virtualisation.html#cb22-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-43"><a href="virtualisation.html#cb22-43" aria-hidden="true" tabindex="-1"></a><span class="co"># lista zatrzymanych kontenerow</span></span>
+<span id="cb22-44"><a href="virtualisation.html#cb22-44" aria-hidden="true" tabindex="-1"></a>sudo docker ps <span class="sc">-</span>aq </span>
+<span id="cb22-45"><a href="virtualisation.html#cb22-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-46"><a href="virtualisation.html#cb22-46" aria-hidden="true" tabindex="-1"></a><span class="co"># zamkniecie kontenera z zewnatrz</span></span>
+<span id="cb22-47"><a href="virtualisation.html#cb22-47" aria-hidden="true" tabindex="-1"></a>sudo docker stop <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span></span>
+<span id="cb22-48"><a href="virtualisation.html#cb22-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-49"><a href="virtualisation.html#cb22-49" aria-hidden="true" tabindex="-1"></a><span class="co"># ubicie kontenera - bo np. jest zawieszony</span></span>
+<span id="cb22-50"><a href="virtualisation.html#cb22-50" aria-hidden="true" tabindex="-1"></a>sudo docker kill <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span></span>
+<span id="cb22-51"><a href="virtualisation.html#cb22-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-52"><a href="virtualisation.html#cb22-52" aria-hidden="true" tabindex="-1"></a><span class="co"># zapauzowanie kontenera</span></span>
+<span id="cb22-53"><a href="virtualisation.html#cb22-53" aria-hidden="true" tabindex="-1"></a>sudo docker pause  <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span></span>
+<span id="cb22-54"><a href="virtualisation.html#cb22-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-55"><a href="virtualisation.html#cb22-55" aria-hidden="true" tabindex="-1"></a><span class="co"># odpauzowanie kontenera</span></span>
+<span id="cb22-56"><a href="virtualisation.html#cb22-56" aria-hidden="true" tabindex="-1"></a>sudo docker unpause  <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span></span>
+<span id="cb22-57"><a href="virtualisation.html#cb22-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-58"><a href="virtualisation.html#cb22-58" aria-hidden="true" tabindex="-1"></a><span class="co"># usuniecie kontenera (nie bedzie go juz na liście uzyskanej z  &#39;docker ps -a&#39;)</span></span>
+<span id="cb22-59"><a href="virtualisation.html#cb22-59" aria-hidden="true" tabindex="-1"></a>sudo docker rm <span class="sc">&lt;</span>containar_name<span class="sc">&gt;</span></span>
+<span id="cb22-60"><a href="virtualisation.html#cb22-60" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-61"><a href="virtualisation.html#cb22-61" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-62"><a href="virtualisation.html#cb22-62" aria-hidden="true" tabindex="-1"></a><span class="co"># usuniecie wszyskich niewlaczonych kontenerow</span></span>
+<span id="cb22-63"><a href="virtualisation.html#cb22-63" aria-hidden="true" tabindex="-1"></a>sudo docker container prune </span>
+<span id="cb22-64"><a href="virtualisation.html#cb22-64" aria-hidden="true" tabindex="-1"></a><span class="co">#lub</span></span>
+<span id="cb22-65"><a href="virtualisation.html#cb22-65" aria-hidden="true" tabindex="-1"></a>sudo docker rm <span class="sc">$</span>(sudo docker ps <span class="sc">-</span>aq)</span>
+<span id="cb22-66"><a href="virtualisation.html#cb22-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-67"><a href="virtualisation.html#cb22-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-68"><a href="virtualisation.html#cb22-68" aria-hidden="true" tabindex="-1"></a><span class="co"># logi kontenera</span></span>
+<span id="cb22-69"><a href="virtualisation.html#cb22-69" aria-hidden="true" tabindex="-1"></a>sudo docker logs <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span></span>
+<span id="cb22-70"><a href="virtualisation.html#cb22-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-71"><a href="virtualisation.html#cb22-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-72"><a href="virtualisation.html#cb22-72" aria-hidden="true" tabindex="-1"></a><span class="co"># uruchomienie z okreslona siecia</span></span>
+<span id="cb22-73"><a href="virtualisation.html#cb22-73" aria-hidden="true" tabindex="-1"></a>sudo docker run <span class="sc">--</span>net <span class="sc">&lt;</span>nazwa_sieci<span class="sc">&gt;</span> <span class="er">&lt;</span>nazwa_obrazu<span class="sc">&gt;</span></span>
+<span id="cb22-74"><a href="virtualisation.html#cb22-74" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-75"><a href="virtualisation.html#cb22-75" aria-hidden="true" tabindex="-1"></a><span class="co"># uruchomienie z </span></span></code></pre></div>
+<p>Sledzenie zmian w kontenerze</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="virtualisation.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># jakie pliki/katalogi zostaly zmodyfikowane</span></span>
+<span id="cb23-2"><a href="virtualisation.html#cb23-2" aria-hidden="true" tabindex="-1"></a>sudo docker diff <span class="sc">&lt;</span>container_name<span class="sc">&gt;</span></span></code></pre></div>
+<div id="inspekcja" class="section level4" number="7.3.6.1">
+<h4><span class="header-section-number">7.3.6.1</span> Inspekcja</h4>
+<p>Szczegolowe informacje o tym co sie dzieje z danym kontenerem</p>
+<p><code>sudo docker inspect &lt;container_name&gt;</code></p>
+</div>
+<div id="attach-vs-exec" class="section level4" number="7.3.6.2">
+<h4><span class="header-section-number">7.3.6.2</span> attach vs exec</h4>
+<p>Attach:</p>
+<p>Po prostu umozliwia nam podpiecie sie terminalem pod kontener i tym samym prace z nim w inteaktywnym trybie (przez ten terminal).</p>
+<p>Exec:</p>
+<p>Docker exec executes a new command / create a new process in the container’s environmen.</p>
+<p>Ponizsze uzycie <em>exec</em> daje podobny efekt co <em>attach (-it od interactive terminal)</em></p>
+<p><code>sudo docker exec -it &lt;caontainer_name&gt; /bin/bash</code></p>
+</div>
+<div id="o-outpucie-docker-ps" class="section level4" number="7.3.6.3">
+<h4><span class="header-section-number">7.3.6.3</span> O outpucie <em>docker ps</em></h4>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="virtualisation.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> docker ps</span>
+<span id="cb24-2"><a href="virtualisation.html#cb24-2" aria-hidden="true" tabindex="-1"></a>CONTAINER ID      IMAGE      COMMAND        CREATED           STATUS</span>
+<span id="cb24-3"><a href="virtualisation.html#cb24-3" aria-hidden="true" tabindex="-1"></a>f0c9cd92a938      ubuntu     <span class="st">&quot;sleep 60&quot;</span>     <span class="dv">3</span> seconds ago     Up <span class="dv">1</span> second</span></code></pre></div>
+<p>Powyzej <em>COMMAND</em> oznacza:</p>
+<p>It’s the command passed to <code>docker run &lt;image&gt; [command]</code>. If no command was specified there then it’s the <code>CMD</code> from the Dockerfile. In <a href="https://github.com/tianon/docker-brew-ubuntu-core/blob/857debd4347496c541f9806c084710dace49cd27/bionic/Dockerfile"><code>ubuntu</code>’s case</a> that would be <code>CMD ["/bin/bash"]</code></p>
+</div>
+<div id="zmienne-srodowiskowe" class="section level4" number="7.3.6.4">
+<h4><span class="header-section-number">7.3.6.4</span> Zmienne srodowiskowe</h4>
+<p>Uruchamianie kontenera ze zmiennymi srodowiskowymi poprzez operator <em>-e</em>.</p>
+<p>Additionally, the operator can <strong>set any environment variable</strong> in the container by using one or more <code>-e</code> flags, even overriding those mentioned above, or already defined by the developer with a Dockerfile <code>ENV</code>. If the operator names an environment variable without specifying a value, then the current value of the named variable is propagated into the container’s environment:</p>
+<p><code>docker run -e "deep=purple" -e today</code></p>
+</div>
+</div>
+<div id="tworzenie-obrazu" class="section level3" number="7.3.7">
+<h3><span class="header-section-number">7.3.7</span> Tworzenie obrazu</h3>
+<div id="przez-commity" class="section level4" number="7.3.7.1">
+<h4><span class="header-section-number">7.3.7.1</span> Przez commity</h4>
+</div>
+<div id="przez-dockerfile" class="section level4" number="7.3.7.2">
+<h4><span class="header-section-number">7.3.7.2</span> Przez Dockerfile</h4>
+<p>COPY - kopiowanie spoza kontenera do kontenera.</p>
+<p>RUN - komendy odpalane w czasie budowy obrazu. Sa wykonywane wewnatrz kontenera.</p>
+<p>ENTRYPOINT - komendy odpalane za każdym razem po uruchomieniu kontenera (wykonywane sa w kontenerze)</p>
+<p>CMD - komenda uruchamiana przy starcie kontenera (zawsze jedna). Przydaje się do kontenerow typu ‘executable’ , czyli np. uruchamiajac kontener tak naprawde od razu odpalam jakas aplikacje ktora jest w nim.</p>
+<p>ENV - s</p>
+<p>BUdowanie kontenera:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="virtualisation.html#cb25-1" aria-hidden="true" tabindex="-1"></a>docker build <span class="sc">-</span>t <span class="sc">&lt;</span>nazwa<span class="sc">:</span>numer_versji<span class="sc">&gt;</span></span></code></pre></div>
+</div>
+</div>
+<div id="networking-1" class="section level3" number="7.3.8">
+<h3><span class="header-section-number">7.3.8</span> Networking</h3>
+<div id="ogolen-info" class="section level4" number="7.3.8.1">
+<h4><span class="header-section-number">7.3.8.1</span> Ogolen info</h4>
+<p>Docker domyslnie tworzy dla kontenerow 3 sieci.</p>
+<ul>
+<li><p>bridge - sluzy glownie do komunikacji miedzy kontenerami.</p></li>
+<li><p>host -</p></li>
+<li><p>null - konener nie jest podlaczony do zadnej sieci</p></li>
+</ul>
+<p>Lista sieci dockera:</p>
+<p><code>docker network ls</code></p>
+<p>Bridge:</p>
+<p>Sluzy glownie do komunikacji miedzy konenerami. Kazdy kotener ma tutaj nadane swoje IP (niepowidzne poza siecia ??? Chyba z poziomu hosta mamy do nich dostep: patrz ksiazka o dockerach s.117 ). Bodatkowo docker0 (mostek) tez ma nadane IP. Ponizej mamy 2 kontenery i doecker0 (na rysunku jeszcze jest pokazane dodatkowo bindowanie portow na zewnatrz do kumunikacji ze swiatem zewnetrznym, ale o tym w innym rozdziale)</p>
+<p><img src="Virtualisation/figures/Docker_Port_Mapping.jpg" /></p>
+<p>Mozemy utworzyc wiele sieci typu <em>bridge.</em> Jest zalecane aby do swoich projektow tworzyc wlasne sieci <em>bridge</em> niezalezne od tej domyslnej.</p>
+<p>Szczegolowe informacje o konkretnej sieci</p>
+<p><code>sudo docker network inspect &lt;nazwa sieci&gt;</code></p>
+</div>
+<div id="komunikacja-miedzy-kontenerami" class="section level4" number="7.3.8.2">
+<h4><span class="header-section-number">7.3.8.2</span> Komunikacja miedzy kontenerami</h4>
+<p>Do komunikcji miedzy kontenerami mozemy uzywam wspomnianej sieci typu <em>bridge</em>, oraz wystawianych poza kontener katalogow poprzez jeden z dwoch mechanizmow:</p>
+<ul>
+<li><p>volumne</p></li>
+<li><p>bind mount</p></li>
+</ul>
+</div>
+<div id="komunikacja-miedzy-sieciami-w-dokerze" class="section level4" number="7.3.8.3">
+<h4><span class="header-section-number">7.3.8.3</span> Komunikacja miedzy sieciami w dokerze</h4>
+</div>
+<div id="komunikacja-ze-swiatem-zewnetrznym" class="section level4" number="7.3.8.4">
+<h4><span class="header-section-number">7.3.8.4</span> Komunikacja ze swiatem zewnetrznym</h4>
+<p>Kontenery nie są domyslnie dostepne z zewnatrz.</p>
+<div id="bindowanie-katalogow" class="section level5" number="7.3.8.4.1">
+<h5><span class="header-section-number">7.3.8.4.1</span> Bindowanie katalogow</h5>
+<p>Mozemy je skomunikowac ze swiatem zewnetrznym poprzez spiecie katalogu dockera z katalogiem na hoscie (<em>Volumes</em>):</p>
+<p><img src="Virtualisation/figures/docker_volume.PNG" /></p>
+<p>Sa 3 rodzaje <em>Volumes</em>:</p>
+<ul>
+<li><p><strong>Host volumnes (Bind mount)</strong>: reczne mapowanie katalogu z hosta na katalog z kontenera</p></li>
+<li><p><strong>Anonymous volumes</strong>: okreslam katalog w kontenerze, a na hoscie automatycznie docker robi sobie swoja lokalizacje (nie jest ona chyba bezposrednio dostepna. Docker sam sobie tym zarzadza).</p></li>
+<li><p><strong>Named volumnes</strong>: to co powyzej, ale dodatkowo okreslam nazwe, do ktorej moge sie potem odnosic (zalecany sposob pracy z <em>Volume</em>). Nazwa odnosci sie do folderu na hoscie.</p></li>
+</ul>
+<p><em>Anonymous volues</em> i <em>named volumes</em> sa zazwyczaj domyslnie tworzone w takich lokalizacjach:</p>
+<p><img src="Virtualisation/figures/volumes_paths.PNG" /></p>
+<p>W tych katalogach kazdy volumen na swoj indywidualny hash.</p>
+<p><em>Volumes</em> to byty niezalezne od kontenerow. Usuwajac kontener nie usuwamy razem z nim automatycznie <em>volume</em>.</p>
+<p>Polecenia</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="virtualisation.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lista volumes</span></span>
+<span id="cb26-2"><a href="virtualisation.html#cb26-2" aria-hidden="true" tabindex="-1"></a>docker volume ls</span>
+<span id="cb26-3"><a href="virtualisation.html#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="virtualisation.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># lista filtrowana po nazwie volumne</span></span>
+<span id="cb26-5"><a href="virtualisation.html#cb26-5" aria-hidden="true" tabindex="-1"></a>docker volume ls <span class="sc">-</span>f name<span class="ot">=</span>data</span>
+<span id="cb26-6"><a href="virtualisation.html#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="virtualisation.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># inspecja</span></span>
+<span id="cb26-8"><a href="virtualisation.html#cb26-8" aria-hidden="true" tabindex="-1"></a>docker volume inspect <span class="sc">&lt;</span>nazwa_volume<span class="sc">&gt;</span></span>
+<span id="cb26-9"><a href="virtualisation.html#cb26-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-10"><a href="virtualisation.html#cb26-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-11"><a href="virtualisation.html#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># usuwanie</span></span>
+<span id="cb26-12"><a href="virtualisation.html#cb26-12" aria-hidden="true" tabindex="-1"></a>docker volume rm <span class="sc">&lt;</span>nazwa_volume<span class="sc">&gt;</span></span>
+<span id="cb26-13"><a href="virtualisation.html#cb26-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-14"><a href="virtualisation.html#cb26-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-15"><a href="virtualisation.html#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co"># usuwanie volumow nie uzywanych (nie spietych z zadnym kontenerem)</span></span>
+<span id="cb26-16"><a href="virtualisation.html#cb26-16" aria-hidden="true" tabindex="-1"></a>docker volume prune</span>
+<span id="cb26-17"><a href="virtualisation.html#cb26-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="virtualisation.html#cb26-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-19"><a href="virtualisation.html#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="co"># utworzenie volume nie podpietego pod kontener (named volume)</span></span>
+<span id="cb26-20"><a href="virtualisation.html#cb26-20" aria-hidden="true" tabindex="-1"></a>docker volume create <span class="sc">&lt;</span>nazwa_volume<span class="sc">&gt;</span></span>
+<span id="cb26-21"><a href="virtualisation.html#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="virtualisation.html#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co"># podpiecie istaniejacego volume pod kontener</span></span>
+<span id="cb26-23"><a href="virtualisation.html#cb26-23" aria-hidden="true" tabindex="-1"></a>docker run <span class="sc">--</span>mount source<span class="ot">=</span>[volume_name],destination<span class="ot">=</span>[path_in_container] [docker_image]</span>
+<span id="cb26-24"><a href="virtualisation.html#cb26-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-25"><a href="virtualisation.html#cb26-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-26"><a href="virtualisation.html#cb26-26" aria-hidden="true" tabindex="-1"></a><span class="co"># utworzenie volumen typu host volume przez polecenie run (mount point jest tutaj w pwd)</span></span>
+<span id="cb26-27"><a href="virtualisation.html#cb26-27" aria-hidden="true" tabindex="-1"></a>docker run <span class="sc">-</span>v <span class="sc">$</span>(pwd)<span class="sc">:</span><span class="er">/</span>var<span class="sc">/</span>opt<span class="sc">/</span>project <span class="sc">&lt;</span>image_name<span class="sc">&gt;</span></span>
+<span id="cb26-28"><a href="virtualisation.html#cb26-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-29"><a href="virtualisation.html#cb26-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-30"><a href="virtualisation.html#cb26-30" aria-hidden="true" tabindex="-1"></a><span class="co"># podpiecie kontenera do voluma innego kontenera</span></span>
+<span id="cb26-31"><a href="virtualisation.html#cb26-31" aria-hidden="true" tabindex="-1"></a>docker run <span class="sc">--</span>volumes<span class="sc">-</span>from <span class="sc">&lt;</span>nazwa_kontera_do_volume_ktore_sie_podpinamy<span class="sc">&gt;</span> <span class="er">&lt;</span>nazwa_obrazu<span class="sc">&gt;</span></span></code></pre></div>
+<p>W ramach <em>volume</em> <em>mountpoint</em> dotyczy katalogu po stronie hosta a nie kontenera.</p>
+</div>
+<div id="porty" class="section level5" number="7.3.8.4.2">
+<h5><span class="header-section-number">7.3.8.4.2</span> Porty</h5>
+<p>Mozemy tez dokonac bindowania portow kontenera z portami komputera.</p>
+<p>Kontenery otwieraja sie domylsnie na okreslonych portach.</p>
+<p>Sprawdzenie jaki port ma wystawiony kontener.</p>
+<p><img src="Virtualisation/figures/port_kontenera.PNG" /></p>
+<p>Aby kontener miał komunikację ze swiatem zewnętrznym (poza calym Docker Hostem) musimy zbindowac porty kontenera z portami komputera. Jednak dwa kontenery moga wpasc w konflikt bo otworza sie na tych samych portach:</p>
+<p><img src="Virtualisation/figures/binding_portow_kontenera_i_komputera.PNG" /></p>
+<p>Bindowanie okresla sie np. w poleceniu run:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="virtualisation.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zbindowanie portu 6379 kontenera na port 6000 komputera</span></span>
+<span id="cb27-2"><a href="virtualisation.html#cb27-2" aria-hidden="true" tabindex="-1"></a>dockeer run <span class="sc">-</span>p6000<span class="sc">:</span><span class="dv">6379</span> <span class="sc">&lt;</span>image_name<span class="sc">&gt;</span></span></code></pre></div>
+<p>Potem informacja o tym bindowania moze byc wyswietlona w kolumnie <em>PORTS</em> po wywołaniu <code>docker ps:</code></p>
+<p><img src="Virtualisation/figures/port_kontenera_po_bindowaniu.PNG" /></p>
+</div>
+</div>
+</div>
+<div id="compose" class="section level3" number="7.3.9">
+<h3><span class="header-section-number">7.3.9</span> Compose</h3>
+<p>Zapisywanie do pliku yaml listy komend ktore uruchamiaja nam kontenery z odpowiednimi ustawieniami.</p>
+<p>Przyklad przepisanie komend na yamla:</p>
+<p>KOMENDY:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="virtualisation.html#cb28-1" aria-hidden="true" tabindex="-1"></a>docker run <span class="sc">-</span>d \</span>
+<span id="cb28-2"><a href="virtualisation.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">--</span>network todo<span class="sc">-</span>app <span class="sc">--</span>network<span class="sc">-</span>alias mysql \</span>
+<span id="cb28-3"><a href="virtualisation.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>v todo<span class="sc">-</span>mysql<span class="sc">-</span>data<span class="sc">:</span><span class="er">/</span>var<span class="sc">/</span>lib<span class="sc">/</span>mysql \</span>
+<span id="cb28-4"><a href="virtualisation.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>e MYSQL_ROOT_PASSWORD<span class="ot">=</span>secret \</span>
+<span id="cb28-5"><a href="virtualisation.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>e MYSQL_DATABASE<span class="ot">=</span>todos \</span>
+<span id="cb28-6"><a href="virtualisation.html#cb28-6" aria-hidden="true" tabindex="-1"></a>  mysql<span class="sc">:</span><span class="fl">5.7</span></span></code></pre></div>
+<p>odpowiadajacy komendom YAML:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="virtualisation.html#cb29-1" aria-hidden="true" tabindex="-1"></a> version<span class="sc">:</span> <span class="st">&quot;3.7&quot;</span></span>
+<span id="cb29-2"><a href="virtualisation.html#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="virtualisation.html#cb29-3" aria-hidden="true" tabindex="-1"></a> services<span class="sc">:</span></span>
+<span id="cb29-4"><a href="virtualisation.html#cb29-4" aria-hidden="true" tabindex="-1"></a>   app<span class="sc">:</span></span>
+<span id="cb29-5"><a href="virtualisation.html#cb29-5" aria-hidden="true" tabindex="-1"></a>     <span class="co"># The app service definition</span></span>
+<span id="cb29-6"><a href="virtualisation.html#cb29-6" aria-hidden="true" tabindex="-1"></a>   mysql<span class="sc">:</span></span>
+<span id="cb29-7"><a href="virtualisation.html#cb29-7" aria-hidden="true" tabindex="-1"></a>     image<span class="sc">:</span> mysql<span class="sc">:</span><span class="fl">5.7</span></span>
+<span id="cb29-8"><a href="virtualisation.html#cb29-8" aria-hidden="true" tabindex="-1"></a>     volumes<span class="sc">:</span></span>
+<span id="cb29-9"><a href="virtualisation.html#cb29-9" aria-hidden="true" tabindex="-1"></a>       <span class="sc">-</span> todo<span class="sc">-</span>mysql<span class="sc">-</span>data<span class="sc">:</span><span class="er">/</span>var<span class="sc">/</span>lib<span class="sc">/</span>mysql</span>
+<span id="cb29-10"><a href="virtualisation.html#cb29-10" aria-hidden="true" tabindex="-1"></a>     environment<span class="sc">:</span></span>
+<span id="cb29-11"><a href="virtualisation.html#cb29-11" aria-hidden="true" tabindex="-1"></a>       MYSQL_ROOT_PASSWORD<span class="sc">:</span> secret</span>
+<span id="cb29-12"><a href="virtualisation.html#cb29-12" aria-hidden="true" tabindex="-1"></a>       MYSQL_DATABASE<span class="sc">:</span> todos</span>
+<span id="cb29-13"><a href="virtualisation.html#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="virtualisation.html#cb29-14" aria-hidden="true" tabindex="-1"></a> volumes<span class="sc">:</span></span>
+<span id="cb29-15"><a href="virtualisation.html#cb29-15" aria-hidden="true" tabindex="-1"></a>   todo<span class="sc">-</span>mysql<span class="sc">-</span>data<span class="sc">:</span></span></code></pre></div>
+<p>Wiekszy przyklad: <a href="https://docs.docker.com/get-started/08_using_compose/" class="uri">https://docs.docker.com/get-started/08_using_compose/</a></p>
+<p>Odpalanie pliku compose:</p>
+<p>Trzeba sie upewnic ze mamy zainstalowane <em>Docker compose</em>. Jezeli tak wykonyjemy komende:</p>
+<p><code>docker-compose -f &lt;nazwa_pliku_yaml&gt; up</code></p>
+</div>
+<div id="uprodukcyjnianie" class="section level3" number="7.3.10">
+<h3><span class="header-section-number">7.3.10</span> Uprodukcyjnianie</h3>
+<div id="docker-hub." class="section level4" number="7.3.10.1">
+<h4><span class="header-section-number">7.3.10.1</span> Docker Hub.</h4>
+<p>Na <em>Docker Hub</em> jest duzo dodatkowych uzytecznych informacji o obraza jak np. informacje o konfiguracji zmiennych srodowiskowych. Warto je poczytac.</p>
+</div>
+<div id="proces-uprodukcyjniania" class="section level4" number="7.3.10.2">
+<h4><span class="header-section-number">7.3.10.2</span> Proces uprodukcyjniania</h4>
+<p>Ponizej:</p>
+<ol style="list-style-type: decimal">
+<li>Developuje sobie moja apke. Jenym z jej elementow moze byc kontener (bazowy pobieram sobie np. z Docker hub).</li>
+<li>Caly moj projekt wrzucam na Git</li>
+<li>Potem Jenkins przygotowuje paczke. W jego ramach musi sie tez zajac naszym kontenerem. Musi utworzyc obraz w oparciu o nasz Dockerfile i potem go umiescic na Repozytorium.</li>
+<li>Na koniec jest przeprowadzana instacja na serverze. W ramach instalacji nasz obraz bedzie mogl byc pobrany z repozytorium.</li>
+</ol>
+<p><img src="Virtualisation/figures/images_uprodukcyjnianie.PNG" /></p>
+</div>
+</div>
+</div>
+<div id="virtual-os---other-solutions" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Virtual OS - Other Solutions</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sonar-qube.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="windows-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": true,
+"instapper": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Virtualisation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-Manual_R.pdf", "bookdown-Manual_R.epub"],
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+</body>
+
+</html>

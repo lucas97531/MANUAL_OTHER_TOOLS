@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 YAML | Workflow</title>
+  <meta name="description" content="Chapter 2 YAML | Workflow" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 YAML | Workflow" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 YAML | Workflow" />
+  
+  
+  
+
+<meta name="author" content="Łukasz Muszyński" />
+
+
+<meta name="date" content="2021-08-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="json.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdution to Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> INTRO</a></li>
+<li class="chapter" data-level="2" data-path="yaml.html"><a href="yaml.html"><i class="fa fa-check"></i><b>2</b> YAML</a></li>
+<li class="chapter" data-level="3" data-path="json.html"><a href="json.html"><i class="fa fa-check"></i><b>3</b> JSON</a></li>
+<li class="chapter" data-level="4" data-path="xml.html"><a href="xml.html"><i class="fa fa-check"></i><b>4</b> XML</a></li>
+<li class="chapter" data-level="5" data-path="ini.html"><a href="ini.html"><i class="fa fa-check"></i><b>5</b> INI</a></li>
+<li class="chapter" data-level="6" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>6</b> </a></li>
+<li class="chapter" data-level="7" data-path="podstawowe-pojecia.html"><a href="podstawowe-pojecia.html"><i class="fa fa-check"></i><b>7</b> Podstawowe pojecia</a></li>
+<li class="chapter" data-level="8" data-path="architektura-linuxa.html"><a href="architektura-linuxa.html"><i class="fa fa-check"></i><b>8</b> Architektura Linuxa</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="architektura-linuxa.html"><a href="architektura-linuxa.html#system-plików"><i class="fa fa-check"></i><b>8.1</b> System plików</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="make-file.html"><a href="make-file.html"><i class="fa fa-check"></i><b>9</b> Make file</a></li>
+<li class="chapter" data-level="10" data-path="repozytoria.html"><a href="repozytoria.html"><i class="fa fa-check"></i><b>10</b> Repozytoria</a></li>
+<li class="chapter" data-level="11" data-path="dostepy-uzytkownicy.html"><a href="dostepy-uzytkownicy.html"><i class="fa fa-check"></i><b>11</b> Dostepy / Uzytkownicy</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="dostepy-uzytkownicy.html"><a href="dostepy-uzytkownicy.html#polecenia"><i class="fa fa-check"></i><b>11.1</b> Polecenia</a></li>
+<li class="chapter" data-level="11.2" data-path="dostepy-uzytkownicy.html"><a href="dostepy-uzytkownicy.html#plik-shadow---zarzadzanie"><i class="fa fa-check"></i><b>11.2</b> Plik shadow - zarzadzanie</a></li>
+<li class="chapter" data-level="11.3" data-path="dostepy-uzytkownicy.html"><a href="dostepy-uzytkownicy.html#admin-vs-root-user-vs-super-user"><i class="fa fa-check"></i><b>11.3</b> <strong>Admin vs Root user vs Super User</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="screens.html"><a href="screens.html"><i class="fa fa-check"></i><b>12</b> Screens</a></li>
+<li class="chapter" data-level="13" data-path="red-hat.html"><a href="red-hat.html"><i class="fa fa-check"></i><b>13</b> Red Hat</a></li>
+<li class="chapter" data-level="14" data-path="ubuntu.html"><a href="ubuntu.html"><i class="fa fa-check"></i><b>14</b> Ubuntu</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ubuntu.html"><a href="ubuntu.html#instalacja"><i class="fa fa-check"></i><b>14.1</b> Instalacja</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="ubuntu.html"><a href="ubuntu.html#virtual-box-na-windows-10"><i class="fa fa-check"></i><b>14.1.1</b> Virtual Box na Windows 10</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="ubuntu.html"><a href="ubuntu.html#nautilus"><i class="fa fa-check"></i><b>14.2</b> Nautilus</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="ubuntu.html"><a href="ubuntu.html#creating-links"><i class="fa fa-check"></i><b>14.2.1</b> Creating links</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html"><i class="fa fa-check"></i><b>15</b> Terminal-Shell-console</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#zsh-instalacja-i-konfiguracja"><i class="fa fa-check"></i><b>15.1</b> ZSH Instalacja i konfiguracja</a></li>
+<li class="chapter" data-level="15.2" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#skladnia"><i class="fa fa-check"></i><b>15.2</b> Skladnia</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#skroty-oznaczenia"><i class="fa fa-check"></i><b>15.2.1</b> Skroty oznaczenia</a></li>
+<li class="chapter" data-level="15.2.2" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#zmienne"><i class="fa fa-check"></i><b>15.2.2</b> Zmienne</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#komendy"><i class="fa fa-check"></i><b>15.3</b> Komendy</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#cat"><i class="fa fa-check"></i><b>15.3.1</b> cat</a></li>
+<li class="chapter" data-level="15.3.2" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#chmod"><i class="fa fa-check"></i><b>15.3.2</b> chmod</a></li>
+<li class="chapter" data-level="15.3.3" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#rm"><i class="fa fa-check"></i><b>15.3.3</b> rm</a></li>
+<li class="chapter" data-level="15.3.4" data-path="terminal-shell-console.html"><a href="terminal-shell-console.html#tar"><i class="fa fa-check"></i><b>15.3.4</b> tar</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="scheduling.html"><a href="scheduling.html"><i class="fa fa-check"></i><b>16</b> Scheduling</a></li>
+<li class="chapter" data-level="17" data-path="rozne.html"><a href="rozne.html"><i class="fa fa-check"></i><b>17</b> Rozne</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="rozne.html"><a href="rozne.html#stdin-stdout-and-stderr"><i class="fa fa-check"></i><b>17.1</b> <strong>stdin, stdout and stderr</strong></a></li>
+<li class="chapter" data-level="17.2" data-path="rozne.html"><a href="rozne.html#uzywanie-devnull"><i class="fa fa-check"></i><b>17.2</b> Uzywanie dev/null</a></li>
+<li class="chapter" data-level="17.3" data-path="rozne.html"><a href="rozne.html#exit-status"><i class="fa fa-check"></i><b>17.3</b> Exit status</a></li>
+<li class="chapter" data-level="17.4" data-path="rozne.html"><a href="rozne.html#sh-vs-source-vs-bin"><i class="fa fa-check"></i><b>17.4</b> sh vs source vs bin</a></li>
+<li class="chapter" data-level="17.5" data-path="rozne.html"><a href="rozne.html#domyslny-edytor"><i class="fa fa-check"></i><b>17.5</b> Domyslny edytor</a></li>
+<li class="chapter" data-level="17.6" data-path="rozne.html"><a href="rozne.html#split-okna-terminala"><i class="fa fa-check"></i><b>17.6</b> Split okna terminala</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="proxyvpntor-itp.html"><a href="proxyvpntor-itp.html"><i class="fa fa-check"></i><b>18</b> Proxy/VPN/Tor itp</a></li>
+<li class="chapter" data-level="19" data-path="protokó-http.html"><a href="protokó-http.html"><i class="fa fa-check"></i><b>19</b> Protokół HTTP</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="protokó-http.html"><a href="protokó-http.html#linki"><i class="fa fa-check"></i><b>19.1</b> Linki:</a></li>
+<li class="chapter" data-level="19.2" data-path="protokó-http.html"><a href="protokó-http.html#section-1"><i class="fa fa-check"></i><b>19.2</b> </a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="protokó-http.html"><a href="protokó-http.html#różne-uwagi"><i class="fa fa-check"></i><b>19.2.1</b> Różne uwagi</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="protokó-http.html"><a href="protokó-http.html#adres-url"><i class="fa fa-check"></i><b>19.3</b> Adres URL</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="protokó-http.html"><a href="protokó-http.html#ogólny-schemat"><i class="fa fa-check"></i><b>19.3.1</b> Ogólny schemat</a></li>
+<li class="chapter" data-level="19.3.2" data-path="protokó-http.html"><a href="protokó-http.html#czasowniki-http"><i class="fa fa-check"></i><b>19.3.2</b> <strong>Czasowniki HTTP</strong></a></li>
+<li class="chapter" data-level="19.3.3" data-path="protokó-http.html"><a href="protokó-http.html#statusy"><i class="fa fa-check"></i><b>19.3.3</b> Statusy</a></li>
+<li class="chapter" data-level="19.3.4" data-path="protokó-http.html"><a href="protokó-http.html#naglowki"><i class="fa fa-check"></i><b>19.3.4</b> Naglowki</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="klucze-szyfruj-ce.html"><a href="klucze-szyfruj-ce.html"><i class="fa fa-check"></i><b>20</b> Klucze szyfrujące</a></li>
+<li class="chapter" data-level="21" data-path="sonar-qube.html"><a href="sonar-qube.html"><i class="fa fa-check"></i><b>21</b> SONAR QUBE</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="sonar-qube.html"><a href="sonar-qube.html#installing"><i class="fa fa-check"></i><b>21.1</b> Installing</a></li>
+<li class="chapter" data-level="21.2" data-path="sonar-qube.html"><a href="sonar-qube.html#running"><i class="fa fa-check"></i><b>21.2</b> Running</a></li>
+<li class="chapter" data-level="21.3" data-path="sonar-qube.html"><a href="sonar-qube.html#project"><i class="fa fa-check"></i><b>21.3</b> Project</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="virtual-machines.html"><a href="virtual-machines.html"><i class="fa fa-check"></i><b>22</b> Virtual Machines</a></li>
+<li class="chapter" data-level="23" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html"><i class="fa fa-check"></i><b>23</b> Virtual OS - Kubernetes</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#instalacja-1"><i class="fa fa-check"></i><b>23.1</b> Instalacja</a>
+<ul>
+<li class="chapter" data-level="23.1.1" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#windows"><i class="fa fa-check"></i><b>23.1.1</b> Windows</a></li>
+<li class="chapter" data-level="23.1.2" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#ubunt"><i class="fa fa-check"></i><b>23.1.2</b> Ubunt</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#pytania"><i class="fa fa-check"></i><b>23.2</b> Pytania</a></li>
+<li class="chapter" data-level="23.3" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#rozne-uwagi"><i class="fa fa-check"></i><b>23.3</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="23.4" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#architektura"><i class="fa fa-check"></i><b>23.4</b> Architektura</a>
+<ul>
+<li class="chapter" data-level="23.4.1" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#podzial-pod-ow-na-aplikacje-stateful-i-stateless"><i class="fa fa-check"></i><b>23.4.1</b> <strong>Podzial pod-ow na aplikacje stateful i stateless</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="23.5" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#polecenia-1"><i class="fa fa-check"></i><b>23.5</b> Polecenia</a></li>
+<li class="chapter" data-level="23.6" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#praca-z-plikami-konfiguracyjnymi"><i class="fa fa-check"></i><b>23.6</b> Praca z plikami konfiguracyjnymi</a>
+<ul>
+<li class="chapter" data-level="23.6.1" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#labels-i-selectors"><i class="fa fa-check"></i><b>23.6.1</b> Labels i Selectors</a></li>
+<li class="chapter" data-level="23.6.2" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---deployment"><i class="fa fa-check"></i><b>23.6.2</b> plik konfiguracyjny - Deployment</a></li>
+<li class="chapter" data-level="23.6.3" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---pod"><i class="fa fa-check"></i><b>23.6.3</b> plik konfiguracyjny - pod</a></li>
+<li class="chapter" data-level="23.6.4" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---service"><i class="fa fa-check"></i><b>23.6.4</b> plik konfiguracyjny - Service</a></li>
+<li class="chapter" data-level="23.6.5" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---secret"><i class="fa fa-check"></i><b>23.6.5</b> plik konfiguracyjny - Secret</a></li>
+<li class="chapter" data-level="23.6.6" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---ingress"><i class="fa fa-check"></i><b>23.6.6</b> plik konfiguracyjny - Ingress</a></li>
+<li class="chapter" data-level="23.6.7" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---configmap"><i class="fa fa-check"></i><b>23.6.7</b> plik konfiguracyjny - ConfigMap</a></li>
+<li class="chapter" data-level="23.6.8" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---persistentvolume-pv-i-persistentvolumeclaim-pvc"><i class="fa fa-check"></i><b>23.6.8</b> plik konfiguracyjny - PersistentVolume (pv) i PersistentVolumeClaim (pvc)</a></li>
+<li class="chapter" data-level="23.6.9" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#plik-konfiguracyjny---job"><i class="fa fa-check"></i><b>23.6.9</b> plik konfiguracyjny - Job</a></li>
+</ul></li>
+<li class="chapter" data-level="23.7" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#health-check"><i class="fa fa-check"></i><b>23.7</b> Health check</a></li>
+<li class="chapter" data-level="23.8" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#namespace"><i class="fa fa-check"></i><b>23.8</b> Namespace</a></li>
+<li class="chapter" data-level="23.9" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#volumes"><i class="fa fa-check"></i><b>23.9</b> Volumes</a></li>
+<li class="chapter" data-level="23.10" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#helm"><i class="fa fa-check"></i><b>23.10</b> Helm</a></li>
+<li class="chapter" data-level="23.11" data-path="virtual-os-kubernetes.html"><a href="virtual-os-kubernetes.html#dashboard"><i class="fa fa-check"></i><b>23.11</b> Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html"><i class="fa fa-check"></i><b>24</b> Virtual OS - Dockers</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#rozne-uwagi-1"><i class="fa fa-check"></i><b>24.1</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="24.2" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#instalacja-2"><i class="fa fa-check"></i><b>24.2</b> Instalacja</a>
+<ul>
+<li class="chapter" data-level="24.2.1" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#windows-1"><i class="fa fa-check"></i><b>24.2.1</b> Windows</a></li>
+<li class="chapter" data-level="24.2.2" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#ubuntu-1"><i class="fa fa-check"></i><b>24.2.2</b> Ubuntu</a></li>
+</ul></li>
+<li class="chapter" data-level="24.3" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#docker"><i class="fa fa-check"></i><b>24.3</b> Docker</a></li>
+<li class="chapter" data-level="24.4" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#images"><i class="fa fa-check"></i><b>24.4</b> Images</a>
+<ul>
+<li class="chapter" data-level="24.4.1" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#warstwy"><i class="fa fa-check"></i><b>24.4.1</b> Warstwy</a></li>
+<li class="chapter" data-level="24.4.2" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#section-2"><i class="fa fa-check"></i><b>24.4.2</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="24.5" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#kontenery"><i class="fa fa-check"></i><b>24.5</b> Kontenery</a>
+<ul>
+<li class="chapter" data-level="24.5.1" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#inspekcja"><i class="fa fa-check"></i><b>24.5.1</b> Inspekcja</a></li>
+<li class="chapter" data-level="24.5.2" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#attach-vs-exec"><i class="fa fa-check"></i><b>24.5.2</b> attach vs exec</a></li>
+<li class="chapter" data-level="24.5.3" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#o-outpucie-docker-ps"><i class="fa fa-check"></i><b>24.5.3</b> O outpucie <em>docker ps</em></a></li>
+<li class="chapter" data-level="24.5.4" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#zmienne-srodowiskowe"><i class="fa fa-check"></i><b>24.5.4</b> Zmienne srodowiskowe</a></li>
+</ul></li>
+<li class="chapter" data-level="24.6" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#tworzenie-obrazu"><i class="fa fa-check"></i><b>24.6</b> Tworzenie obrazu</a>
+<ul>
+<li class="chapter" data-level="24.6.1" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#przez-commity"><i class="fa fa-check"></i><b>24.6.1</b> Przez commity</a></li>
+<li class="chapter" data-level="24.6.2" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#przez-dockerfile"><i class="fa fa-check"></i><b>24.6.2</b> Przez Dockerfile</a></li>
+</ul></li>
+<li class="chapter" data-level="24.7" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#networking"><i class="fa fa-check"></i><b>24.7</b> Networking</a>
+<ul>
+<li class="chapter" data-level="24.7.1" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#ogolen-info"><i class="fa fa-check"></i><b>24.7.1</b> Ogolen info</a></li>
+<li class="chapter" data-level="24.7.2" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#komunikacja-miedzy-kontenerami"><i class="fa fa-check"></i><b>24.7.2</b> Komunikacja miedzy kontenerami</a></li>
+<li class="chapter" data-level="24.7.3" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#komunikacja-miedzy-sieciami-w-dokerze"><i class="fa fa-check"></i><b>24.7.3</b> Komunikacja miedzy sieciami w dokerze</a></li>
+<li class="chapter" data-level="24.7.4" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#komunikacja-ze-swiatem-zewnetrznym"><i class="fa fa-check"></i><b>24.7.4</b> Komunikacja ze swiatem zewnetrznym</a></li>
+</ul></li>
+<li class="chapter" data-level="24.8" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#compose"><i class="fa fa-check"></i><b>24.8</b> Compose</a></li>
+<li class="chapter" data-level="24.9" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#uprodukcyjnianie"><i class="fa fa-check"></i><b>24.9</b> Uprodukcyjnianie</a>
+<ul>
+<li class="chapter" data-level="24.9.1" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#docker-hub."><i class="fa fa-check"></i><b>24.9.1</b> Docker Hub.</a></li>
+<li class="chapter" data-level="24.9.2" data-path="virtual-os-dockers.html"><a href="virtual-os-dockers.html#proces-uprodukcyjniania"><i class="fa fa-check"></i><b>24.9.2</b> Proces uprodukcyjniania</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="virtual-os-other-solutions.html"><a href="virtual-os-other-solutions.html"><i class="fa fa-check"></i><b>25</b> Virtual OS - Other Solutions</a></li>
+<li class="chapter" data-level="26" data-path="windows-2.html"><a href="windows-2.html"><i class="fa fa-check"></i><b>26</b> Windows</a>
+<ul>
+<li class="chapter" data-level="26.1" data-path="windows-2.html"><a href="windows-2.html#podstawy-skladni"><i class="fa fa-check"></i><b>26.1</b> podstawy skladni</a></li>
+<li class="chapter" data-level="26.2" data-path="windows-2.html"><a href="windows-2.html#zmienne-1"><i class="fa fa-check"></i><b>26.2</b> zmienne</a></li>
+<li class="chapter" data-level="26.3" data-path="windows-2.html"><a href="windows-2.html#control-flow"><i class="fa fa-check"></i><b>26.3</b> control flow</a></li>
+<li class="chapter" data-level="26.4" data-path="windows-2.html"><a href="windows-2.html#odpalanie-stron-w-danej-przegladarce"><i class="fa fa-check"></i><b>26.4</b> odpalanie stron w danej przegladarce</a></li>
+<li class="chapter" data-level="26.5" data-path="windows-2.html"><a href="windows-2.html#przydatne-komentu"><i class="fa fa-check"></i><b>26.5</b> przydatne komentu</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="cicd-concept.html"><a href="cicd-concept.html"><i class="fa fa-check"></i><b>27</b> CI/CD concept</a></li>
+<li class="chapter" data-level="28" data-path="section-3.html"><a href="section-3.html"><i class="fa fa-check"></i><b>28</b> </a></li>
+<li class="chapter" data-level="29" data-path="jenkins.html"><a href="jenkins.html"><i class="fa fa-check"></i><b>29</b> Jenkins</a></li>
+<li class="chapter" data-level="30" data-path="team-city.html"><a href="team-city.html"><i class="fa fa-check"></i><b>30</b> Team city</a></li>
+<li class="chapter" data-level="31" data-path="gib-lab.html"><a href="gib-lab.html"><i class="fa fa-check"></i><b>31</b> Gib Lab</a></li>
+<li class="chapter" data-level="32" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>32</b> Git</a>
+<ul>
+<li class="chapter" data-level="32.1" data-path="git.html"><a href="git.html#uwagi-rozne"><i class="fa fa-check"></i><b>32.1</b> uwagi rozne</a></li>
+<li class="chapter" data-level="32.2" data-path="git.html"><a href="git.html#logika-git-a"><i class="fa fa-check"></i><b>32.2</b> logika git-a</a></li>
+<li class="chapter" data-level="32.3" data-path="git.html"><a href="git.html#repozytoria-1"><i class="fa fa-check"></i><b>32.3</b> repozytoria</a></li>
+<li class="chapter" data-level="32.4" data-path="git.html"><a href="git.html#diff"><i class="fa fa-check"></i><b>32.4</b> diff</a></li>
+<li class="chapter" data-level="32.5" data-path="git.html"><a href="git.html#tracking"><i class="fa fa-check"></i><b>32.5</b> tracking</a>
+<ul>
+<li class="chapter" data-level="32.5.1" data-path="git.html"><a href="git.html#sledzenie-nowych-plikow"><i class="fa fa-check"></i><b>32.5.1</b> sledzenie nowych plikow</a></li>
+<li class="chapter" data-level="32.5.2" data-path="git.html"><a href="git.html#gitignore"><i class="fa fa-check"></i><b>32.5.2</b> gitignore</a></li>
+</ul></li>
+<li class="chapter" data-level="32.6" data-path="git.html"><a href="git.html#stage"><i class="fa fa-check"></i><b>32.6</b> stage</a></li>
+<li class="chapter" data-level="32.7" data-path="git.html"><a href="git.html#branches"><i class="fa fa-check"></i><b>32.7</b> branches</a></li>
+<li class="chapter" data-level="32.8" data-path="git.html"><a href="git.html#commits"><i class="fa fa-check"></i><b>32.8</b> commits</a>
+<ul>
+<li class="chapter" data-level="32.8.1" data-path="git.html"><a href="git.html#podstawy"><i class="fa fa-check"></i><b>32.8.1</b> podstawy</a></li>
+<li class="chapter" data-level="32.8.2" data-path="git.html"><a href="git.html#funkcja-log-wyswietla-liste-commitow"><i class="fa fa-check"></i><b>32.8.2</b> funkcja log (wyswietla liste commitow)</a></li>
+<li class="chapter" data-level="32.8.3" data-path="git.html"><a href="git.html#wskazniki"><i class="fa fa-check"></i><b>32.8.3</b> wskazniki</a></li>
+<li class="chapter" data-level="32.8.4" data-path="git.html"><a href="git.html#revert-vs-reset"><i class="fa fa-check"></i><b>32.8.4</b> revert vs reset</a></li>
+<li class="chapter" data-level="32.8.5" data-path="git.html"><a href="git.html#squash"><i class="fa fa-check"></i><b>32.8.5</b> squash</a></li>
+<li class="chapter" data-level="32.8.6" data-path="git.html"><a href="git.html#merge"><i class="fa fa-check"></i><b>32.8.6</b> merge</a></li>
+<li class="chapter" data-level="32.8.7" data-path="git.html"><a href="git.html#rebase"><i class="fa fa-check"></i><b>32.8.7</b> rebase</a></li>
+</ul></li>
+<li class="chapter" data-level="32.9" data-path="git.html"><a href="git.html#stash"><i class="fa fa-check"></i><b>32.9</b> stash</a></li>
+<li class="chapter" data-level="32.10" data-path="git.html"><a href="git.html#inne-komendy"><i class="fa fa-check"></i><b>32.10</b> Inne komendy</a></li>
+<li class="chapter" data-level="32.11" data-path="git.html"><a href="git.html#github"><i class="fa fa-check"></i><b>32.11</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="32.11.1" data-path="git.html"><a href="git.html#cooperation"><i class="fa fa-check"></i><b>32.11.1</b> Cooperation</a></li>
+</ul></li>
+<li class="chapter" data-level="32.12" data-path="git.html"><a href="git.html#r-markdown"><i class="fa fa-check"></i><b>32.12</b> R Markdown</a></li>
+<li class="chapter" data-level="32.13" data-path="git.html"><a href="git.html#including-plots"><i class="fa fa-check"></i><b>32.13</b> Including Plots</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workflow</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="yaml" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> YAML</h1>
+<p>Dobry tutorial do skladni samego YAML-a: <a href="https://www.youtube.com/watch?v=1uFVr15xDGg">link</a></p>
+<p>Duzo przykladow: <a href="https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started">link</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="yaml.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tutaj mozge zaczac kolejny dokument</span></span>
+<span id="cb1-2"><a href="yaml.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tekst w jednej linijce</span></span>
+<span id="cb1-3"><a href="yaml.html#cb1-3" aria-hidden="true" tabindex="-1"></a>bar_m<span class="sc">:</span> <span class="er">&gt;</span></span>
+<span id="cb1-4"><a href="yaml.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  this is not a normal string it</span>
+<span id="cb1-5"><a href="yaml.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  spans more than</span>
+<span id="cb1-6"><a href="yaml.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  one line</span>
+<span id="cb1-7"><a href="yaml.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  see?</span>
+<span id="cb1-8"><a href="yaml.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># tekst wielolinijkowy</span></span>
+<span id="cb1-9"><a href="yaml.html#cb1-9" aria-hidden="true" tabindex="-1"></a>bar_o<span class="sc">:</span> <span class="er">&gt;</span></span>
+<span id="cb1-10"><a href="yaml.html#cb1-10" aria-hidden="true" tabindex="-1"></a>  this is not a normal string it</span>
+<span id="cb1-11"><a href="yaml.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  spans more than</span>
+<span id="cb1-12"><a href="yaml.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  one line</span>
+<span id="cb1-13"><a href="yaml.html#cb1-13" aria-hidden="true" tabindex="-1"></a>  see?</span>
+<span id="cb1-14"><a href="yaml.html#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># null</span></span>
+<span id="cb1-15"><a href="yaml.html#cb1-15" aria-hidden="true" tabindex="-1"></a>foo<span class="sc">:</span> <span class="er">~</span></span>
+<span id="cb1-16"><a href="yaml.html#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># null - drugie sposob zapisu</span></span>
+<span id="cb1-17"><a href="yaml.html#cb1-17" aria-hidden="true" tabindex="-1"></a>bar<span class="sc">:</span> null</span>
+<span id="cb1-18"><a href="yaml.html#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># dwa rowpowazne sposoby zapisu listy wartosci</span></span>
+<span id="cb1-19"><a href="yaml.html#cb1-19" aria-hidden="true" tabindex="-1"></a>items_1<span class="sc">:</span> [ <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span> ]</span>
+<span id="cb1-20"><a href="yaml.html#cb1-20" aria-hidden="true" tabindex="-1"></a>items_2<span class="sc">:</span></span>
+<span id="cb1-21"><a href="yaml.html#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb1-22"><a href="yaml.html#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb1-23"><a href="yaml.html#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> <span class="dv">3</span></span>
+<span id="cb1-24"><a href="yaml.html#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> <span class="dv">4</span></span>
+<span id="cb1-25"><a href="yaml.html#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> <span class="dv">5</span></span>
+<span id="cb1-26"><a href="yaml.html#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># zagniezdzanie</span></span>
+<span id="cb1-27"><a href="yaml.html#cb1-27" aria-hidden="true" tabindex="-1"></a>xmas<span class="sc">-</span>fifth<span class="sc">-</span>day<span class="sc">:</span></span>
+<span id="cb1-28"><a href="yaml.html#cb1-28" aria-hidden="true" tabindex="-1"></a> calling<span class="sc">-</span>birds<span class="sc">:</span> four</span>
+<span id="cb1-29"><a href="yaml.html#cb1-29" aria-hidden="true" tabindex="-1"></a> french<span class="sc">-</span>hens<span class="sc">:</span> <span class="dv">3</span></span>
+<span id="cb1-30"><a href="yaml.html#cb1-30" aria-hidden="true" tabindex="-1"></a> golden<span class="sc">-</span>rings<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb1-31"><a href="yaml.html#cb1-31" aria-hidden="true" tabindex="-1"></a> partridges<span class="sc">:</span></span>
+<span id="cb1-32"><a href="yaml.html#cb1-32" aria-hidden="true" tabindex="-1"></a>   count<span class="sc">:</span> <span class="dv">1</span></span>
+<span id="cb1-33"><a href="yaml.html#cb1-33" aria-hidden="true" tabindex="-1"></a>   location<span class="sc">:</span> <span class="st">&quot;a pear tree&quot;</span></span>
+<span id="cb1-34"><a href="yaml.html#cb1-34" aria-hidden="true" tabindex="-1"></a> turtle<span class="sc">-</span>doves<span class="sc">:</span> two</span>
+<span id="cb1-35"><a href="yaml.html#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-36"><a href="yaml.html#cb1-36" aria-hidden="true" tabindex="-1"></a>doe<span class="sc">:</span> <span class="st">&quot;a deer, a female deer&quot;</span></span>
+<span id="cb1-37"><a href="yaml.html#cb1-37" aria-hidden="true" tabindex="-1"></a>ray<span class="sc">:</span> <span class="st">&quot;a drop of golden sun&quot;</span></span>
+<span id="cb1-38"><a href="yaml.html#cb1-38" aria-hidden="true" tabindex="-1"></a>pi<span class="sc">:</span> <span class="fl">3.14159</span></span>
+<span id="cb1-39"><a href="yaml.html#cb1-39" aria-hidden="true" tabindex="-1"></a>xmas<span class="sc">:</span> true <span class="co"># zmienna logiczne to true/false; yes/no; on/off</span></span>
+<span id="cb1-40"><a href="yaml.html#cb1-40" aria-hidden="true" tabindex="-1"></a>french<span class="sc">-</span>hens<span class="sc">:</span> <span class="dv">3</span></span>
+<span id="cb1-41"><a href="yaml.html#cb1-41" aria-hidden="true" tabindex="-1"></a>calling<span class="sc">-</span>birds<span class="sc">:</span></span>
+<span id="cb1-42"><a href="yaml.html#cb1-42" aria-hidden="true" tabindex="-1"></a> <span class="sc">-</span> huey</span>
+<span id="cb1-43"><a href="yaml.html#cb1-43" aria-hidden="true" tabindex="-1"></a> <span class="sc">-</span> dewey</span>
+<span id="cb1-44"><a href="yaml.html#cb1-44" aria-hidden="true" tabindex="-1"></a> <span class="sc">-</span> louie</span>
+<span id="cb1-45"><a href="yaml.html#cb1-45" aria-hidden="true" tabindex="-1"></a> <span class="sc">-</span> fred</span></code></pre></div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="json.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": true,
+"instapper": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Files_types.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-Manual_R.pdf", "bookdown-Manual_R.epub"],
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Linux | Workflow</title>
+  <meta name="description" content="Chapter 3 Linux | Workflow" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Linux | Workflow" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Linux | Workflow" />
+  
+  
+  
+
+<meta name="author" content="Łukasz Muszyński" />
+
+
+<meta name="date" content="2023-08-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="files-types.html"/>
+<link rel="next" href="network.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdution to Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> INTRO</a></li>
+<li class="chapter" data-level="2" data-path="files-types.html"><a href="files-types.html"><i class="fa fa-check"></i><b>2</b> Files types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="files-types.html"><a href="files-types.html#yaml"><i class="fa fa-check"></i><b>2.1</b> YAML</a></li>
+<li class="chapter" data-level="2.2" data-path="files-types.html"><a href="files-types.html#json"><i class="fa fa-check"></i><b>2.2</b> JSON</a></li>
+<li class="chapter" data-level="2.3" data-path="files-types.html"><a href="files-types.html#xml"><i class="fa fa-check"></i><b>2.3</b> XML</a></li>
+<li class="chapter" data-level="2.4" data-path="files-types.html"><a href="files-types.html#ini"><i class="fa fa-check"></i><b>2.4</b> INI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>3</b> Linux</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="linux.html"><a href="linux.html#podstawowe-pojecia"><i class="fa fa-check"></i><b>3.1</b> Podstawowe pojecia</a></li>
+<li class="chapter" data-level="3.2" data-path="linux.html"><a href="linux.html#architektura-linuxa"><i class="fa fa-check"></i><b>3.2</b> Architektura Linuxa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="linux.html"><a href="linux.html#system-plików"><i class="fa fa-check"></i><b>3.2.1</b> System plików</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="linux.html"><a href="linux.html#make-file"><i class="fa fa-check"></i><b>3.3</b> Make file</a></li>
+<li class="chapter" data-level="3.4" data-path="linux.html"><a href="linux.html#repozytoria"><i class="fa fa-check"></i><b>3.4</b> Repozytoria</a></li>
+<li class="chapter" data-level="3.5" data-path="linux.html"><a href="linux.html#dostepy-uzytkownicy"><i class="fa fa-check"></i><b>3.5</b> Dostepy / Uzytkownicy</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="linux.html"><a href="linux.html#polecenia"><i class="fa fa-check"></i><b>3.5.1</b> Polecenia</a></li>
+<li class="chapter" data-level="3.5.2" data-path="linux.html"><a href="linux.html#plik-shadow---zarzadzanie"><i class="fa fa-check"></i><b>3.5.2</b> Plik shadow - zarzadzanie</a></li>
+<li class="chapter" data-level="3.5.3" data-path="linux.html"><a href="linux.html#admin-vs-root-user-vs-super-user"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Admin vs Root user vs Super User</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="linux.html"><a href="linux.html#screens"><i class="fa fa-check"></i><b>3.6</b> Screens</a></li>
+<li class="chapter" data-level="3.7" data-path="linux.html"><a href="linux.html#red-hat"><i class="fa fa-check"></i><b>3.7</b> Red Hat</a></li>
+<li class="chapter" data-level="3.8" data-path="linux.html"><a href="linux.html#ubuntu"><i class="fa fa-check"></i><b>3.8</b> Ubuntu</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="linux.html"><a href="linux.html#instalacja"><i class="fa fa-check"></i><b>3.8.1</b> Instalacja</a></li>
+<li class="chapter" data-level="3.8.2" data-path="linux.html"><a href="linux.html#nautilus"><i class="fa fa-check"></i><b>3.8.2</b> Nautilus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="linux.html"><a href="linux.html#terminal-shell-console"><i class="fa fa-check"></i><b>3.9</b> Terminal-Shell-console</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="linux.html"><a href="linux.html#zsh-instalacja-i-konfiguracja"><i class="fa fa-check"></i><b>3.9.1</b> ZSH Instalacja i konfiguracja</a></li>
+<li class="chapter" data-level="3.9.2" data-path="linux.html"><a href="linux.html#skladnia"><i class="fa fa-check"></i><b>3.9.2</b> Skladnia</a></li>
+<li class="chapter" data-level="3.9.3" data-path="linux.html"><a href="linux.html#komendy-bash"><i class="fa fa-check"></i><b>3.9.3</b> Komendy bash</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="linux.html"><a href="linux.html#networking"><i class="fa fa-check"></i><b>3.10</b> Networking</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="linux.html"><a href="linux.html#polecenie-netstat"><i class="fa fa-check"></i><b>3.10.1</b> polecenie netstat</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="linux.html"><a href="linux.html#scheduling"><i class="fa fa-check"></i><b>3.11</b> Scheduling</a></li>
+<li class="chapter" data-level="3.12" data-path="linux.html"><a href="linux.html#rozne"><i class="fa fa-check"></i><b>3.12</b> Rozne</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="linux.html"><a href="linux.html#stdin-stdout-and-stderr"><i class="fa fa-check"></i><b>3.12.1</b> <strong>stdin, stdout and stderr</strong></a></li>
+<li class="chapter" data-level="3.12.2" data-path="linux.html"><a href="linux.html#uzywanie-devnull"><i class="fa fa-check"></i><b>3.12.2</b> Uzywanie dev/null</a></li>
+<li class="chapter" data-level="3.12.3" data-path="linux.html"><a href="linux.html#exit-status"><i class="fa fa-check"></i><b>3.12.3</b> Exit status</a></li>
+<li class="chapter" data-level="3.12.4" data-path="linux.html"><a href="linux.html#sh-vs-source-vs-bin"><i class="fa fa-check"></i><b>3.12.4</b> sh vs source vs bin</a></li>
+<li class="chapter" data-level="3.12.5" data-path="linux.html"><a href="linux.html#domyslny-edytor"><i class="fa fa-check"></i><b>3.12.5</b> Domyslny edytor</a></li>
+<li class="chapter" data-level="3.12.6" data-path="linux.html"><a href="linux.html#split-okna-terminala"><i class="fa fa-check"></i><b>3.12.6</b> Split okna terminala</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="network.html"><a href="network.html"><i class="fa fa-check"></i><b>4</b> Network</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="network.html"><a href="network.html#proxyvpntor-itp"><i class="fa fa-check"></i><b>4.1</b> Proxy/VPN/Tor itp</a></li>
+<li class="chapter" data-level="4.2" data-path="network.html"><a href="network.html#protokół-http"><i class="fa fa-check"></i><b>4.2</b> Protokół HTTP</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="network.html"><a href="network.html#linki"><i class="fa fa-check"></i><b>4.2.1</b> Linki:</a></li>
+<li class="chapter" data-level="4.2.2" data-path="network.html"><a href="network.html#różne-uwagi"><i class="fa fa-check"></i><b>4.2.2</b> Różne uwagi</a></li>
+<li class="chapter" data-level="4.2.3" data-path="network.html"><a href="network.html#adres-url"><i class="fa fa-check"></i><b>4.2.3</b> Adres URL</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="security.html"><a href="security.html"><i class="fa fa-check"></i><b>5</b> Security</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="security.html"><a href="security.html#klucze-szyfrujące"><i class="fa fa-check"></i><b>5.1</b> Klucze szyfrujące</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sonar-qube.html"><a href="sonar-qube.html"><i class="fa fa-check"></i><b>6</b> SONAR QUBE</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sonar-qube.html"><a href="sonar-qube.html#installing"><i class="fa fa-check"></i><b>6.1</b> Installing</a></li>
+<li class="chapter" data-level="6.2" data-path="sonar-qube.html"><a href="sonar-qube.html#running"><i class="fa fa-check"></i><b>6.2</b> Running</a></li>
+<li class="chapter" data-level="6.3" data-path="sonar-qube.html"><a href="sonar-qube.html#project"><i class="fa fa-check"></i><b>6.3</b> Project</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="virtualisation.html"><a href="virtualisation.html"><i class="fa fa-check"></i><b>7</b> Virtualisation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="virtualisation.html"><a href="virtualisation.html#virtual-machines"><i class="fa fa-check"></i><b>7.1</b> Virtual Machines</a></li>
+<li class="chapter" data-level="7.2" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---kubernetes"><i class="fa fa-check"></i><b>7.2</b> Virtual OS - Kubernetes</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-1"><i class="fa fa-check"></i><b>7.2.1</b> Instalacja</a></li>
+<li class="chapter" data-level="7.2.2" data-path="virtualisation.html"><a href="virtualisation.html#pytania"><i class="fa fa-check"></i><b>7.2.2</b> Pytania</a></li>
+<li class="chapter" data-level="7.2.3" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi"><i class="fa fa-check"></i><b>7.2.3</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.2.4" data-path="virtualisation.html"><a href="virtualisation.html#architektura"><i class="fa fa-check"></i><b>7.2.4</b> Architektura</a></li>
+<li class="chapter" data-level="7.2.5" data-path="virtualisation.html"><a href="virtualisation.html#polecenia-1"><i class="fa fa-check"></i><b>7.2.5</b> Polecenia</a></li>
+<li class="chapter" data-level="7.2.6" data-path="virtualisation.html"><a href="virtualisation.html#praca-z-plikami-konfiguracyjnymi"><i class="fa fa-check"></i><b>7.2.6</b> Praca z plikami konfiguracyjnymi</a></li>
+<li class="chapter" data-level="7.2.7" data-path="virtualisation.html"><a href="virtualisation.html#health-check"><i class="fa fa-check"></i><b>7.2.7</b> Health check</a></li>
+<li class="chapter" data-level="7.2.8" data-path="virtualisation.html"><a href="virtualisation.html#namespace"><i class="fa fa-check"></i><b>7.2.8</b> Namespace</a></li>
+<li class="chapter" data-level="7.2.9" data-path="virtualisation.html"><a href="virtualisation.html#volumes"><i class="fa fa-check"></i><b>7.2.9</b> Volumes</a></li>
+<li class="chapter" data-level="7.2.10" data-path="virtualisation.html"><a href="virtualisation.html#helm"><i class="fa fa-check"></i><b>7.2.10</b> Helm</a></li>
+<li class="chapter" data-level="7.2.11" data-path="virtualisation.html"><a href="virtualisation.html#dashboard"><i class="fa fa-check"></i><b>7.2.11</b> Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---dockers"><i class="fa fa-check"></i><b>7.3</b> Virtual OS - Dockers</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi-1"><i class="fa fa-check"></i><b>7.3.1</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.3.2" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-2"><i class="fa fa-check"></i><b>7.3.2</b> Instalacja</a></li>
+<li class="chapter" data-level="7.3.3" data-path="virtualisation.html"><a href="virtualisation.html#docker"><i class="fa fa-check"></i><b>7.3.3</b> Docker</a></li>
+<li class="chapter" data-level="7.3.4" data-path="virtualisation.html"><a href="virtualisation.html#images"><i class="fa fa-check"></i><b>7.3.4</b> Images</a></li>
+<li class="chapter" data-level="7.3.5" data-path="virtualisation.html"><a href="virtualisation.html#section-2"><i class="fa fa-check"></i><b>7.3.5</b> </a></li>
+<li class="chapter" data-level="7.3.6" data-path="virtualisation.html"><a href="virtualisation.html#kontenery"><i class="fa fa-check"></i><b>7.3.6</b> Kontenery</a></li>
+<li class="chapter" data-level="7.3.7" data-path="virtualisation.html"><a href="virtualisation.html#tworzenie-obrazu"><i class="fa fa-check"></i><b>7.3.7</b> Tworzenie obrazu</a></li>
+<li class="chapter" data-level="7.3.8" data-path="virtualisation.html"><a href="virtualisation.html#networking-1"><i class="fa fa-check"></i><b>7.3.8</b> Networking</a></li>
+<li class="chapter" data-level="7.3.9" data-path="virtualisation.html"><a href="virtualisation.html#compose"><i class="fa fa-check"></i><b>7.3.9</b> Compose</a></li>
+<li class="chapter" data-level="7.3.10" data-path="virtualisation.html"><a href="virtualisation.html#uprodukcyjnianie"><i class="fa fa-check"></i><b>7.3.10</b> Uprodukcyjnianie</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---other-solutions"><i class="fa fa-check"></i><b>7.4</b> Virtual OS - Other Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="windows-2.html"><a href="windows-2.html"><i class="fa fa-check"></i><b>8</b> Windows</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="windows-2.html"><a href="windows-2.html#podstawy-skladni"><i class="fa fa-check"></i><b>8.1</b> podstawy skladni</a></li>
+<li class="chapter" data-level="8.2" data-path="windows-2.html"><a href="windows-2.html#zmienne-1"><i class="fa fa-check"></i><b>8.2</b> zmienne</a></li>
+<li class="chapter" data-level="8.3" data-path="windows-2.html"><a href="windows-2.html#control-flow"><i class="fa fa-check"></i><b>8.3</b> control flow</a></li>
+<li class="chapter" data-level="8.4" data-path="windows-2.html"><a href="windows-2.html#odpalanie-stron-w-danej-przegladarce"><i class="fa fa-check"></i><b>8.4</b> odpalanie stron w danej przegladarce</a></li>
+<li class="chapter" data-level="8.5" data-path="windows-2.html"><a href="windows-2.html#przydatne-komentu"><i class="fa fa-check"></i><b>8.5</b> przydatne komentu</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="work-organisation.html"><a href="work-organisation.html"><i class="fa fa-check"></i><b>9</b> Work organisation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="work-organisation.html"><a href="work-organisation.html#cicd-concept"><i class="fa fa-check"></i><b>9.1</b> CI/CD concept</a></li>
+<li class="chapter" data-level="9.2" data-path="work-organisation.html"><a href="work-organisation.html#jenkins"><i class="fa fa-check"></i><b>9.2</b> Jenkins</a></li>
+<li class="chapter" data-level="9.3" data-path="work-organisation.html"><a href="work-organisation.html#team-city"><i class="fa fa-check"></i><b>9.3</b> Team city</a></li>
+<li class="chapter" data-level="9.4" data-path="work-organisation.html"><a href="work-organisation.html#gib-lab"><i class="fa fa-check"></i><b>9.4</b> Gib Lab</a></li>
+<li class="chapter" data-level="9.5" data-path="work-organisation.html"><a href="work-organisation.html#git"><i class="fa fa-check"></i><b>9.5</b> Git</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="work-organisation.html"><a href="work-organisation.html#uwagi-rozne"><i class="fa fa-check"></i><b>9.5.1</b> uwagi rozne</a></li>
+<li class="chapter" data-level="9.5.2" data-path="work-organisation.html"><a href="work-organisation.html#logika-git-a"><i class="fa fa-check"></i><b>9.5.2</b> logika git-a</a></li>
+<li class="chapter" data-level="9.5.3" data-path="work-organisation.html"><a href="work-organisation.html#repozytoria-1"><i class="fa fa-check"></i><b>9.5.3</b> repozytoria</a></li>
+<li class="chapter" data-level="9.5.4" data-path="work-organisation.html"><a href="work-organisation.html#diff"><i class="fa fa-check"></i><b>9.5.4</b> diff</a></li>
+<li class="chapter" data-level="9.5.5" data-path="work-organisation.html"><a href="work-organisation.html#tracking"><i class="fa fa-check"></i><b>9.5.5</b> tracking</a></li>
+<li class="chapter" data-level="9.5.6" data-path="work-organisation.html"><a href="work-organisation.html#stage"><i class="fa fa-check"></i><b>9.5.6</b> stage</a></li>
+<li class="chapter" data-level="9.5.7" data-path="work-organisation.html"><a href="work-organisation.html#branches"><i class="fa fa-check"></i><b>9.5.7</b> branches</a></li>
+<li class="chapter" data-level="9.5.8" data-path="work-organisation.html"><a href="work-organisation.html#commits"><i class="fa fa-check"></i><b>9.5.8</b> commits</a></li>
+<li class="chapter" data-level="9.5.9" data-path="work-organisation.html"><a href="work-organisation.html#stash"><i class="fa fa-check"></i><b>9.5.9</b> stash</a></li>
+<li class="chapter" data-level="9.5.10" data-path="work-organisation.html"><a href="work-organisation.html#inne-komendy"><i class="fa fa-check"></i><b>9.5.10</b> Inne komendy</a></li>
+<li class="chapter" data-level="9.5.11" data-path="work-organisation.html"><a href="work-organisation.html#github"><i class="fa fa-check"></i><b>9.5.11</b> GitHub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>10</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="workflow.html"><a href="workflow.html#airflow"><i class="fa fa-check"></i><b>10.1</b> AirFlow</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="workflow.html"><a href="workflow.html#instalacja---ubuntu"><i class="fa fa-check"></i><b>10.1.1</b> Instalacja - Ubuntu</a></li>
+<li class="chapter" data-level="10.1.2" data-path="workflow.html"><a href="workflow.html#instalacja---windows"><i class="fa fa-check"></i><b>10.1.2</b> Instalacja - Windows</a></li>
+<li class="chapter" data-level="10.1.3" data-path="workflow.html"><a href="workflow.html#składnia"><i class="fa fa-check"></i><b>10.1.3</b> Składnia</a></li>
+<li class="chapter" data-level="10.1.4" data-path="workflow.html"><a href="workflow.html#komendy-cli-command-line-interface"><i class="fa fa-check"></i><b>10.1.4</b> Komendy CLI (<strong>Command Line Interface</strong>)</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workflow</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="linux" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Linux</h1>
+<div id="podstawowe-pojecia" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Podstawowe pojecia</h2>
+<p>PID-process identifier : PID is a unique number that identifies each running processes in an operating system).</p>
+</div>
+<div id="architektura-linuxa" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Architektura Linuxa</h2>
+<div id="system-plików" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> System plików</h3>
+<p><img src="Linux/struktura_katalogow.png" /></p>
+</div>
+</div>
+<div id="make-file" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Make file</h2>
+<p>Prosty przyklad: <a href="https://makefiletutorial.com/">makefiletutorial</a>, <a href="https://opensource.com/article/18/8/what-how-makefile">link</a></p>
+</div>
+<div id="repozytoria" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Repozytoria</h2>
+<p><a href="https://itsfoss.com/ppa-guide/">link</a></p>
+</div>
+<div id="dostepy-uzytkownicy" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Dostepy / Uzytkownicy</h2>
+<p><a href="https://www.youtube.com/watch?v=jwnvKOjmtEA&amp;t=255s">youtube</a></p>
+<div id="polecenia" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Polecenia</h3>
+<p>Jak nazywa sie uzytkownik na ktorym jestem zalogowany:</p>
+<p><code>whoami</code></p>
+<p>Lista uzytownikow w systemie</p>
+<p><code>cat /etc/passwd</code></p>
+<p>Zmiana uzytkownika ktory jest rootem</p>
+<p><code>sudo su  #  (su od switch user)</code></p>
+<p>Zmiana na uzytkownika ‘lucas’</p>
+<p><code>sudo su lucas</code></p>
+<p>Dodaj uzytkownika ‘barbara’</p>
+<p><code>adduser barbara # jest jeszcze polecenie 'useradd', ale niezalecane bo daje mniej mozliwosci</code></p>
+<p>lista grup do ktorych nalezy aktualnie zalogowany uzytkownik</p>
+<p><code>groups  # domyslnie chyba dla kazdego usera jest tworzona grupa o jego nazwie.</code></p>
+<p>lista wszystkich czlonkow danej grupy.</p>
+<p><code>getent group lucas</code></p>
+<p>lista wszystkich grup w systemie</p>
+<p><code>less /etc/group</code></p>
+<p>Uzytkownicy - informacje</p>
+<div id="sudo-su" class="section level4" number="3.5.1.1">
+<h4><span class="header-section-number">3.5.1.1</span> sudo su</h4>
+<p>To explain this you need to know what the programs do:</p>
+<ul>
+<li><p><code>su</code> - The command <code>su</code> is used to switch to another user (<strong>s</strong> witch <strong>u</strong> ser), but you can also switch to the root user by invoking the command with no parameter. <code>su</code> asks you for the password of the user to switch, after typing the password you switched to the user’s environment.</p></li>
+<li><p><code>sudo</code> - <code>sudo</code> is meant to run a single command with root privileges. But unlike <code>su</code> it prompts you for the password of the current user. This user must be in the sudoers file (or a group that is in the sudoers file). By default, Ubuntu “remembers” your password for 15 minutes, so that you don’t have to type your password every time.</p></li>
+<li><p><code>bash</code> - A text-interface to interact with the computer. It’s important to understand the difference between login, non-login, interactive and non-interactive shells:</p></li>
+</ul>
+<p>Types of shells:</p>
+<ul>
+<li><p><strong>login shell</strong>: A login shell logs you into the system as a specified user, necessary for this is a username and password. When you hit ctrl+alt+F1 to login into a virtual terminal you get after successful login a login shell.</p></li>
+<li><p><strong>non-login shell</strong>: A shell that is executed without logging in, necessary for this is a currently logged-in user. When you open a graphic terminal in gnome it is a non-login shell.</p></li>
+<li><p><strong>interactive shell</strong>: A shell (login or non-login) where you can interactively type or interrupt commands. For example a gnome terminal.</p></li>
+<li><p><strong>non-interactive shell</strong>: A (sub)shell that is probably run from an automated process. You will see neither input nor output.</p></li>
+</ul>
+<p>So the cases are:</p>
+<ul>
+<li><p><strong><code>sudo su</code></strong> Calls <code>sudo</code> with the command <code>su</code>. Bash is called as interactive non-login shell. So bash only executes <code>.bashrc</code>. You can see that after switching to root you are still in the same directory:</p>
+<pre><code>user@host:~$ sudo su
+root@host:/home/user#</code></pre></li>
+<li><p><strong><code>sudo su -</code></strong> This time it is a login shell, so <code>/etc/profile</code>, <code>.profile</code> and <code>.bashrc</code> are executed and you will find yourself in root’s home directory with root’s environment.</p></li>
+<li><p><strong><code>sudo -i</code></strong> It is nearly the same as <code>sudo su -</code> The -i (simulate initial login) option runs the shell specified by the password database entry of the target user as a login shell. This means that login-specific resource files such as <code>.profile</code>, <code>.bashrc</code> or <code>.login</code> will be read and executed by the shell.</p></li>
+<li><p><strong><code>sudo /bin/bash</code></strong> This means that you call <code>sudo</code> with the command <code>/bin/bash</code>. <code>/bin/bash</code> is started as non-login shell so all the dot-files are not executed, but bash itself reads <code>.bashrc</code> of the calling user. Your environment stays the same. Your home will not be root’s home. So you are root, but in the environment of the calling user.</p></li>
+<li><p><strong><code>sudo -s</code></strong> reads the <code>$SHELL</code> variable and executes the content. If <code>$SHELL</code> contains <code>/bin/bash</code> it invokes <code>sudo /bin/bash</code> (see above).</p></li>
+</ul>
+</div>
+</div>
+<div id="plik-shadow---zarzadzanie" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Plik shadow - zarzadzanie</h3>
+<p>Praca z tym plikiem jest potrzebne np. w sytuacji kiedy chcemy komuś zmienic haslo.</p>
+<p><a href="https://www.cyberciti.biz/faq/understanding-etcshadow-file/">link</a></p>
+</div>
+<div id="admin-vs-root-user-vs-super-user" class="section level3" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> <strong>Admin vs Root user vs Super User</strong></h3>
+<p>Root user = Super User</p>
+<p>Actually the Admin user does not have root privileges. The “root” user has full access to everything and anything in the OS X system including System files and user accounts. The Admin user does not have access to the System files or the files in other user accounts than his/her own. In order to have “root” user access you must first enable the “root user” password, which is done using the NetInfo Manager. In Unix the “root” user is also referred to as the “superuser.”</p>
+</div>
+</div>
+<div id="screens" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Screens</h2>
+<p>screen command in Linux provides the ability to launch and <em>use multiple shell sessions from a single ssh session</em>. When a process is started with ‘screen,’ the process can be detached from session &amp; then can reattach the session at a later time. When the session is detached, the process that was originally started from the screen is still running and managed by the screen itself. The process can then re-attach the session at a later time, and the terminals are still there, the way it was left. Poza powyższym zastosowaniem (zdalna obsługa wielu sesji), screen mozna tez uzyc do rozwiazania problemu zwiazanego z tym, ze jezeli rozlaczymy sie z serwerem linuxowym to nasze sesja się przerwie i nasze procesy przestana dzialac. Tworzac screena mozemy latwo rozwiazac ten problem (<a href="https://unix.stackexchange.com/questions/479/keep-processes-running-after-ssh-session-disconnects">link</a>)</p>
+<pre><code> # lista screenow
+Screen -ls   #(jezeli jakisc screen ma status ‘attach’ to znaczy ze gdzie jest otwarte okno w ktorym mozna na nim pracowac)
+
+# tworzenie nowego screenu
+Screen -S &lt;name&gt;
+
+# sprawdzanie czy jestem w sesji : https://www.ostechnix.com/how-to-check-if-you-are-in-screen-session-or-not-in-linux/
+echo $STY # sprawdzenie czy mój ekran jest w jakiejś sesji (jeżeli nie, to nie zwróci nic)
+
+# wychodzenie z screenu bez jego zamykania (deatching) : 
+‘Ctrl+a’ i po chwili naciska ‘d’
+
+# wychodzenie z screenu z zamykaniem (killing) : Ctrl+a’ i po chwili naciska ‘k’. Potem jeszcze zatwierdzam przez ‘y’
+
+# zamykanie screen (quit):
+screen -S PID -X quit
+
+# zamykanie screen (kill):
+screen -X -S SCREENID kill
+
+
+#wchodzenie do sesji
+screen -r &lt;numer&gt;
+
+# usuwanie martwych screenow
+screen -wipe
+
+# usuwanie konkretnego matwego screena
+screen -wipe PID   </code></pre>
+</div>
+<div id="red-hat" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Red Hat</h2>
+</div>
+<div id="ubuntu" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Ubuntu</h2>
+<div id="instalacja" class="section level3" number="3.8.1">
+<h3><span class="header-section-number">3.8.1</span> Instalacja</h3>
+<div id="virtual-box-na-windows-10" class="section level4" number="3.8.1.1">
+<h4><span class="header-section-number">3.8.1.1</span> Virtual Box na Windows 10</h4>
+<p>filmik: instalacja plus rozwiazanie problemu malego okna (przetestowane na Ubuntu 21.04): <a href="https://www.youtube.com/watch?v=x5MhydijWmc">link</a></p>
+</div>
+</div>
+<div id="nautilus" class="section level3" number="3.8.2">
+<h3><span class="header-section-number">3.8.2</span> Nautilus</h3>
+<div id="creating-links" class="section level4" number="3.8.2.1">
+<h4><span class="header-section-number">3.8.2.1</span> Creating links</h4>
+<p>Sprawdzam czy Nautilus jest zainstalowany (wystepuje pod nazwa “Files”):</p>
+<p><img src="Linux/nautilus.PNG" /></p>
+<p>Uruchamiam Nautilusa i przechodze do jego <em>Preferences</em>.</p>
+<p><img src="Linux/nautilus_preferences_location.PNG" /></p>
+<p>W <em>Preferences</em> zaznaczam opcje umozlwiajaca dostep do tworzenia linkow w menu kontekstowym. :</p>
+<p><img src="Linux/nautilus_preferences_links_action.PNG" /></p>
+<p>Teraz w Nautilusie w menu konteksowym pliku/folderu mamy mozliwosc tworzenia linkow:</p>
+<p><img src="Linux/nautilus_create_link.PNG" /></p>
+<p>Taki link po utworzeniu np. metoda “Drag and drop” moge sobie przerzucic na pulpit.</p>
+</div>
+</div>
+</div>
+<div id="terminal-shell-console" class="section level2" number="3.9">
+<h2><span class="header-section-number">3.9</span> Terminal-Shell-console</h2>
+<p>Domyslnie jako shell funkcjonuje <em>bash</em>. Ale są alternatywny. Najbardziej popularną jest <em>zsh</em> który ma liczne pluginy pozwalajace go bogato skonfigurowac.</p>
+<div id="zsh-instalacja-i-konfiguracja" class="section level3" number="3.9.1">
+<h3><span class="header-section-number">3.9.1</span> ZSH Instalacja i konfiguracja</h3>
+<p>Instalacja : <a href="https://www.youtube.com/watch?v=tUkIHhdxnyM">youtube</a></p>
+<p>krok 1:</p>
+<p>zaktualizowanie listy dostepnych pakietow</p>
+<p><code>sudo apt-get update</code></p>
+<p>krok 2:</p>
+<p>instalacja:</p>
+<p><code>sudo apt-get install zsh</code></p>
+<p>krok 3:</p>
+<p>Konfiguracja. Tutaj tez zostanie utworzony plik konfiguracyjny</p>
+<p>Wpisujemy:</p>
+<p><code>zsh</code></p>
+<p>i dostajemy:</p>
+<p><img src="Linux/zsh_konfiguracja_1.PNG" /></p>
+<p>Uwaga o lokalizacji pliku konfiguracyjnego:</p>
+<p>Przy domyslnym ustawieniu sciezki utworzonego pliku konfiguracyjnego <code>~/.zshrs</code> plik utworzy się w katalogu <code>home/&lt;nazwa_uzytkownika&gt;/</code></p>
+<p>Poniewaz nazwa pliku zaczyna sie od kropki, bedzie to plik ukryty.</p>
+<p>krok 4:</p>
+<p>Ustawienie <em>zsh</em> jako domyslnej powloki.</p>
+<p>Po zaintalowaniu <em>zsh</em> nie staje sie on automatycznie domyslna powloka. Mozemy to sprawdzic wpisujac:</p>
+<p><code>echo $SHELL</code></p>
+<p>zwroci nam ze domyslnie dalej uzywamy <em>bash</em>:</p>
+<p>/bin/bash Zeby dokonac zmiany:</p>
+<p><code>chsh -s /usr/bin/zsh</code> # . Zakladam ze <em>zsh</em> jest w sciezce <code>/usr/bin/</code>. Nazwa komendy <em>chsh</em> jest od ‘change shell’</p>
+<p>Nastepnie musze sie wylogowa i zalogowa do ubuntu (nie wystarczy nowa sesja w terminalu).</p>
+<p>krok 5:</p>
+<p>Opcjonalne instalacja <em>oh-my-zsh</em></p>
+<p>Musimy miec zainstalowanego <em>Git</em>. Mozemy sprawdzic czy go mamy np. poprzez:</p>
+<p><code>apt-cache policy git</code></p>
+<p>Jezeli go nie mamy to go instalujemy:</p>
+<p><code>sudo apt install git-all</code></p>
+<p>Dalej instalujemy <em>oh-my-zsh</em>:</p>
+<p><code>sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"</code> Po wykonaniu powyzszej komendy bedzie od razu aktywny.</p>
+<p>krok 6:</p>
+<p>Uzywanie plugins: <a href="https://linuxhint.com/use-zsh-plugins/">link</a></p>
+<p>Lista dostepnych pluginow jest tutaj: <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">link</a></p>
+<p>Kazdy plug in ma swoja instrukcje instalacji. Jezeli mamy zainstalowany <em>oh-my-sh</em> to mozemy korzystac z intrukcji istalacji dedykowanej wlasnie pod niego.</p>
+<p>Naciekawsze pluginy:</p>
+<p><a href="https://github.com/zsh-users/zsh-autosuggestions"><strong>zsh-autosuggestions</strong></a> <strong>-</strong> podpowiedz skladni</p>
+<p><a href="https://github.com/zsh-users/zsh-syntax-highlighting"><strong>zsh-syntax-highlighting</strong></a> <strong>-</strong> podkreslanie skladni</p>
+</div>
+<div id="skladnia" class="section level3" number="3.9.2">
+<h3><span class="header-section-number">3.9.2</span> Skladnia</h3>
+<p>Super sciaga (rowniez do pisania skryptow do plikow sh): <a href="https://devhints.io/bash">devhints</a>.</p>
+<div id="ogólne-zasady" class="section level4" number="3.9.2.1">
+<h4><span class="header-section-number">3.9.2.1</span> Ogólne zasady</h4>
+<div id="section" class="section level5" number="3.9.2.1.1">
+<h5><span class="header-section-number">3.9.2.1.1</span> <code>#!</code></h5>
+</div>
+<div id="when-the-first-characters-in-a-script-are-that-is-called-the-shebang.-if-your-file-starts-with-pathtosomething-the-standard-is-to-run-something-and-pass-the-rest-of-the-file-to-that-program-as-an-input." class="section level5" number="3.9.2.1.2">
+<h5><span class="header-section-number">3.9.2.1.2</span> When the first characters in a script are <code>#!</code>, that is called the <a href="http://en.wikipedia.org/wiki/Shebang_%28Unix%29">shebang</a>. If your file starts with <code>#!/path/to/something</code> the standard is to run <code>something</code> and pass the rest of the file to that program as an input.</h5>
+</div>
+<div id="section-1" class="section level5" number="3.9.2.1.3">
+<h5><span class="header-section-number">3.9.2.1.3</span> </h5>
+<p><strong>Uruchamienie skrypty sh</strong></p>
+<p><code>bash nazwa_skryptu</code></p>
+<p>lub</p>
+<p><code>sh nazwa skryptu</code></p>
+</div>
+<div id="vertical-bar" class="section level5" number="3.9.2.1.4">
+<h5><span class="header-section-number">3.9.2.1.4</span> Vertical bar |</h5>
+<p>The vertical bar character is used to represent a <a href="http://www.linfo.org/pipe.html"><em>pipe</em></a> in <a href="http://www.linfo.org/command.html">commands</a> in <a href="http://www.linfo.org/linuxdef.html">Linux</a> and other <a href="http://www.linfo.org/unix-like.html">Unix-like</a> <a href="http://www.linfo.org/operating_system.html">operating systems</a>. A pipe is a form of <a href="http://www.linfo.org/redirection.html"><em>redirection</em></a> that is used to send the output of one <a href="http://www.linfo.org/program.html">program</a> to another program for further processing.</p>
+</div>
+<div id="colon-dwukropek" class="section level5" number="3.9.2.1.5">
+<h5><span class="header-section-number">3.9.2.1.5</span> colon (dwukropek)</h5>
+<p><a href="https://stackoverflow.com/questions/3224878/what-is-the-purpose-of-the-colon-gnu-bash-builtin">link</a></p>
+<p><a href="https://www.aplawrence.com/Basics/leading-colon.html">link</a></p>
+</div>
+<div id="brace-expansion" class="section level5" number="3.9.2.1.6">
+<h5><span class="header-section-number">3.9.2.1.6</span> brace expansion</h5>
+<p><a href="https://linuxhint.com/bash_brace_expansion/">link</a></p>
+<p>Używanie &amp;&amp; i II</p>
+<p><a href="https://stackoverflow.com/questions/4510640/what-is-the-purpose-of-in-a-shell-command">link</a></p>
+</div>
+<div id="list-vs-array" class="section level5" number="3.9.2.1.7">
+<h5><span class="header-section-number">3.9.2.1.7</span> list vs array</h5>
+<p><a href="https://www.usessionbuddy.com/post/What-Is-List-And-Arrays-In-Bash/">link</a></p>
+</div>
+<div id="nawiasy" class="section level5" number="3.9.2.1.8">
+<h5><span class="header-section-number">3.9.2.1.8</span> Nawiasy</h5>
+<p><a href="https://unix.stackexchange.com/questions/306111/what-is-the-difference-between-the-bash-operators-vs-vs-vs">link</a></p>
+</div>
+</div>
+<div id="przykłady" class="section level4" number="3.9.2.2">
+<h4><span class="header-section-number">3.9.2.2</span> Przykłady</h4>
+<p>Co to robi: ${2:-${1}}</p>
+<p>It means “Use the second argument if the first is undefined <em>or</em> empty, else use the first.” The form “${2-${1}}” (no ‘:’) means “Use the second if the first is not defined (but if the first is defined as empty, use it).”</p>
+</div>
+<div id="skroty-oznaczenia" class="section level4" number="3.9.2.3">
+<h4><span class="header-section-number">3.9.2.3</span> Skroty oznaczenia</h4>
+<p>^<em>X</em> - Ctrl + X</p>
+</div>
+<div id="zmienne" class="section level4" number="3.9.2.4">
+<h4><span class="header-section-number">3.9.2.4</span> Zmienne</h4>
+<p>Mamy 2 rodzaje zmiennych:</p>
+<ul>
+<li><p><strong>Environment variables (zmienne środowiskowe)</strong> are variables that are available system-wide and are inherited by all spawned child processes and shells.</p></li>
+<li><p><strong>Shell variables</strong> are variables that apply only to the current shell instance. Each shell such as <code>zsh</code> and <code>bash</code>, has its own set of internal shell variables.<br />
+</p></li>
+</ul>
+<p>Uzywanie zmiennych srodowiskowych : <a href="https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/">link</a></p>
+<p><strong>Typy zmiennych (int, string itp):</strong></p>
+<p><a href="https://tldp.org/LDP/abs/html/untyped.html">link</a> - generalnie nie ma typów w bash</p>
+<p>ale można je wymuszać: <a href="https://tldp.org/LDP/abs/html/declareref.html">link</a></p>
+<p><strong>Używanie cudzysłowia przy zmiennych</strong></p>
+<p><a href="https://tldp.org/LDP/abs/html/quotingvar.html">link</a></p>
+<pre><code>List=&quot;one two three&quot;
+
+for a in $List     # Splits the variable in parts at whitespace.
+do
+  echo &quot;$a&quot;
+done
+# one
+# two
+# three
+
+echo &quot;---&quot;
+
+for a in &quot;$List&quot;   # Preserves whitespace in a single variable.
+do #     ^     ^
+  echo &quot;$a&quot;
+done
+# one two three</code></pre>
+</div>
+<div id="nawiasy-1" class="section level4" number="3.9.2.5">
+<h4><span class="header-section-number">3.9.2.5</span> Nawiasy</h4>
+<p><a href="https://ss64.com/bash/syntax-brackets.html">link</a></p>
+</div>
+<div id="special-character" class="section level4" number="3.9.2.6">
+<h4><span class="header-section-number">3.9.2.6</span> Special character</h4>
+<p><a href="https://tldp.org/LDP/abs/html/special-chars.html">link</a></p>
+</div>
+<div id="strumienie" class="section level4" number="3.9.2.7">
+<h4><span class="header-section-number">3.9.2.7</span> Strumienie</h4>
+<p><a href="https://linuxhint.com/bash_stdin_stderr_stdout/">link</a></p>
+</div>
+</div>
+<div id="komendy-bash" class="section level3" number="3.9.3">
+<h3><span class="header-section-number">3.9.3</span> Komendy bash</h3>
+<p>Lista 37 najwazniejszych komand z opiesem: <a href="https://www.howtogeek.com/412055/37-important-linux-commands-you-should-know/">link</a> (brakuje na liscie cp)</p>
+<p>Lista pelna komend: <a href="https://ss64.com/bash/">link</a></p>
+<div id="cat" class="section level4" number="3.9.3.1">
+<h4><span class="header-section-number">3.9.3.1</span> cat</h4>
+</div>
+<div id="chmod" class="section level4" number="3.9.3.2">
+<h4><span class="header-section-number">3.9.3.2</span> chmod</h4>
+<p><a href="https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/">link</a></p>
+<p>chmod 777: <a href="https://linuxize.com/post/what-does-chmod-777-mean/">link</a></p>
+</div>
+<div id="rm" class="section level4" number="3.9.3.3">
+<h4><span class="header-section-number">3.9.3.3</span> rm</h4>
+<p>rm vs rmdir:</p>
+<p>You can also use the rm command to delete directories by using the -r option alongside the command. So what is the basic difference between both the commands? Well, the answer is simple. The rm command can be used to delete non-empty directories as well but rmdir command is used to delete only empty directories. There is absolutely no way to delete non-empty directories using the rmdir command.</p>
+</div>
+<div id="tar" class="section level4" number="3.9.3.4">
+<h4><span class="header-section-number">3.9.3.4</span> tar</h4>
+<p><a href="https://www.tecmint.com/18-tar-command-examples-in-linux/">link</a></p>
+</div>
+<div id="let" class="section level4" number="3.9.3.5">
+<h4><span class="header-section-number">3.9.3.5</span> let</h4>
+<p><a href="https://www.computerhope.com/unix/bash/let.htm">link</a></p>
+<p>Using <strong>let</strong> is similar to enclosing an arithmetic expression in double parentheses, for instance:</p>
+<pre><code>(( expr ))</code></pre>
+</div>
+</div>
+</div>
+<div id="networking" class="section level2" number="3.10">
+<h2><span class="header-section-number">3.10</span> Networking</h2>
+<div id="polecenie-netstat" class="section level3" number="3.10.1">
+<h3><span class="header-section-number">3.10.1</span> polecenie netstat</h3>
+<p><a href="https://www.tecmint.com/20-netstat-commands-for-linux-network-management/" class="uri">https://www.tecmint.com/20-netstat-commands-for-linux-network-management/</a></p>
+<p>Sprawdzenie socketow</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="linux.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># przyklad dla portu majacego w nazwie &#39;:80&#39;. dzieki &#39;p&#39; bedzie wyswietlony PID procesu. </span></span>
+<span id="cb6-2"><a href="linux.html#cb6-2" aria-hidden="true" tabindex="-1"></a>sudo netstat <span class="sc">-</span>nlp <span class="sc">|</span>grep <span class="sc">:</span><span class="dv">80</span></span></code></pre></div>
+</div>
+</div>
+<div id="scheduling" class="section level2" number="3.11">
+<h2><span class="header-section-number">3.11</span> Scheduling</h2>
+<p>W linuxie sluzy do tego cron.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="linux.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># czy sa jakies zaplanowane zadania dla aktualnego uzytkownika:</span></span>
+<span id="cb7-2"><a href="linux.html#cb7-2" aria-hidden="true" tabindex="-1"></a>crontab <span class="sc">-</span>l</span>
+<span id="cb7-3"><a href="linux.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="linux.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="linux.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># edycja pliku domyslnie ustawionym w linuxie edytorem</span></span>
+<span id="cb7-6"><a href="linux.html#cb7-6" aria-hidden="true" tabindex="-1"></a>crontab <span class="sc">-</span>e</span></code></pre></div>
+<p><img src="Linux/cron.PNG" /></p>
+<p>Na powyzszym obrazie poszczegolne gwiazdki (rozdzielone spacje) odpowiadaja poszczegolnym jednostka czasu, co jest zmapowane liniemi.</p>
+<p>Przyklady skladni:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="linux.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykad sladni dla jednoska= minuta</span></span>
+<span id="cb8-2"><a href="linux.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="linux.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># kazda minuta</span></span>
+<span id="cb8-4"><a href="linux.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> <span class="er">*</span> <span class="er">*</span> <span class="er">*</span> <span class="er">*</span> echo <span class="st">&#39;Hello&#39;</span> <span class="sc">&gt;</span><span class="er">&gt;/</span>temp<span class="sc">/</span>test<span class="sc">/</span>txt</span>
+<span id="cb8-5"><a href="linux.html#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="linux.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#minuty od 0 do 5</span></span>
+<span id="cb8-7"><a href="linux.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="dv">0-5</span> <span class="sc">*</span> <span class="er">*</span> <span class="er">*</span> <span class="er">*</span> echo <span class="st">&#39;Hello&#39;</span> <span class="sc">&gt;</span><span class="er">&gt;/</span>temp<span class="sc">/</span>test<span class="sc">/</span>txt</span>
+<span id="cb8-8"><a href="linux.html#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="linux.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># minuty 1,10,15,20 </span></span>
+<span id="cb8-10"><a href="linux.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span> <span class="sc">*</span> <span class="er">*</span> <span class="er">*</span> <span class="er">*</span> echo <span class="st">&#39;Hello&#39;</span> <span class="sc">&gt;</span><span class="er">&gt;/</span>temp<span class="sc">/</span>test<span class="sc">/</span>txt</span>
+<span id="cb8-11"><a href="linux.html#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="linux.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># co dziesiata minuta (tutaj minut)</span></span>
+<span id="cb8-13"><a href="linux.html#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span><span class="er">/</span><span class="dv">10</span> <span class="sc">*</span> <span class="er">*</span> <span class="er">*</span> <span class="er">*</span> echo <span class="st">&#39;Hello&#39;</span> <span class="sc">&gt;</span><span class="er">&gt;/</span>temp<span class="sc">/</span>test<span class="sc">/</span>txt</span></code></pre></div>
+<p>W samym pliku warto dodawac komentarze (po znaku ‘#’)</p>
+<p>Rozne przyklady:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="linux.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EMpty temp folder every FRoday at 5pm</span></span>
+<span id="cb9-2"><a href="linux.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> <span class="dv">5</span> <span class="sc">*</span> <span class="er">*</span> <span class="dv">5</span> rm <span class="sc">-</span>rf <span class="sc">/</span>tmp<span class="sc">/</span><span class="er">*</span></span>
+<span id="cb9-3"><a href="linux.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-4"><a href="linux.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># backup images to Google DRove every night at midnight</span></span></code></pre></div>
+</div>
+<div id="rozne" class="section level2" number="3.12">
+<h2><span class="header-section-number">3.12</span> Rozne</h2>
+<p>Windows Device Manager equivalent</p>
+<p><code>sudo apt install hardinfo</code></p>
+<p><code>hardinfo</code></p>
+<div id="stdin-stdout-and-stderr" class="section level3" number="3.12.1">
+<h3><span class="header-section-number">3.12.1</span> <strong>stdin, stdout and stderr</strong></h3>
+<p><a href="https://linuxhint.com/bash_stdin_stderr_stdout/" class="uri">https://linuxhint.com/bash_stdin_stderr_stdout/</a></p>
+</div>
+<div id="uzywanie-devnull" class="section level3" number="3.12.2">
+<h3><span class="header-section-number">3.12.2</span> Uzywanie dev/null</h3>
+<p><a href="https://linuxhint.com/what_is_dev_null/" class="uri">https://linuxhint.com/what_is_dev_null/</a></p>
+<p><a href="https://www.journaldev.com/35489/dev-null-in-linux" class="uri">https://www.journaldev.com/35489/dev-null-in-linux</a></p>
+<p>pushd w polaczeniu z dev/null: <a href="https://serverfault.com/questions/108154/can-i-call-pushd-popd-and-prevent-it-printing-the-stack">link</a></p>
+</div>
+<div id="exit-status" class="section level3" number="3.12.3">
+<h3><span class="header-section-number">3.12.3</span> Exit status</h3>
+<p><a href="https://www.cyberciti.biz/faq/bash-get-exit-code-of-command/" class="uri">https://www.cyberciti.biz/faq/bash-get-exit-code-of-command/</a></p>
+</div>
+<div id="sh-vs-source-vs-bin" class="section level3" number="3.12.4">
+<h3><span class="header-section-number">3.12.4</span> sh vs source vs bin</h3>
+<p><a href="https://stackoverflow.com/questions/13786499/what-is-the-difference-between-using-sh-and-source" class="uri">https://stackoverflow.com/questions/13786499/what-is-the-difference-between-using-sh-and-source</a></p>
+</div>
+<div id="domyslny-edytor" class="section level3" number="3.12.5">
+<h3><span class="header-section-number">3.12.5</span> Domyslny edytor</h3>
+<p>Przyklad zmiany na edytor <em>nano</em>.</p>
+<p><code>export EDITOR=/usr/bin/nano</code></p>
+</div>
+<div id="split-okna-terminala" class="section level3" number="3.12.6">
+<h3><span class="header-section-number">3.12.6</span> Split okna terminala</h3>
+<p>W lewym gornym rogu jest krzyzyk ktory otworzy nowe okno poprzez split ekranu.</p>
+<p><img src="Linux/ubuntu_split_terminala.PNG" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="files-types.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="network.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": true,
+"instapper": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Linux.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-Manual_R.pdf", "bookdown-Manual_R.epub"],
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+</body>
+
+</html>

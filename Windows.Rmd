@@ -5,13 +5,17 @@
 ## podstawy skladni
 :: komentarz
 
-
+  
+## wywolanie funkcji z parametrami
+dir /ad
+  
+  
 ## zmienne
 
 :: nie dawac spacji na okolo znaku '='
 set zmienna=100
 
-:: do zmiennaj odwoluje sie w znalach procentu
+:: do zmiennej odwoluje sie w znakach procentu
 @echo %zmienna%
 
 
@@ -27,12 +31,12 @@ start chrome wp.pl
 
 
 
-## przydatne komentu
+## przydatne komendy
 
 :: lista zmiennych srodowiskowych
 set 
 
-:: lista zmiennych srodowiskowych z 'PYTH' (uwaga, jest casesensitive)
+:: lista zmiennych srodowiskowych z 'PYTH' (uwaga, jest case_sensitive)
 set | findstr PTYH
 
 systeminfo

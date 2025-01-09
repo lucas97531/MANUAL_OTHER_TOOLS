@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Security | Workflow</title>
+  <meta name="description" content="Chapter 5 Security | Workflow" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Security | Workflow" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Security | Workflow" />
+  
+  
+  
+
+<meta name="author" content="Łukasz Muszyński" />
+
+
+<meta name="date" content="2023-08-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="network.html"/>
+<link rel="next" href="sonar-qube.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdution to Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> INTRO</a></li>
+<li class="chapter" data-level="2" data-path="files-types.html"><a href="files-types.html"><i class="fa fa-check"></i><b>2</b> Files types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="files-types.html"><a href="files-types.html#yaml"><i class="fa fa-check"></i><b>2.1</b> YAML</a></li>
+<li class="chapter" data-level="2.2" data-path="files-types.html"><a href="files-types.html#json"><i class="fa fa-check"></i><b>2.2</b> JSON</a></li>
+<li class="chapter" data-level="2.3" data-path="files-types.html"><a href="files-types.html#xml"><i class="fa fa-check"></i><b>2.3</b> XML</a></li>
+<li class="chapter" data-level="2.4" data-path="files-types.html"><a href="files-types.html#ini"><i class="fa fa-check"></i><b>2.4</b> INI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>3</b> Linux</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="linux.html"><a href="linux.html#podstawowe-pojecia"><i class="fa fa-check"></i><b>3.1</b> Podstawowe pojecia</a></li>
+<li class="chapter" data-level="3.2" data-path="linux.html"><a href="linux.html#architektura-linuxa"><i class="fa fa-check"></i><b>3.2</b> Architektura Linuxa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="linux.html"><a href="linux.html#system-plików"><i class="fa fa-check"></i><b>3.2.1</b> System plików</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="linux.html"><a href="linux.html#make-file"><i class="fa fa-check"></i><b>3.3</b> Make file</a></li>
+<li class="chapter" data-level="3.4" data-path="linux.html"><a href="linux.html#repozytoria"><i class="fa fa-check"></i><b>3.4</b> Repozytoria</a></li>
+<li class="chapter" data-level="3.5" data-path="linux.html"><a href="linux.html#dostepy-uzytkownicy"><i class="fa fa-check"></i><b>3.5</b> Dostepy / Uzytkownicy</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="linux.html"><a href="linux.html#polecenia"><i class="fa fa-check"></i><b>3.5.1</b> Polecenia</a></li>
+<li class="chapter" data-level="3.5.2" data-path="linux.html"><a href="linux.html#plik-shadow---zarzadzanie"><i class="fa fa-check"></i><b>3.5.2</b> Plik shadow - zarzadzanie</a></li>
+<li class="chapter" data-level="3.5.3" data-path="linux.html"><a href="linux.html#admin-vs-root-user-vs-super-user"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Admin vs Root user vs Super User</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="linux.html"><a href="linux.html#screens"><i class="fa fa-check"></i><b>3.6</b> Screens</a></li>
+<li class="chapter" data-level="3.7" data-path="linux.html"><a href="linux.html#red-hat"><i class="fa fa-check"></i><b>3.7</b> Red Hat</a></li>
+<li class="chapter" data-level="3.8" data-path="linux.html"><a href="linux.html#ubuntu"><i class="fa fa-check"></i><b>3.8</b> Ubuntu</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="linux.html"><a href="linux.html#instalacja"><i class="fa fa-check"></i><b>3.8.1</b> Instalacja</a></li>
+<li class="chapter" data-level="3.8.2" data-path="linux.html"><a href="linux.html#nautilus"><i class="fa fa-check"></i><b>3.8.2</b> Nautilus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="linux.html"><a href="linux.html#terminal-shell-console"><i class="fa fa-check"></i><b>3.9</b> Terminal-Shell-console</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="linux.html"><a href="linux.html#zsh-instalacja-i-konfiguracja"><i class="fa fa-check"></i><b>3.9.1</b> ZSH Instalacja i konfiguracja</a></li>
+<li class="chapter" data-level="3.9.2" data-path="linux.html"><a href="linux.html#skladnia"><i class="fa fa-check"></i><b>3.9.2</b> Skladnia</a></li>
+<li class="chapter" data-level="3.9.3" data-path="linux.html"><a href="linux.html#komendy-bash"><i class="fa fa-check"></i><b>3.9.3</b> Komendy bash</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="linux.html"><a href="linux.html#networking"><i class="fa fa-check"></i><b>3.10</b> Networking</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="linux.html"><a href="linux.html#polecenie-netstat"><i class="fa fa-check"></i><b>3.10.1</b> polecenie netstat</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="linux.html"><a href="linux.html#scheduling"><i class="fa fa-check"></i><b>3.11</b> Scheduling</a></li>
+<li class="chapter" data-level="3.12" data-path="linux.html"><a href="linux.html#rozne"><i class="fa fa-check"></i><b>3.12</b> Rozne</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="linux.html"><a href="linux.html#stdin-stdout-and-stderr"><i class="fa fa-check"></i><b>3.12.1</b> <strong>stdin, stdout and stderr</strong></a></li>
+<li class="chapter" data-level="3.12.2" data-path="linux.html"><a href="linux.html#uzywanie-devnull"><i class="fa fa-check"></i><b>3.12.2</b> Uzywanie dev/null</a></li>
+<li class="chapter" data-level="3.12.3" data-path="linux.html"><a href="linux.html#exit-status"><i class="fa fa-check"></i><b>3.12.3</b> Exit status</a></li>
+<li class="chapter" data-level="3.12.4" data-path="linux.html"><a href="linux.html#sh-vs-source-vs-bin"><i class="fa fa-check"></i><b>3.12.4</b> sh vs source vs bin</a></li>
+<li class="chapter" data-level="3.12.5" data-path="linux.html"><a href="linux.html#domyslny-edytor"><i class="fa fa-check"></i><b>3.12.5</b> Domyslny edytor</a></li>
+<li class="chapter" data-level="3.12.6" data-path="linux.html"><a href="linux.html#split-okna-terminala"><i class="fa fa-check"></i><b>3.12.6</b> Split okna terminala</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="network.html"><a href="network.html"><i class="fa fa-check"></i><b>4</b> Network</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="network.html"><a href="network.html#proxyvpntor-itp"><i class="fa fa-check"></i><b>4.1</b> Proxy/VPN/Tor itp</a></li>
+<li class="chapter" data-level="4.2" data-path="network.html"><a href="network.html#protokół-http"><i class="fa fa-check"></i><b>4.2</b> Protokół HTTP</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="network.html"><a href="network.html#linki"><i class="fa fa-check"></i><b>4.2.1</b> Linki:</a></li>
+<li class="chapter" data-level="4.2.2" data-path="network.html"><a href="network.html#różne-uwagi"><i class="fa fa-check"></i><b>4.2.2</b> Różne uwagi</a></li>
+<li class="chapter" data-level="4.2.3" data-path="network.html"><a href="network.html#adres-url"><i class="fa fa-check"></i><b>4.2.3</b> Adres URL</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="security.html"><a href="security.html"><i class="fa fa-check"></i><b>5</b> Security</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="security.html"><a href="security.html#klucze-szyfrujące"><i class="fa fa-check"></i><b>5.1</b> Klucze szyfrujące</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sonar-qube.html"><a href="sonar-qube.html"><i class="fa fa-check"></i><b>6</b> SONAR QUBE</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sonar-qube.html"><a href="sonar-qube.html#installing"><i class="fa fa-check"></i><b>6.1</b> Installing</a></li>
+<li class="chapter" data-level="6.2" data-path="sonar-qube.html"><a href="sonar-qube.html#running"><i class="fa fa-check"></i><b>6.2</b> Running</a></li>
+<li class="chapter" data-level="6.3" data-path="sonar-qube.html"><a href="sonar-qube.html#project"><i class="fa fa-check"></i><b>6.3</b> Project</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="virtualisation.html"><a href="virtualisation.html"><i class="fa fa-check"></i><b>7</b> Virtualisation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="virtualisation.html"><a href="virtualisation.html#virtual-machines"><i class="fa fa-check"></i><b>7.1</b> Virtual Machines</a></li>
+<li class="chapter" data-level="7.2" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---kubernetes"><i class="fa fa-check"></i><b>7.2</b> Virtual OS - Kubernetes</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-1"><i class="fa fa-check"></i><b>7.2.1</b> Instalacja</a></li>
+<li class="chapter" data-level="7.2.2" data-path="virtualisation.html"><a href="virtualisation.html#pytania"><i class="fa fa-check"></i><b>7.2.2</b> Pytania</a></li>
+<li class="chapter" data-level="7.2.3" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi"><i class="fa fa-check"></i><b>7.2.3</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.2.4" data-path="virtualisation.html"><a href="virtualisation.html#architektura"><i class="fa fa-check"></i><b>7.2.4</b> Architektura</a></li>
+<li class="chapter" data-level="7.2.5" data-path="virtualisation.html"><a href="virtualisation.html#polecenia-1"><i class="fa fa-check"></i><b>7.2.5</b> Polecenia</a></li>
+<li class="chapter" data-level="7.2.6" data-path="virtualisation.html"><a href="virtualisation.html#praca-z-plikami-konfiguracyjnymi"><i class="fa fa-check"></i><b>7.2.6</b> Praca z plikami konfiguracyjnymi</a></li>
+<li class="chapter" data-level="7.2.7" data-path="virtualisation.html"><a href="virtualisation.html#health-check"><i class="fa fa-check"></i><b>7.2.7</b> Health check</a></li>
+<li class="chapter" data-level="7.2.8" data-path="virtualisation.html"><a href="virtualisation.html#namespace"><i class="fa fa-check"></i><b>7.2.8</b> Namespace</a></li>
+<li class="chapter" data-level="7.2.9" data-path="virtualisation.html"><a href="virtualisation.html#volumes"><i class="fa fa-check"></i><b>7.2.9</b> Volumes</a></li>
+<li class="chapter" data-level="7.2.10" data-path="virtualisation.html"><a href="virtualisation.html#helm"><i class="fa fa-check"></i><b>7.2.10</b> Helm</a></li>
+<li class="chapter" data-level="7.2.11" data-path="virtualisation.html"><a href="virtualisation.html#dashboard"><i class="fa fa-check"></i><b>7.2.11</b> Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---dockers"><i class="fa fa-check"></i><b>7.3</b> Virtual OS - Dockers</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="virtualisation.html"><a href="virtualisation.html#rozne-uwagi-1"><i class="fa fa-check"></i><b>7.3.1</b> Rozne uwagi</a></li>
+<li class="chapter" data-level="7.3.2" data-path="virtualisation.html"><a href="virtualisation.html#instalacja-2"><i class="fa fa-check"></i><b>7.3.2</b> Instalacja</a></li>
+<li class="chapter" data-level="7.3.3" data-path="virtualisation.html"><a href="virtualisation.html#docker"><i class="fa fa-check"></i><b>7.3.3</b> Docker</a></li>
+<li class="chapter" data-level="7.3.4" data-path="virtualisation.html"><a href="virtualisation.html#images"><i class="fa fa-check"></i><b>7.3.4</b> Images</a></li>
+<li class="chapter" data-level="7.3.5" data-path="virtualisation.html"><a href="virtualisation.html#section-2"><i class="fa fa-check"></i><b>7.3.5</b> </a></li>
+<li class="chapter" data-level="7.3.6" data-path="virtualisation.html"><a href="virtualisation.html#kontenery"><i class="fa fa-check"></i><b>7.3.6</b> Kontenery</a></li>
+<li class="chapter" data-level="7.3.7" data-path="virtualisation.html"><a href="virtualisation.html#tworzenie-obrazu"><i class="fa fa-check"></i><b>7.3.7</b> Tworzenie obrazu</a></li>
+<li class="chapter" data-level="7.3.8" data-path="virtualisation.html"><a href="virtualisation.html#networking-1"><i class="fa fa-check"></i><b>7.3.8</b> Networking</a></li>
+<li class="chapter" data-level="7.3.9" data-path="virtualisation.html"><a href="virtualisation.html#compose"><i class="fa fa-check"></i><b>7.3.9</b> Compose</a></li>
+<li class="chapter" data-level="7.3.10" data-path="virtualisation.html"><a href="virtualisation.html#uprodukcyjnianie"><i class="fa fa-check"></i><b>7.3.10</b> Uprodukcyjnianie</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="virtualisation.html"><a href="virtualisation.html#virtual-os---other-solutions"><i class="fa fa-check"></i><b>7.4</b> Virtual OS - Other Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="windows-2.html"><a href="windows-2.html"><i class="fa fa-check"></i><b>8</b> Windows</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="windows-2.html"><a href="windows-2.html#podstawy-skladni"><i class="fa fa-check"></i><b>8.1</b> podstawy skladni</a></li>
+<li class="chapter" data-level="8.2" data-path="windows-2.html"><a href="windows-2.html#zmienne-1"><i class="fa fa-check"></i><b>8.2</b> zmienne</a></li>
+<li class="chapter" data-level="8.3" data-path="windows-2.html"><a href="windows-2.html#control-flow"><i class="fa fa-check"></i><b>8.3</b> control flow</a></li>
+<li class="chapter" data-level="8.4" data-path="windows-2.html"><a href="windows-2.html#odpalanie-stron-w-danej-przegladarce"><i class="fa fa-check"></i><b>8.4</b> odpalanie stron w danej przegladarce</a></li>
+<li class="chapter" data-level="8.5" data-path="windows-2.html"><a href="windows-2.html#przydatne-komentu"><i class="fa fa-check"></i><b>8.5</b> przydatne komentu</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="work-organisation.html"><a href="work-organisation.html"><i class="fa fa-check"></i><b>9</b> Work organisation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="work-organisation.html"><a href="work-organisation.html#cicd-concept"><i class="fa fa-check"></i><b>9.1</b> CI/CD concept</a></li>
+<li class="chapter" data-level="9.2" data-path="work-organisation.html"><a href="work-organisation.html#jenkins"><i class="fa fa-check"></i><b>9.2</b> Jenkins</a></li>
+<li class="chapter" data-level="9.3" data-path="work-organisation.html"><a href="work-organisation.html#team-city"><i class="fa fa-check"></i><b>9.3</b> Team city</a></li>
+<li class="chapter" data-level="9.4" data-path="work-organisation.html"><a href="work-organisation.html#gib-lab"><i class="fa fa-check"></i><b>9.4</b> Gib Lab</a></li>
+<li class="chapter" data-level="9.5" data-path="work-organisation.html"><a href="work-organisation.html#git"><i class="fa fa-check"></i><b>9.5</b> Git</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="work-organisation.html"><a href="work-organisation.html#uwagi-rozne"><i class="fa fa-check"></i><b>9.5.1</b> uwagi rozne</a></li>
+<li class="chapter" data-level="9.5.2" data-path="work-organisation.html"><a href="work-organisation.html#logika-git-a"><i class="fa fa-check"></i><b>9.5.2</b> logika git-a</a></li>
+<li class="chapter" data-level="9.5.3" data-path="work-organisation.html"><a href="work-organisation.html#repozytoria-1"><i class="fa fa-check"></i><b>9.5.3</b> repozytoria</a></li>
+<li class="chapter" data-level="9.5.4" data-path="work-organisation.html"><a href="work-organisation.html#diff"><i class="fa fa-check"></i><b>9.5.4</b> diff</a></li>
+<li class="chapter" data-level="9.5.5" data-path="work-organisation.html"><a href="work-organisation.html#tracking"><i class="fa fa-check"></i><b>9.5.5</b> tracking</a></li>
+<li class="chapter" data-level="9.5.6" data-path="work-organisation.html"><a href="work-organisation.html#stage"><i class="fa fa-check"></i><b>9.5.6</b> stage</a></li>
+<li class="chapter" data-level="9.5.7" data-path="work-organisation.html"><a href="work-organisation.html#branches"><i class="fa fa-check"></i><b>9.5.7</b> branches</a></li>
+<li class="chapter" data-level="9.5.8" data-path="work-organisation.html"><a href="work-organisation.html#commits"><i class="fa fa-check"></i><b>9.5.8</b> commits</a></li>
+<li class="chapter" data-level="9.5.9" data-path="work-organisation.html"><a href="work-organisation.html#stash"><i class="fa fa-check"></i><b>9.5.9</b> stash</a></li>
+<li class="chapter" data-level="9.5.10" data-path="work-organisation.html"><a href="work-organisation.html#inne-komendy"><i class="fa fa-check"></i><b>9.5.10</b> Inne komendy</a></li>
+<li class="chapter" data-level="9.5.11" data-path="work-organisation.html"><a href="work-organisation.html#github"><i class="fa fa-check"></i><b>9.5.11</b> GitHub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>10</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="workflow.html"><a href="workflow.html#airflow"><i class="fa fa-check"></i><b>10.1</b> AirFlow</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="workflow.html"><a href="workflow.html#instalacja---ubuntu"><i class="fa fa-check"></i><b>10.1.1</b> Instalacja - Ubuntu</a></li>
+<li class="chapter" data-level="10.1.2" data-path="workflow.html"><a href="workflow.html#instalacja---windows"><i class="fa fa-check"></i><b>10.1.2</b> Instalacja - Windows</a></li>
+<li class="chapter" data-level="10.1.3" data-path="workflow.html"><a href="workflow.html#składnia"><i class="fa fa-check"></i><b>10.1.3</b> Składnia</a></li>
+<li class="chapter" data-level="10.1.4" data-path="workflow.html"><a href="workflow.html#komendy-cli-command-line-interface"><i class="fa fa-check"></i><b>10.1.4</b> Komendy CLI (<strong>Command Line Interface</strong>)</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workflow</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="security" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Security</h1>
+<div id="klucze-szyfrujące" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Klucze szyfrujące</h2>
+<p>Mamy szyfrowanie symetryczne i asymetryczne. W pierwszym przypadku tym samym kluczem szyfrujemy i odszyfrowujemy wiadomość. W kluczy asymetrycznym inny kluczy służy do szyfrowania, a inny do odszyfrowania wiadomości. Szyfrowanie asymetryczne jest zazwyczaj używane do tworzenia pary kluczy publicznych-prywatny : wszyscy mają dostęp do klucza szyfrującego (klucz publiczny), ale odszyfrowanie (kluczy prywatny) mają tylko wybrane jednostki. Szyfrowanie asymetryczne jest używane do tworzenia klucza prywatnego gdzie tylko strony uczestniczące w komunikacji mają do niego dostęp (obie strony używają tego samego klucza prywatnego). Ponieważ klucze publiczne są obliczeniochłonne, w praktyce jest tak, że komunikacja zaczyna się od klucza publicznego a potem przechodzi się na klucze prywatne, tzn:</p>
+<p>Strona A z użyciem klucza publicznego (należącego do B) szyfruje utworzony przez siebie klucz prywatny (nazwijmy go <em>g</em>). Strona B go swoim kluczem prywatnym odszyfrowuje i przechodzą dalej na komunikację prywatnym kluczem <em>g</em>.</p>
+<p><strong>Uwaga:</strong> Certyfikaty publiczne powinny być uwierzytelniane przez CA (Certhificate Authority). W celach testowych kiedy pracuje lokalnie na komputerze mogę sobie ten proces zasymulować odpowiednią aplikacją w systemie operacyjnym.</p>
+<p>Przykład szyfrowania niesymetrycznego na bazie protokołu Diffiego Hellmana <a href="http://www.crypto-it.net/pl/asymetryczne/diffiego-hellmana.html">crypto-it.net</a>:</p>
+<p><strong>Sam algorytm</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Alice i Bob uzgadniają liczbę pierwszą p i bazę g.</p></li>
+<li><p>Alice wybiera sekretną liczbę całkowitą a, a następnie wysyła Bobowi liczbę A = g<sup>a</sup> mod p.</p></li>
+<li><p>Bob wybiera sekretną liczbę całkowitą b, a następnie wysyła Alice liczbę B = g<sup>b</sup> mod p.</p></li>
+<li><p>Alice oblicza liczbę k = B<sup>a</sup> mod p.</p></li>
+<li><p>Bob oblicza tę samą liczbę k = A<sup>b</sup> mod p.</p></li>
+<li><p>Od tego momentu Alice i Bob współdzielą sekretną liczbę k.</p></li>
+</ol>
+<p>Otrzymana przez obie strony liczba k jest bardzo duża - wykorzystywane w algorytmie liczby a i b mają przynajmniej po 100 cyfr, natomiast liczba pierwsza p ma przynajmniej 300 cyfr. Wartość k może być następnie zmieniona na klucz symetryczny za pomocą <a href="http://www.crypto-it.net/pl/teoria/funkcja-jednokierunkowa.html#hash" title="Przeczytaj więcej o funkcjach haszujących">funkcji haszującej</a>. Klucz symetryczny jest stosowany do szyfrowania całej dalszej komunikacji.</p>
+<p><strong>Przykład użycia do kluczy prywatny-publiczny:</strong></p>
+<p>Możliwe jest wykorzystanie protokołu Diffiego-Hellmana do szyfrowania wiadomości przy użyciu kluczy publicznego i prywatnego.</p>
+<p>W takim przypadku, Bob mógłby wysłać wiadomość do Alice, szyfrując ją za klucza publicznego Alice, którym są trzy liczby: g, p, g<sup>a</sup> mod p. W celu przesłania Alice sekretnej wiadomości, Bob musi wylosować liczbę b, a następnie wysłać niezaszyfrowaną liczbę g<sup>b</sup> mod p do Alice. Wreszcie przychodzi czas na wysłanie właściwej wiadomości, zaszyfrowanej za pomocą klucza symetrycznego (g<sup>a</sup>)<sup>b</sup> mod p.</p>
+<p>Jedynie Alice będzie w stanie określić wartość b i odszyfrować wiadomość. Zastosowanie klucza publicznego zapobiega również atakom <a href="http://www.crypto-it.net/pl/ataki/man-in-the-middle.html" title="Przeczytaj więcej o atakach man-in-the-middle">man-in-the-middle</a>.</p>
+<p>Przytoczony algorytm umożliwia szyfrowanie danych za pomocą szyfrów asymetrycznych. Obecnie jednak, dużo bardziej popularnym sposobem szyfrowania z kluczem publicznym jest <a href="http://www.crypto-it.net/pl/asymetryczne/rsa.html" title="Przeczytaj więcej o szyfrowaniu RSA">RSA</a>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="network.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sonar-qube.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": true,
+"instapper": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Security.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-Manual_R.pdf", "bookdown-Manual_R.epub"],
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+</body>
+
+</html>
