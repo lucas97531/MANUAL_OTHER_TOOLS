@@ -1,9 +1,0 @@
-########################################################
-# Plik Dockerfile demonstrujący działanie instrukcji CMD.
-########################################################
-# Obraz bazowy: busybox:latest.
-FROM busybox:latest
-# Autor: dr Peter.
-MAINTAINER dr Peter <peterindia@gmail.com>
-# Instrukcja CMD wyświetlająca tekst.
-CMD ["echo", "Plik demonstracyjny"] 
